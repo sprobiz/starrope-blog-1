@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- JSON-LD 구조화 데이터 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "TypeScript 입문 가이드: JavaScript 개발자를 위한 정적 타입의 모든 것",
+    "description": "JavaScript의 타입 안전성 약점을 보완하는 TypeScript의 기본 타입 시스템, 인터페이스, 제네릭, 유틸리티 타입을 실전 코드 예시와 함께 완전히 정복합니다.",
+    "image": "https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?auto=format&fit=crop&w=800&q=80",
+    "author": { "@type": "Person", "name": "Starrope" },
+    "publisher": { "@type": "Organization", "name": "Starrope IT", "url": "https://blog1.starrope2023.com" },
+    "datePublished": "2026-06-29",
+    "dateModified": "2026-06-29",
+    "url": "https://blog1.starrope2023.com/posts/typescript-intro.html",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://blog1.starrope2023.com/posts/typescript-intro.html" }
+  }
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TypeScript 입문 가이드: JavaScript 개발자를 위한 정적 타입의 모든 것 | 스타로프 IT 블로그</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="JavaScript의 타입 안전성 약점을 보완하는 TypeScript의 기본 타입 시스템, 인터페이스, 제네릭, 유틸리티 타입을 실전 코드 예시와 함께 완전히 정복합니다.">
+  <meta name="keywords" content="TypeScript 입문, 타입스크립트 기초, TypeScript vs JavaScript, 인터페이스 타입스크립트, 제네릭 TypeScript, 타입스크립트 설치, 정적 타입 언어">
+  <meta name="author" content="Starrope">
+  <meta property="og:title" content="TypeScript 입문 가이드: JavaScript 개발자를 위한 정적 타입의 모든 것">
+  <meta property="og:description" content="JavaScript의 타입 안전성 약점을 보완하는 TypeScript의 기본 타입 시스템, 인터페이스, 제네릭, 유틸리티 타입을 실전 코드 예시와 함께 완전히 정복합니다.">
+  <meta property="og:type" content="article">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://starrope.github.io/posts/typescript-intro.html">
+
+  <link rel="stylesheet" href="../assets/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1692428092138510" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">S</div>
+        <span class="gradient-text">Starrope IT</span>
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-item">홈</a>
+        <a href="../index.html#articles" class="nav-item">포스트</a>
+        <a href="../about.html" class="nav-item">소개</a>
+        <a href="../privacy-policy.html" class="nav-item">개인정보처리방침</a>
+        <a href="../terms-of-service.html" class="nav-item">이용약관</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="다크 모드 전환">
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- POST HEADER -->
+  <header class="post-header">
+    <div class="post-header-tag">코딩 / 자바스크립트</div>
+    <h1 class="post-header-title">TypeScript 입문 가이드: JavaScript 개발자를 위한 정적 타입의 모든 것</h1>
+    <div class="post-header-meta">
+      <span>작성자: Starrope</span>
+      <span>•</span>
+      <span>2026. 06. 29</span>
+      <span>•</span>
+      <span>읽는 시간: 약 5분</span>
+    </div>
+  </header>
+
+  <!-- AD SLOT (POST TOP) -->
+  <div class="container">
+    <ins class="adsbygoogle ad-slot ad-header"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 상단 반응형 광고</div>
+    </ins>
+  </div>
+
+  <!-- ARTICLE LAYOUT -->
+  <main class="container post-article-layout">
+    <article class="post-content">
+
+      <img src="https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?auto=format&fit=crop&w=800&q=80" alt="TypeScript 타입스크립트 입문 정적 타입 자바스크립트" style="width:100%; border-radius:12px; margin-bottom:32px; box-shadow:var(--shadow-md);">
+
+      <p>JavaScript로 처음 프로그래밍을 시작한 분들이라면 런타임에서 갑자기 <code>TypeError: Cannot read properties of undefined</code> 같은 에러를 만나 당황한 경험이 있을 것입니다. <strong>TypeScript(타입스크립트)</strong>는 마이크로소프트가 개발한 JavaScript의 슈퍼셋(Superset) 언어로, <strong>정적 타입 시스템</strong>을 추가하여 코드를 실행하기 전에 타입 관련 오류를 컴파일 타임에 미리 잡아냅니다. 현재 React, Vue, Angular, Node.js 등 거의 모든 주요 JS 생태계에서 TypeScript가 사실상 표준이 되었으며, 채용 시장에서도 TypeScript 능숙도는 필수 스킬이 되었습니다.</p>
+
+      <h2>1. TypeScript를 써야 하는 이유: 규모가 커질수록 빛나는 타입 안전성</h2>
+      <p>소규모 스크립트에서는 JavaScript의 동적 타입도 충분하지만, 팀 협업과 대규모 프로젝트에서는 타입이 없는 코드가 예측 불가능한 버그의 온상이 됩니다. TypeScript는 이 문제를 근본적으로 해결합니다.</p>
+
+      <ul>
+        <li><strong>IDE 자동완성의 극적 향상:</strong> 타입 정보가 있으면 VS Code가 객체의 속성, 함수의 파라미터, 반환 타입을 정확하게 자동완성해 줍니다. 문서 없이도 API를 쉽게 사용할 수 있어 개발 속도가 크게 향상됩니다.</li>
+        <li><strong>런타임 전 버그 예방:</strong> 문자열을 받아야 하는 함수에 숫자를 전달하거나, 없는 속성에 접근하는 실수를 코드 작성 단계에서 빨간 줄로 즉시 알려줍니다. 프로덕션 배포 후 발생하는 버그가 대폭 감소합니다.</li>
+        <li><strong>팀 협업 문서화 효과:</strong> 타입 선언이 곧 문서입니다. 함수 시그니처만 봐도 어떤 데이터를 입력받고 무엇을 반환하는지 명확히 알 수 있어, 팀원 간 의사소통 비용이 절감됩니다.</li>
+      </ul>
+
+      <blockquote>
+        "TypeScript는 JavaScript에 타입을 강제하는 언어가 아닙니다. 개발자에게 코드에 대한 더 깊은 사고를 유도하고, 그 결과물을 IDE와 협력하여 최고의 개발 경험으로 환원하는 언어입니다."
+      </blockquote>
+
+      <h2>2. 기본 타입과 인터페이스: TypeScript의 핵심 빌딩 블록</h2>
+      <p>TypeScript의 기본 타입은 JavaScript의 원시형에 대응됩니다. 변수 선언 시 콜론(:) 뒤에 타입을 명시하거나, TypeScript의 강력한 <strong>타입 추론(Type Inference)</strong>에 맡겨 자동으로 결정하게 할 수 있습니다.</p>
+
+      <ul>
+        <li><strong>원시 타입:</strong> <code>string</code>, <code>number</code>, <code>boolean</code>, <code>null</code>, <code>undefined</code>가 기본 타입입니다. <code>let name: string = 'Starrope'</code>처럼 선언합니다.</li>
+        <li><strong>배열과 튜플:</strong> <code>number[]</code> 또는 <code>Array&lt;number&gt;</code>로 숫자 배열을 표현합니다. 튜플(Tuple)은 <code>[string, number]</code>처럼 각 인덱스의 타입을 고정합니다.</li>
+        <li><strong>인터페이스(Interface):</strong> 객체의 구조를 미리 정의하는 TypeScript의 핵심 기능입니다. <code>interface User { id: number; name: string; email?: string; }</code>처럼 선언하면, 이 구조를 따르지 않는 객체가 할당될 때 즉시 에러를 발생시킵니다. <code>?</code>는 선택적(optional) 속성을 의미합니다.</li>
+      </ul>
+
+      <!-- AD SLOT (IN-CONTENT) -->
+      <ins class="adsbygoogle ad-slot ad-content"
+           style="display:block; text-align:center;"
+           data-ad-layout="in-article"
+           data-ad-format="fluid"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="5566778899">
+        <div class="ad-slot-label">본문 중간 인피드 광고 영역</div>
+      </ins>
+
+      <h2>3. 제네릭과 유틸리티 타입: TypeScript를 강력하게 만드는 고급 기능</h2>
+      <p><strong>제네릭(Generics)</strong>은 타입을 마치 함수의 파라미터처럼 사용하여, 다양한 타입에 재사용 가능한 컴포넌트를 만드는 TypeScript의 핵심 고급 기능입니다. 과도한 <code>any</code> 타입 사용을 피하면서도 유연한 코드를 작성할 수 있게 합니다.</p>
+
+      <ul>
+        <li><strong>제네릭 함수:</strong> <code>function identity&lt;T&gt;(arg: T): T { return arg; }</code>처럼 선언하면 <code>identity&lt;string&gt;('hello')</code>, <code>identity&lt;number&gt;(42)</code> 모두 타입 안전하게 처리됩니다.</li>
+        <li><strong>Partial&lt;T&gt;:</strong> 인터페이스의 모든 속성을 선택적으로 만듭니다. API PATCH 요청에서 일부 필드만 업데이트할 때 매우 유용합니다.</li>
+        <li><strong>Pick&lt;T, K&gt; / Omit&lt;T, K&gt;:</strong> 기존 인터페이스에서 특정 속성만 추출하거나 제외한 새 타입을 생성합니다. 코드 중복 없이 타입을 효율적으로 재활용하는 강력한 도구입니다.</li>
+      </ul>
+
+      <h2>마치며</h2>
+      <p>TypeScript 학습의 첫 단계는 기존 JavaScript 프로젝트에 <code>tsconfig.json</code>을 추가하고 파일 확장자를 <code>.ts</code>로 변경하는 것입니다. <code>strict: false</code>로 시작해 점진적으로 타입을 추가하는 마이그레이션 전략이 초보자에게 추천됩니다. TypeScript의 공식 플레이그라운드(typescriptlang.org/play)에서 브라우저 안에서 바로 실습하며 결과를 확인할 수 있습니다. TypeScript를 능숙하게 다룰 수 있게 되면 React, Next.js, Node.js 개발에서 느끼는 자신감이 완전히 달라집니다.</p>
+
+    </article>
+
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">운영자 프로필</h3>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background-color: var(--primary-color); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">S</div>
+          <div>
+            <h4 style="font-size: 15px;">Starrope</h4>
+            <span style="font-size: 12px; color: var(--text-muted);">IT 기술 & SEO 파트너</span>
+          </div>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">실전 SEO 전략 및 IT 기술 블로그 최적화 파트너입니다. 최고의 퍼포먼스를 내는 고성능 블로그 정보를 제공합니다.</p>
+      </div>
+      <ins class="adsbygoogle ad-slot ad-sidebar sidebar-widget"
+           style="display:block"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="9876543210"
+           data-ad-format="rectangle"
+           data-full-width-responsive="true">
+        <div class="ad-slot-label">사이드바 스폰서 링크</div>
+      </ins>
+      <div class="sidebar-widget">
+        <h3 class="widget-title">바로가기</h3>
+        <ul class="categories-list">
+          <li><a href="../index.html">🏠 홈으로 돌아가기</a></li>
+          <li><a href="../about.html">👤 필자 소개 보기</a></li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <!-- AD SLOT (POST BOTTOM) -->
+  <div class="container" style="margin-bottom: 60px;">
+    <ins class="adsbygoogle ad-slot ad-footer"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1122334455"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 하단 반응형 매칭 광고</div>
+    </ins>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <a href="../index.html" class="logo footer-info-logo">
+          <div class="logo-icon">S</div>
+          <span class="gradient-text">Starrope IT</span>
+        </a>
+        <p>최신 IT 기술 트렌드, AI 생산성 도구 사용법 및 디지털 노마드의 삶을 위한 유용한 지식을 공유하는 전문 기술 블로그.</p>
+      </div>
+      <div class="footer-links">
+        <h4>중요 문서</h4>
+        <ul>
+          <li><a href="../privacy-policy.html">개인정보처리방침</a></li>
+          <li><a href="../terms-of-service.html">서비스 이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Starrope IT. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/main.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</body>
+</html>

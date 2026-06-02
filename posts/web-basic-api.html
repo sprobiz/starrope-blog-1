@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>클라이언트 서버 API 입문 가이드 | 스타로프 IT 블로그</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="인터넷이 어떻게 작동하는지 완전히 이해하고 싶은 초보자를 위한 클라이언트, 서버, 그리고 이들을 연결하는 가교인 API의 개념과 동작 원리를 5분 만에 완벽 정리합니다.">
+  
+  <!-- Link CSS (relative path to main assets) -->
+  <link rel="stylesheet" href="../assets/style.css">
+  
+  <!-- Pre-configured Google AdSense Auto Ads Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1692428092138510" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">S</div>
+        <span class="gradient-text">Starrope IT</span>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-item">홈</a>
+        <a href="../index.html#articles" class="nav-item">포스트</a>
+        <a href="../about.html" class="nav-item">소개</a>
+        <a href="../privacy-policy.html" class="nav-item">개인정보처리방침</a>
+        <a href="../terms-of-service.html" class="nav-item">이용약관</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="다크 모드 전환">
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- POST HEADER -->
+  <header class="post-header">
+    <div class="post-header-tag">코딩 및 웹 개발 입문</div>
+    <h1 class="post-header-title">웹의 동작 원리 이해하기: 클라이언트와 서버, API 개념 5분 마스터</h1>
+    <div class="post-header-meta">
+      <span>작성자: Starrope</span>
+      <span>•</span>
+      <span>2026. 06. 07 (오전 8:00)</span>
+      <span>•</span>
+      <span>읽는 시간: 약 4분</span>
+    </div>
+  </header>
+
+  <!-- AD SLOT (POST TOP DISPLAY) -->
+  <div class="container">
+    <ins class="adsbygoogle ad-slot ad-header"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 상단 반응형 광고</div>
+    </ins>
+  </div>
+
+  <!-- ARTICLE LAYOUT -->
+  <main class="container post-article-layout">
+    
+    <!-- LEFT: MAIN CONTENT -->
+    <article class="post-content">
+      
+      <p>매일 아침 눈을 떠 스마트폰으로 뉴스를 확인하고, 인스타그램 피드를 내리며, 카카오톡 메시지를 보내고 유튜브 영상을 시청하는 모든 순간, 우리는 보이지 않는 거대한 디지털 네트워크 생태계 속에서 살고 있습니다. 이러한 모든 현대 문명의 서비스들은 예외 없이 **'웹의 기본 아키텍처 원리'**를 기초로 설계되어 있습니다. 코딩이나 컴퓨터 지식이 전혀 없는 비전공자라 할지라도, IT 업계의 일잘러들과 소통하고 비즈니스 아이디어를 웹에 구현하기 위해서는 반드시 이 웹의 동작 축인 세 가지 뼈대 개념, 즉 <strong>클라이언트(Client), 서버(Server), 그리고 API(Application Programming Interface)</strong>를 이해해야 합니다. 이 3대 지도를 5분 만에 직관적인 비유로 머릿속에 완벽히 장착해 드리겠습니다.</p>
+      
+      <div class="post-main-image" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80'); height: 350px; background-size: cover; background-position: center; border-radius: 12px; margin-bottom: 24px;"></div>
+
+      <h2>1. 클라이언트와 서버: 주문하는 고객과 요리하는 주방</h2>
+      <p>웹의 구조를 가장 명료하게 이해하기 위한 최적의 비유는 바로 **'고급 레스토랑의 서빙 시스템'**입니다. 우리가 크롬이나 사파리 같은 인터넷 브라우저를 켜서 네이버나 쿠팡 주소를 주소창에 치는 행위는 레스토랑에 들어가 테이블에 앉는 것과 똑같습니다.</p>
+      
+      <ul>
+        <li><strong>클라이언트(Client) - 요청하는 손님:</strong> 스마트폰, 노트북, 태블릿 등 사용자가 직접 눈으로 화면을 보며 클릭하고 입력을 시도하는 디바이스나 브라우저를 일컫습니다. 즉, 서비스를 소비하고 요구를 발신하는 고객의 영역입니다.</li>
+        <li><strong>서버(Server) - 음식을 제공하는 주방:</strong> 보이지 않는 저 멀리 빌딩의 클라우드 데이터 센터 안에 24시간 내내 전원이 켜진 채 작동하는 거대한 컴퓨터 시스템입니다. 손님의 주문을 접수하고, 내부 냉장고(데이터베이스)에서 식재료를 꺼내어 맛있는 요리(HTML, 이미지 데이터)를 만들어 발송하는 주방장 역할입니다.</li>
+      </ul>
+
+      <blockquote>
+        "웹이란 결국, 사용자 눈앞에 보이는 클라이언트라는 화려한 스크린과, 그 뒤편에서 수많은 데이터를 24시간 쉬지 않고 조리하여 보내주는 서버라는 주방 간의 쉼 없는 약속과 대화입니다."
+      </blockquote>
+      
+      <h2>2. API: 주문을 전달하고 음식을 가져다주는 스마트한 웨이터</h2>
+      <p>레스토랑 비유를 조금 더 이어가 봅시다. 테이블에 앉은 손님이 주방 문을 직접 벌컥 열고 들어가 "스테이크 미디엄 웰던으로 구워주세요!"라고 셰프에게 직접 소리 지르거나, 냉장고를 직접 뒤지는 행동은 극도로 위험하고 통제하기 힘듭니다. 주방의 철저한 위생과 체계를 위해 손님과 주방 사이에는 반드시 주문을 적어 전달하고 완성된 접시를 테이블에 올려주는 친절하고 안전한 웨이터가 존재해야만 합니다. 이 웨이터가 바로 **API(Application Programming Interface)**입니다.</p>
+      
+      <p>즉, API는 클라이언트가 보낸 요청을 규격화된 양식으로 서버에 정확하게 전달하고, 서버가 그 요청을 처리하여 반환해 준 최종 결과 데이터를 다시 안전하게 클라이언트로 배달해 주는 **규격화된 가교 채널**입니다. 우리가 쿠팡에서 결제 버튼을 누르면 이니시스 결제 서비스의 서버로 금액 데이터를 전달해 주는 웨이터(결제 API)가 움직이고, 내 위치 기반으로 날씨 앱을 켜면 기상청 서버의 오늘 오전 기온을 가져다 화면에 띄워주는 웨이터(날씨 API)가 작동하는 셈입니다.</p>
+
+      <!-- AD SLOT (IN-CONTENT DISPLAY) -->
+      <ins class="adsbygoogle ad-slot ad-content"
+           style="display:block; text-align:center;"
+           data-ad-layout="in-article"
+           data-ad-format="fluid"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="5566778899">
+        <div class="ad-slot-label">본문 중간 인피드 광고 영역</div>
+      </ins>
+
+      <h2>3. 대표적인 API의 실제 쓰임새와 통신 형식(JSON)</h2>
+      <p>현대의 IT 비즈니스는 무수히 많은 오픈 API를 블록 조립하듯이 엮어서 돌아간다고 해도 과언이 아닙니다. 새로운 쇼핑몰이나 앱 서비스를 런칭할 때 가입 절차를 일일이 개발하는 대신, "카카오 로그인 API" 또는 "구글 소셜 연동 API"를 한 줄 심어놓으면 복잡한 본인 인증과 개인정보 수집 단계를 플랫폼 대기업 주방장에게 안전하게 아웃소싱하여 해결할 수 있게 됩니다.</p>
+      
+      <p>이때 웨이터(API)가 주문을 적어 나르는 표준적인 종이 서식을 전문 기술 용어로 **JSON(JavaScript Object Notation)**이라고 부릅니다. 어렵게 생각할 필요 없이, 이름과 나이, 이메일 등의 데이터를 `{ "name": "Starrope", "email": "help@starope.com" }` 처럼 중괄호 안에 쉼표로 촘촘히 엮어둔 아주 가볍고 단순한 공통 기호 텍스트 규격입니다. 이 가벼운 규칙 덕분에 전 세계의 다양한 클라이언트 단말기와 서로 다른 종류의 서버 컴퓨터들이 언어의 제약 없이 평화롭게 소통하며 초고속 웹 서핑 세상을 구현하고 있습니다.</p>
+
+      <h2>마치며</h2>
+      <p>클라이언트와 서버가 서로 주문을 주고받고, 유능한 웨이터인 API가 통신 규격 JSON 서식을 들고 분주히 오가는 웹의 3각 편대 흐름을 한 번 머릿속에 담아두면, 어떤 디지털 서비스를 접하더라도 기술적 맥락을 주체적으로 파악하는 눈이 뜨이게 될 것입니다. IT 기획, 마케팅, 그리고 수익 다각화를 위한 블로그 설계에 이르기까지 이 기저 원리는 변하지 않는 든든한 등대가 됩니다. 본 스타로프 IT 채널은 초보자가 기술적 자립심을 갖추도록 가장 친숙한 언어로 실전에 꼭 필요한 알짜 지식만을 골라 지속 전해드리겠습니다. 궁금하신 API 연동 지식이 있다면 언제든 아래 메일 문의해 주십시오. 감사합니다!</p>
+      
+    </article>
+    
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="sidebar">
+      
+      <!-- Bio Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">운영자 프로필</h3>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background-color: var(--primary-color); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">S</div>
+          <div>
+            <h4 style="font-size: 15px;">Starrope</h4>
+            <span style="font-size: 12px; color: var(--text-muted);">IT 기술 & SEO 파트너</span>
+          </div>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">실전 SEO 전략 및 IT 기술 블로그 최적화 파트너입니다. 최고의 퍼포먼스를 내는 고성능 블로그 정보를 제공합니다.</p>
+      </div>
+      
+      <!-- Ad Widget -->
+      <ins class="adsbygoogle ad-slot ad-sidebar sidebar-widget"
+           style="display:block"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="9876543210"
+           data-ad-format="rectangle"
+           data-full-width-responsive="true">
+        <div class="ad-slot-label">사이드바 스폰서 링크</div>
+      </ins>
+      
+      <!-- Navigation Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">바로가기</h3>
+        <ul class="categories-list">
+          <li><a href="../index.html">🏠 홈으로 돌아가기</a></li>
+          <li><a href="../about.html">👤 필자 소개 보기</a></li>
+        </ul>
+      </div>
+      
+    </aside>
+  </main>
+
+  <!-- AD SLOT (POST BOTTOM DISPLAY) -->
+  <div class="container" style="margin-bottom: 60px;">
+    <ins class="adsbygoogle ad-slot ad-footer"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1122334455"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 하단 반응형 매칭 광고</div>
+    </ins>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <a href="../index.html" class="logo footer-info-logo">
+          <div class="logo-icon">S</div>
+          <span class="gradient-text">Starrope IT</span>
+        </a>
+        <p>최신 IT 기술 트렌드, AI 생산성 도구 사용법 및 디지털 노마드의 삶을 위한 유용한 지식을 공유하는 전문 기술 블로그.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h4>중요 문서</h4>
+        <ul>
+          <li><a href="../privacy-policy.html">개인정보처리방침</a></li>
+          <li><a href="../terms-of-service.html">서비스 이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Starrope IT. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Link JS (relative path) -->
+  <script src="../assets/main.js"></script>
+  
+  <!-- Trigger Adsense rendering loop -->
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</body>
+</html>

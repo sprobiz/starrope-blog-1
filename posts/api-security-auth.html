@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- JSON-LD 구조화 데이터 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "웹 API 보안 인증 완전 가이드: JWT·OAuth 2.0·API Key 방식 비교와 실전 적용",
+    "description": "웹 서비스 보안의 핵심인 JWT 토큰 인증, OAuth 2.0 소셜 로그인, API Key 방식의 원리와 차이점을 비교하고 각 방식의 보안 취약점 예방법을 실전 위주로 정리합니다.",
+    "image": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
+    "author": { "@type": "Person", "name": "Starrope" },
+    "publisher": { "@type": "Organization", "name": "Starrope IT", "url": "https://blog1.starrope2023.com" },
+    "datePublished": "2026-06-30",
+    "dateModified": "2026-06-30",
+    "url": "https://blog1.starrope2023.com/posts/api-security-auth.html",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://blog1.starrope2023.com/posts/api-security-auth.html" }
+  }
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>웹 API 보안 인증 완전 가이드: JWT·OAuth 2.0·API Key 방식 비교와 실전 적용 | 스타로프 IT 블로그</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="웹 서비스 보안의 핵심인 JWT 토큰 인증, OAuth 2.0 소셜 로그인, API Key 방식의 원리와 차이점을 비교하고 각 방식의 보안 취약점 예방법을 실전 위주로 정리합니다.">
+  <meta name="keywords" content="JWT 인증, OAuth 2.0, API 보안, API Key, 웹 보안, 토큰 인증, REST API 보안, Bearer Token, 소셜 로그인 구현, 세션 vs JWT">
+  <meta name="author" content="Starrope">
+  <meta property="og:title" content="웹 API 보안 인증 완전 가이드: JWT·OAuth 2.0·API Key 방식 비교와 실전 적용">
+  <meta property="og:description" content="웹 서비스 보안의 핵심인 JWT 토큰 인증, OAuth 2.0 소셜 로그인, API Key 방식의 원리와 차이점을 비교하고 각 방식의 보안 취약점 예방법을 실전 위주로 정리합니다.">
+  <meta property="og:type" content="article">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://starrope.github.io/posts/api-security-auth.html">
+
+  <link rel="stylesheet" href="../assets/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1692428092138510" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">S</div>
+        <span class="gradient-text">Starrope IT</span>
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-item">홈</a>
+        <a href="../index.html#articles" class="nav-item">포스트</a>
+        <a href="../about.html" class="nav-item">소개</a>
+        <a href="../privacy-policy.html" class="nav-item">개인정보처리방침</a>
+        <a href="../terms-of-service.html" class="nav-item">이용약관</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="다크 모드 전환">
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- POST HEADER -->
+  <header class="post-header">
+    <div class="post-header-tag">코딩 / 웹 보안</div>
+    <h1 class="post-header-title">웹 API 보안 인증 완전 가이드: JWT·OAuth 2.0·API Key 방식 비교와 실전 적용</h1>
+    <div class="post-header-meta">
+      <span>작성자: Starrope</span>
+      <span>•</span>
+      <span>2026. 06. 30</span>
+      <span>•</span>
+      <span>읽는 시간: 약 6분</span>
+    </div>
+  </header>
+
+  <!-- AD SLOT (POST TOP) -->
+  <div class="container">
+    <ins class="adsbygoogle ad-slot ad-header"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 상단 반응형 광고</div>
+    </ins>
+  </div>
+
+  <!-- ARTICLE LAYOUT -->
+  <main class="container post-article-layout">
+    <article class="post-content">
+
+      <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80" alt="웹 API 보안 인증 JWT OAuth 2.0 API Key" style="width:100%; border-radius:12px; margin-bottom:32px; box-shadow:var(--shadow-md);">
+
+      <p>웹 서비스를 개발할 때 가장 민감하고 중요한 부분이 바로 <strong>인증(Authentication)과 인가(Authorization)</strong>입니다. "이 요청이 진짜 내 사용자로부터 온 것인가?", "이 사용자는 이 자원에 접근할 권한이 있는가?"를 검증하는 로직이 허술하면 개인정보 유출, 계정 탈취, 서비스 파괴 등 치명적인 보안 사고로 이어집니다. 이번 포스팅에서는 현대 웹 개발에서 가장 널리 사용되는 세 가지 API 인증 방식인 <strong>JWT, OAuth 2.0, API Key</strong>의 원리와 차이점, 그리고 각 방식의 보안 강화 방법을 체계적으로 정리합니다.</p>
+
+      <h2>1. JWT(JSON Web Token): 상태 없는 서버를 위한 자가 포함 인증 토큰</h2>
+      <p><strong>JWT(제이더블유티)</strong>는 JSON 형식의 데이터를 Base64로 인코딩한 후 서버의 비밀 키로 서명한 문자열입니다. 헤더(Header), 페이로드(Payload), 서명(Signature) 세 부분이 점(.)으로 구분되어 있습니다. REST API에서 세션 기반 인증을 대체하는 가장 인기 있는 방식입니다.</p>
+
+      <ul>
+        <li><strong>동작 원리:</strong> 사용자가 로그인하면 서버는 사용자 정보를 담은 JWT를 생성해 클라이언트에 전달합니다. 이후 모든 API 요청 시 HTTP 헤더에 <code>Authorization: Bearer {토큰}</code>을 포함시키면 서버는 토큰의 서명을 검증하여 사용자를 식별합니다.</li>
+        <li><strong>Stateless의 장점:</strong> 서버가 세션 정보를 저장하지 않아도 됩니다. 토큰 자체에 모든 정보가 담겨 있어 수평 확장(Scale-out)이 용이하고, 마이크로서비스 아키텍처에 적합합니다.</li>
+        <li><strong>보안 주의사항:</strong> JWT는 서명만 되어 있을 뿐 암호화되지 않으므로 페이로드에 비밀번호 같은 민감 정보를 담아서는 절대 안 됩니다. Access Token은 만료 시간을 짧게(15분~1시간), Refresh Token은 안전한 HttpOnly 쿠키에 저장하는 것이 보안 Best Practice입니다.</li>
+      </ul>
+
+      <blockquote>
+        "JWT를 LocalStorage에 저장하는 것은 XSS(Cross-Site Scripting) 공격에 노출되는 지름길입니다. Access Token은 메모리에, Refresh Token은 HttpOnly 쿠키에 저장하세요."
+      </blockquote>
+
+      <h2>2. OAuth 2.0: 소셜 로그인과 써드파티 API 연동의 표준 프로토콜</h2>
+      <p><strong>OAuth 2.0</strong>은 인터넷 사용자의 계정 정보를 서드파티 앱에 직접 노출하지 않고, 구글·카카오·네이버 같은 신뢰할 수 있는 인증 제공자(Identity Provider)를 통해 대신 인증을 처리하는 표준 권한 위임 프레임워크입니다.</p>
+
+      <ul>
+        <li><strong>Authorization Code Flow:</strong> 가장 안전한 OAuth 흐름입니다. 사용자가 구글 로그인을 클릭하면, 구글이 인증을 처리하고 단기 Authorization Code를 우리 서버에 전달합니다. 서버는 이 코드를 실제 Access Token으로 교환합니다. 코드가 클라이언트 측에 노출되지 않아 가장 안전합니다.</li>
+        <li><strong>Scope 권한 제어:</strong> <code>scope=email profile</code>처럼 요청하는 권한 범위를 명시합니다. 필요한 최소한의 권한만 요청하는 것이 보안 원칙입니다. 사용자는 어떤 정보를 공유할지 명시적으로 동의하게 됩니다.</li>
+        <li><strong>PKCE(Proof Key for Code Exchange):</strong> SPA나 모바일 앱처럼 서버 비밀 키를 안전하게 보관할 수 없는 환경에서는 PKCE 확장을 반드시 사용해야 Authorization Code Interception 공격을 예방할 수 있습니다.</li>
+      </ul>
+
+      <!-- AD SLOT (IN-CONTENT) -->
+      <ins class="adsbygoogle ad-slot ad-content"
+           style="display:block; text-align:center;"
+           data-ad-layout="in-article"
+           data-ad-format="fluid"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="5566778899">
+        <div class="ad-slot-label">본문 중간 인피드 광고 영역</div>
+      </ins>
+
+      <h2>3. API Key 인증: 서버 간 통신의 심플하고 강력한 선택</h2>
+      <p><strong>API Key</strong>는 특정 클라이언트를 식별하는 고유한 문자열입니다. JWT의 복잡한 서명 검증 없이 단순히 요청에 포함된 키 값이 데이터베이스의 유효한 키와 일치하는지 확인하는 방식으로 작동합니다. B2B SaaS 서비스의 외부 API, 서버 간(M2M) 통신, 개발자 도구 연동에서 가장 많이 사용됩니다.</p>
+
+      <ul>
+        <li><strong>전달 방식:</strong> HTTP 헤더(<code>X-API-Key: your-key</code>), 쿼리 파라미터(<code>?api_key=your-key</code>), 또는 Basic Auth 형태로 전달합니다. 보안상 헤더 방식이 가장 권장됩니다. 쿼리 파라미터는 서버 로그에 키가 노출될 위험이 있습니다.</li>
+        <li><strong>Rate Limiting 필수:</strong> API Key 인증 시스템에는 반드시 Rate Limiting(속도 제한)을 구현해야 합니다. 단위 시간당 요청 횟수를 제한하여 무차별 대입 공격(Brute Force)과 DDoS를 방어합니다.</li>
+        <li><strong>키 순환과 권한 범위:</strong> API Key는 주기적으로 갱신(Rotation)하고, 가능하다면 각 키에 접근 가능한 API 엔드포인트와 데이터 범위를 제한하는 세분화된 권한 설계를 적용하는 것이 보안 Best Practice입니다.</li>
+      </ul>
+
+      <h2>마치며</h2>
+      <p>올바른 인증 방식 선택은 서비스의 특성에 따라 달라집니다. <strong>사용자 로그인이 있는 웹/앱 서비스라면 JWT</strong>, <strong>소셜 로그인이나 서드파티 연동이 필요하다면 OAuth 2.0</strong>, <strong>서버 간 통신이나 개발자 API 제공이 목적이라면 API Key</strong>가 일반적으로 최적의 선택입니다. 어떤 방식을 선택하든 HTTPS 필수 적용, 토큰/키의 안전한 저장, 최소 권한 원칙, 로그와 모니터링 구축이라는 보안 4대 원칙은 반드시 지켜야 합니다. 보안은 기능을 만들고 나중에 추가하는 것이 아니라, 설계 단계부터 함께 고려하는 'Security by Design' 철학을 기억하세요.</p>
+
+    </article>
+
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">운영자 프로필</h3>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background-color: var(--primary-color); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">S</div>
+          <div>
+            <h4 style="font-size: 15px;">Starrope</h4>
+            <span style="font-size: 12px; color: var(--text-muted);">IT 기술 & SEO 파트너</span>
+          </div>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">실전 SEO 전략 및 IT 기술 블로그 최적화 파트너입니다. 최고의 퍼포먼스를 내는 고성능 블로그 정보를 제공합니다.</p>
+      </div>
+      <ins class="adsbygoogle ad-slot ad-sidebar sidebar-widget"
+           style="display:block"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="9876543210"
+           data-ad-format="rectangle"
+           data-full-width-responsive="true">
+        <div class="ad-slot-label">사이드바 스폰서 링크</div>
+      </ins>
+      <div class="sidebar-widget">
+        <h3 class="widget-title">바로가기</h3>
+        <ul class="categories-list">
+          <li><a href="../index.html">🏠 홈으로 돌아가기</a></li>
+          <li><a href="../about.html">👤 필자 소개 보기</a></li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <!-- AD SLOT (POST BOTTOM) -->
+  <div class="container" style="margin-bottom: 60px;">
+    <ins class="adsbygoogle ad-slot ad-footer"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1122334455"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 하단 반응형 매칭 광고</div>
+    </ins>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <a href="../index.html" class="logo footer-info-logo">
+          <div class="logo-icon">S</div>
+          <span class="gradient-text">Starrope IT</span>
+        </a>
+        <p>최신 IT 기술 트렌드, AI 생산성 도구 사용법 및 디지털 노마드의 삶을 위한 유용한 지식을 공유하는 전문 기술 블로그.</p>
+      </div>
+      <div class="footer-links">
+        <h4>중요 문서</h4>
+        <ul>
+          <li><a href="../privacy-policy.html">개인정보처리방침</a></li>
+          <li><a href="../terms-of-service.html">서비스 이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Starrope IT. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/main.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</body>
+</html>

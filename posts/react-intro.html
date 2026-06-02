@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- JSON-LD 구조화 데이터 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "React 입문 완전 가이드: 컴포넌트·State·Props로 동적 웹앱 만들기",
+    "description": "2024년 가장 인기 있는 프론트엔드 프레임워크 React의 컴포넌트 구조, JSX 문법, useState·useEffect 핵심 훅을 초보자도 따라하기 쉬게 설명합니다.",
+    "image": "https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?auto=format&fit=crop&w=800&q=80",
+    "author": { "@type": "Person", "name": "Starrope" },
+    "publisher": { "@type": "Organization", "name": "Starrope IT", "url": "https://blog1.starrope2023.com" },
+    "datePublished": "2026-06-27",
+    "dateModified": "2026-06-27",
+    "url": "https://blog1.starrope2023.com/posts/react-intro.html",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://blog1.starrope2023.com/posts/react-intro.html" }
+  }
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React 입문 완전 가이드: 컴포넌트·State·Props로 동적 웹앱 만들기 | 스타로프 IT 블로그</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="2024년 가장 인기 있는 프론트엔드 프레임워크 React의 컴포넌트 구조, JSX 문법, useState·useEffect 핵심 훅을 초보자도 따라하기 쉽게 설명합니다.">
+  <meta name="keywords" content="React 입문, 리액트 시작하기, React 컴포넌트, useState, useEffect, JSX 문법, 리액트 훅, 프론트엔드 개발, React 튜토리얼">
+  <meta name="author" content="Starrope">
+  <meta property="og:title" content="React 입문 완전 가이드: 컴포넌트·State·Props로 동적 웹앱 만들기">
+  <meta property="og:description" content="2024년 가장 인기 있는 프론트엔드 프레임워크 React의 컴포넌트 구조, JSX 문법, useState·useEffect 핵심 훅을 초보자도 따라하기 쉽게 설명합니다.">
+  <meta property="og:type" content="article">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://starrope.github.io/posts/react-intro.html">
+
+  <link rel="stylesheet" href="../assets/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1692428092138510" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">S</div>
+        <span class="gradient-text">Starrope IT</span>
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-item">홈</a>
+        <a href="../index.html#articles" class="nav-item">포스트</a>
+        <a href="../about.html" class="nav-item">소개</a>
+        <a href="../privacy-policy.html" class="nav-item">개인정보처리방침</a>
+        <a href="../terms-of-service.html" class="nav-item">이용약관</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="다크 모드 전환">
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- POST HEADER -->
+  <header class="post-header">
+    <div class="post-header-tag">코딩 / 프론트엔드</div>
+    <h1 class="post-header-title">React 입문 완전 가이드: 컴포넌트·State·Props로 동적 웹앱 만들기</h1>
+    <div class="post-header-meta">
+      <span>작성자: Starrope</span>
+      <span>•</span>
+      <span>2026. 06. 27</span>
+      <span>•</span>
+      <span>읽는 시간: 약 6분</span>
+    </div>
+  </header>
+
+  <!-- AD SLOT (POST TOP) -->
+  <div class="container">
+    <ins class="adsbygoogle ad-slot ad-header"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 상단 반응형 광고</div>
+    </ins>
+  </div>
+
+  <!-- ARTICLE LAYOUT -->
+  <main class="container post-article-layout">
+    <article class="post-content">
+
+      <img src="https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?auto=format&fit=crop&w=800&q=80" alt="React 프론트엔드 프레임워크 입문 가이드" style="width:100%; border-radius:12px; margin-bottom:32px; box-shadow:var(--shadow-md);">
+
+      <p>스택오버플로우(Stack Overflow) 개발자 설문 조사에서 수년째 '가장 많이 사용되는 웹 프레임워크' 1위를 차지하고 있는 <strong>React(리액트)</strong>는 메타(구 페이스북)가 2013년 오픈소스로 공개한 UI 라이브러리입니다. 단순히 인기가 많은 것을 넘어, 넷플릭스, 에어비앤비, 인스타그램 등 전 세계 최대 규모의 서비스들이 React로 구축되어 있습니다. 이번 포스팅에서는 React가 왜 특별한지부터, 핵심 개념인 컴포넌트·State·Props·훅(Hook)까지 완전히 정복합니다.</p>
+
+      <h2>1. 왜 React인가: 컴포넌트 기반 UI 개발의 혁명</h2>
+      <p>기존의 전통적인 웹 개발 방식에서는 HTML, CSS, JavaScript가 분리된 파일에 따로 존재했습니다. React는 이 패러다임을 완전히 뒤집어 <strong>컴포넌트(Component)</strong>라는 개념을 도입했습니다. 하나의 컴포넌트는 특정 UI 영역의 HTML 구조(JSX), 스타일, 동작 로직을 하나의 함수 안에 캡슐화합니다.</p>
+
+      <ul>
+        <li><strong>재사용성(Reusability):</strong> 한 번 만든 버튼, 카드, 모달 컴포넌트를 앱 전체 어디서든 불러와 사용합니다. 코드 중복이 사라져 유지보수가 극적으로 쉬워집니다.</li>
+        <li><strong>가상 DOM(Virtual DOM):</strong> React는 실제 DOM을 직접 조작하지 않고, 메모리 속 가상의 DOM 트리를 먼저 수정한 후 변경된 부분만 실제 DOM에 적용합니다. 이 방식이 React의 놀라운 렌더링 성능 비결입니다.</li>
+        <li><strong>단방향 데이터 흐름:</strong> 데이터는 항상 부모 컴포넌트에서 자식 컴포넌트로 Props를 통해 흐릅니다. 이 예측 가능한 데이터 흐름이 복잡한 앱에서도 디버깅을 쉽게 만듭니다.</li>
+      </ul>
+
+      <blockquote>
+        "React를 배우는 것은 단순히 라이브러리 하나를 익히는 게 아닙니다. 컴포넌트 기반으로 생각하는 방식, 즉 UI를 설계하는 새로운 철학을 습득하는 과정입니다."
+      </blockquote>
+
+      <h2>2. JSX: JavaScript 안에서 HTML을 작성하는 마법의 문법</h2>
+      <p><strong>JSX(JavaScript XML)</strong>는 React의 트레이드마크라 할 수 있는 독특한 문법입니다. 얼핏 보면 HTML처럼 보이지만, 실제로는 JavaScript 코드입니다. Babel 같은 트랜스파일러가 JSX를 브라우저가 이해할 수 있는 순수 JavaScript 함수 호출로 변환해 줍니다.</p>
+
+      <ul>
+        <li><strong>중괄호로 JS 표현식 삽입:</strong> JSX 안에서 <code>{변수명}</code> 또는 <code>{함수()}</code> 형태로 JavaScript 표현식을 HTML 속에 직접 주입할 수 있습니다. 동적 데이터를 UI에 렌더링하는 핵심 방법입니다.</li>
+        <li><strong>className vs class:</strong> HTML의 <code>class</code> 속성은 JSX에서 <code>className</code>으로 써야 합니다. <code>class</code>는 JS 예약어이기 때문입니다. <code>for</code>는 <code>htmlFor</code>로 사용합니다.</li>
+        <li><strong>단일 루트 요소:</strong> 컴포넌트가 반환하는 JSX는 반드시 하나의 최상위 부모 태그로 감싸야 합니다. 불필요한 <code>&lt;div&gt;</code> 추가를 피하고 싶다면 빈 태그 <code>&lt;&gt;&lt;/&gt;</code>(Fragment)를 활용하세요.</li>
+      </ul>
+
+      <h2>3. useState와 useEffect: 함수형 컴포넌트를 살아 숨 쉬게 하는 핵심 훅</h2>
+      <p>2019년 React 16.8 버전에서 도입된 <strong>훅(Hook)</strong>은 함수형 컴포넌트에서 상태(State)와 생명주기(Lifecycle)를 관리할 수 있게 해주는 혁신적인 API입니다. 복잡한 클래스형 컴포넌트를 대체하여 React 개발을 훨씬 간결하게 만들었습니다.</p>
+
+      <ul>
+        <li><strong>useState:</strong> 컴포넌트 내부에서 변하는 데이터를 관리합니다. <code>const [count, setCount] = useState(0)</code>처럼 선언하면, <code>count</code>는 현재 값, <code>setCount</code>는 값을 갱신하는 함수입니다. 값이 바뀔 때마다 컴포넌트가 자동으로 리렌더링됩니다.</li>
+        <li><strong>useEffect:</strong> 컴포넌트가 렌더링된 후 실행되는 사이드 이펙트(API 호출, 타이머, 이벤트 리스너 등록 등)를 처리합니다. 두 번째 인자로 전달하는 의존성 배열(dependency array)로 실행 타이밍을 정밀하게 제어합니다.</li>
+        <li><strong>Props 전달:</strong> 부모 컴포넌트에서 <code>&lt;Button label="클릭" onClick={handleClick} /&gt;</code>처럼 속성을 전달하면, 자식 컴포넌트는 <code>props.label</code>, <code>props.onClick</code>으로 받아 사용합니다.</li>
+      </ul>
+
+      <!-- AD SLOT (IN-CONTENT) -->
+      <ins class="adsbygoogle ad-slot ad-content"
+           style="display:block; text-align:center;"
+           data-ad-layout="in-article"
+           data-ad-format="fluid"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="5566778899">
+        <div class="ad-slot-label">본문 중간 인피드 광고 영역</div>
+      </ins>
+
+      <h2>4. 첫 React 프로젝트 세팅: Vite로 5분 만에 시작하기</h2>
+      <p>과거에는 <code>create-react-app</code>이 공식 시작 도구였지만, 현재는 <strong>Vite(비트)</strong>가 개발 서버 속도와 빌드 성능에서 압도적 우위를 보여 사실상의 표준으로 자리잡았습니다. 터미널에 <code>npm create vite@latest my-app -- --template react</code>를 입력하면 즉시 React + Vite 프로젝트가 생성됩니다.</p>
+
+      <ul>
+        <li><strong>파일 구조 이해:</strong> <code>src/App.jsx</code>가 메인 컴포넌트, <code>src/main.jsx</code>가 React를 DOM에 마운트하는 진입점입니다. <code>src/components/</code> 폴더를 만들어 재사용 컴포넌트를 관리하는 것이 관례입니다.</li>
+        <li><strong>개발 서버 실행:</strong> <code>npm run dev</code> 명령으로 핫 모듈 교체(HMR)가 지원되는 빠른 로컬 개발 서버가 실행됩니다. 코드를 수정하면 브라우저가 즉시 반응합니다.</li>
+        <li><strong>React DevTools:</strong> 크롬 확장 프로그램 'React Developer Tools'를 설치하면 컴포넌트 트리, State, Props 값을 실시간으로 검사할 수 있습니다. 디버깅의 필수 무기입니다.</li>
+      </ul>
+
+      <h2>마치며</h2>
+      <p>React는 진입 장벽이 있지만, 컴포넌트·State·Props·훅이라는 네 가지 핵심 개념을 이해하면 그 이후로는 놀랍도록 논리적이고 즐거운 개발 경험이 펼쳐집니다. React를 통해 웹 개발자로서 취업 시장과 프리랜서 시장 모두에서 경쟁력을 급격히 높일 수 있습니다. 공식 문서인 react.dev는 한국어로도 제공되어 체계적인 학습에 최적의 출발점이 됩니다. 오늘 당장 Vite로 첫 프로젝트를 만들고, 간단한 할 일 목록(To-Do List) 앱을 스스로 구현해 보세요.</p>
+
+    </article>
+
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-widget">
+        <h3 class="widget-title">운영자 프로필</h3>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background-color: var(--primary-color); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">S</div>
+          <div>
+            <h4 style="font-size: 15px;">Starrope</h4>
+            <span style="font-size: 12px; color: var(--text-muted);">IT 기술 & SEO 파트너</span>
+          </div>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">실전 SEO 전략 및 IT 기술 블로그 최적화 파트너입니다. 최고의 퍼포먼스를 내는 고성능 블로그 정보를 제공합니다.</p>
+      </div>
+      <ins class="adsbygoogle ad-slot ad-sidebar sidebar-widget"
+           style="display:block"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="9876543210"
+           data-ad-format="rectangle"
+           data-full-width-responsive="true">
+        <div class="ad-slot-label">사이드바 스폰서 링크</div>
+      </ins>
+      <div class="sidebar-widget">
+        <h3 class="widget-title">바로가기</h3>
+        <ul class="categories-list">
+          <li><a href="../index.html">🏠 홈으로 돌아가기</a></li>
+          <li><a href="../about.html">👤 필자 소개 보기</a></li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <!-- AD SLOT (POST BOTTOM) -->
+  <div class="container" style="margin-bottom: 60px;">
+    <ins class="adsbygoogle ad-slot ad-footer"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1122334455"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 하단 반응형 매칭 광고</div>
+    </ins>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <a href="../index.html" class="logo footer-info-logo">
+          <div class="logo-icon">S</div>
+          <span class="gradient-text">Starrope IT</span>
+        </a>
+        <p>최신 IT 기술 트렌드, AI 생산성 도구 사용법 및 디지털 노마드의 삶을 위한 유용한 지식을 공유하는 전문 기술 블로그.</p>
+      </div>
+      <div class="footer-links">
+        <h4>중요 문서</h4>
+        <ul>
+          <li><a href="../privacy-policy.html">개인정보처리방침</a></li>
+          <li><a href="../terms-of-service.html">서비스 이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Starrope IT. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../assets/main.js"></script>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</body>
+</html>

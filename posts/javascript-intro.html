@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자바스크립트 초보 첫걸음 동적 버튼 클릭 구현 | 스타로프 IT 블로그</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="코딩 초보 비전공자를 위한 JavaScript(자바스크립트) 기초 개념과, 내 웹사이트 버튼에 생동감을 불어넣는 클릭 이벤트 리스너 마스터 가이드를 제시합니다.">
+  
+  <!-- Link CSS (relative path to main assets) -->
+  <link rel="stylesheet" href="../assets/style.css">
+  
+  <!-- Pre-configured Google AdSense Auto Ads Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1692428092138510" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">S</div>
+        <span class="gradient-text">Starrope IT</span>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-item">홈</a>
+        <a href="../index.html#articles" class="nav-item">포스트</a>
+        <a href="../about.html" class="nav-item">소개</a>
+        <a href="../privacy-policy.html" class="nav-item">개인정보처리방침</a>
+        <a href="../terms-of-service.html" class="nav-item">이용약관</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="다크 모드 전환">
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- POST HEADER -->
+  <header class="post-header">
+    <div class="post-header-tag">코딩 및 웹 개발 입문</div>
+    <h1 class="post-header-title">자바스크립트(JavaScript) 첫걸음: 웹사이트에 동적 버튼 클릭 효과 직접 구현하기</h1>
+    <div class="post-header-meta">
+      <span>작성자: Starrope</span>
+      <span>•</span>
+      <span>2026. 06. 12 (오전 8:00)</span>
+      <span>•</span>
+      <span>읽는 시간: 약 5분</span>
+    </div>
+  </header>
+
+  <!-- AD SLOT (POST TOP DISPLAY) -->
+  <div class="container">
+    <ins class="adsbygoogle ad-slot ad-header"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 상단 반응형 광고</div>
+    </ins>
+  </div>
+
+  <!-- ARTICLE LAYOUT -->
+  <main class="container post-article-layout">
+    
+    <!-- LEFT: MAIN CONTENT -->
+    <article class="post-content">
+      
+      <p>HTML로 웹사이트의 탄탄한 뼈대를 짜고, CSS로 화려한 디자인의 옷을 입혔다면, 이제 나만의 웹 서비스를 살아 움직이는 생명체로 거듭나게 할 차례입니다. 사용자가 마우스를 올렸을 때 알람 팝업이 부드럽게 튀어나오거나, 다크 모드 스위치 버튼을 눌렀을 때 배경색이 암흑 속으로 스르륵 바뀌고, 장바구니 담기 카드를 클릭했을 때 카운트 수량이 실시간으로 변경되는 등의 환상적인 동적 제어는 전적으로 **'자바스크립트(JavaScript)'**라는 프로그래밍 언어의 몫입니다. 본 포스팅에서는 코딩에 전혀 베이스가 없는 완전 초보 비전공자의 눈높이에 맞추어 자바스크립트의 필수 기초 동작 구조를 규명하고, 내 웹페이지 버튼에 생동감을 불어넣는 <strong>실전 동적 버튼 이벤트 리스너 구현법</strong>을 단 10분 만에 정복하도록 이끌어 드리겠습니다.</p>
+      
+      <div class="post-main-image" style="background-image: url('https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?auto=format&fit=crop&w=800&q=80'); height: 350px; background-size: cover; background-position: center; border-radius: 12px; margin-bottom: 24px;"></div>
+
+      <h2>1. 자바스크립트(JavaScript)란 무엇이며 웹의 3대 요소 중 어떤 역할일까요?</h2>
+      <p>앞서 배운 웹 빌드 지도를 가볍게 환기해 봅시다. 레고 성을 만든다고 치면, **HTML은 플라스틱 블록**으로 성벽 구조를 쌓는 기본 골격 작업이고, **CSS는 그 블록에 색칠하고 조명**을 비추어 멋지게 꾸미는 인테리어입니다. 그렇다면 **자바스크립트는 레고 성의 성문을 여닫는 도르래 모터나 회전 다리 작동 버튼**과 같습니다.</p>
+      
+      <ul>
+        <li><strong>브라우저가 읽는 유일한 프로그래밍 언어:</strong> 서버 컴퓨터에서 복잡하게 돌아가는 파이썬이나 자바와 달리, 자바스크립트는 사용자의 눈앞 기기인 크롬이나 사파리 브라우저 엔진(V8 등) 내부에서 실시간 다이렉트로 해석되고 고속 작동합니다.</li>
+        <li><strong>동적 사용자 경험(Interactive UX)의 핵심:</strong> 페이지 새로고침 없이 비동기식으로 데이터를 불러와 리스트를 실시간 갈아끼우거나, 멋진 그래픽 애니메이션 인터랙션을 선사하여 고품격 블로그 인상을 굳혀 줍니다.</li>
+      </ul>
+
+      <blockquote>
+        "웹 사이트에 생동감을 얹는 자바스크립트의 기적이란, 단순히 어려운 자바스크립트 문법 구문을 암기하는 데 있는 것이 아니라 사용자의 행동과 브라우저 화면의 변화 사이를 잇는 원인과 결과의 연결 고리를 세련되게 제어하는 조율 능력에 있습니다."
+      </blockquote>
+      
+      <h2>2. 단 5줄로 배우는 클릭 이벤트 리스너(Event Listener) 구현법</h2>
+      <p>본격적인 실습을 위해, 내 HTML 문서에 간단한 버튼 하나를 배치하고, 사용자가 이 버튼을 클릭했을 때 배경 색상이 화사하게 바뀌도록 명령하는 핵심 코드를 작성해 봅시다.</p>
+      
+      <pre style="background-color: var(--card-bg); padding: 16px; border-radius: 8px; overflow-x: auto; font-family: monospace; font-size: 13.5px; border: 1px solid var(--border-color); line-height: 1.6;">
+// HTML 버튼 요소 소환
+const myButton = document.getElementById("action-btn");
+
+// 버튼에 귀를 기울이는 리스너 장착 (클릭 행동 감시)
+myButton.addEventListener("click", function() {
+    // 문서 body의 배경색을 연한 라벤더 컬러로 실시간 전환
+    document.body.style.backgroundColor = "#e0e0ff";
+    alert("동적인 버튼 클릭 효과가 성공적으로 실행되었습니다!");
+});
+      </pre>
+
+      <p>동작 프로세스를 3단계로 뜯어봅시다. 첫째, `document.getElementById("action-btn")`은 HTML 마크업에 심어둔 특정 버튼을 자바스크립트의 통제권 아래로 소환해 `myButton`이라는 메모리 서랍장(변수)에 넣어두는 동작입니다.</p>
+      
+      <p>둘째, `addEventListener("click", ...)` 명령은 소환된 버튼에 **'보이지 않는 귀(리스너)'**를 장착하는 행동입니다. 이 귀는 사용자가 해당 버튼 영역을 마우스로 '클릭'하는 물리적 이벤트가 터지는 찰나를 24시간 쉬지 않고 사냥하듯 감시합니다.</p>
+      
+      <p>셋째, 클릭 신호가 감지되는 즉시 중괄호 `{}` 내부에 사전에 지시해 둔 명령, 즉 문서의 바디 배경색 스타일을 라벤더 헥사 코드(`#e0e0ff`)로 덮어 씌우고 사용자 브라우저 화면에 기분 좋은 웰컴 팝업 알림(`alert`)을 띄워 주는 기적의 이벤트 흐름이 완결되는 것입니다.</p>
+
+      <!-- AD SLOT (IN-CONTENT DISPLAY) -->
+      <ins class="adsbygoogle ad-slot ad-content"
+           style="display:block; text-align:center;"
+           data-ad-layout="in-article"
+           data-ad-format="fluid"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="5566778899">
+        <div class="ad-slot-label">본문 중간 인피드 광고 영역</div>
+      </ins>
+
+      <h2>3. 1인 마케터와 블로거가 자바스크립트를 배울 때 지켜야 할 학습 가이드</h2>
+      <p>비전공자가 자바스크립트를 공부할 때 가장 빈번하게 겪는 좌절은, 시중에 나와 있는 두꺼운 프로그래밍 교과서의 '변수 체계', '자료형', '객체 지향 프로그래밍' 등의 기하학적인 컴퓨터 과학 기초 이론을 처음부터 정독하다가 지쳐 코딩을 포기해 버리는 흐름입니다. 여러분은 개발자 취업이 목적이 아니라 실무 효율 증폭과 웹 비즈니스 커스텀이 목적이므로 아래의 **'실무 중심 학습 3원칙'**을 고수하십시오.</p>
+      
+      <ol>
+        <li><strong>DOM(Document Object Model) 제어 위주의 돌파:</strong> 문서의 특정 요소를 찾아서 글씨를 바꾸거나 클래스명을 넣고 빼는 제어 기법을 우선 정복하십시오. 이것이 다크 모드 전환이나 모바일 햄버거 메뉴 작동의 99% 뼈대를 구성합니다.</li>
+        <li><strong>에러 검출 창(F12 Console)과 친해지기:</strong> 스크립트 파일이 작동하지 않는다면, 즉시 브라우저에서 F12를 눌러 **붉은색 에러 메시지(Uncaught ReferenceError 등)** 한 줄을 복사한 후 인공지능 Claude나 ChatGPT에게 물어 버그를 도려내는 습관을 기르십시오.</li>
+        <li><strong>무료 라이브러리 조합 기법 체득:</strong> 부드러운 이미지 슬라이더(Swiper.js), 스크롤에 반응해 멋지게 요소들이 페이드인 되는 애니메이션 효과(AOS.js) 등 전 세계 개발자들이 이미 완벽하게 만들어 무료 배포해 둔 검증된 자바스크립트 라이브러리들을 안전하게 로드해 쓰는 조립 감각을 기르는 것이 최속 성장의 지름길입니다.</li>
+      </ol>
+
+      <h2>마치며</h2>
+      <p>자바스크립트라는 프로그래밍 도구의 아주 단순한 한 숟가락 지식을 내 사이트에 장착하기 시작했다는 것은, 남들이 미리 정해둔 고정된 웹 디자인의 틀 안에 수동적으로 갇히지 않고, 내가 상상하는 최상의 동적 편의성을 사용자들에게 직접 조작해 선물할 수 있는 능동적 웹 마스터 무대에 진입했음을 공표하는 멋진 발걸음입니다. 오늘 배운 5줄의 클릭 리스너 코드를 시작으로, 다크 모드 스위치나 정돈된 반응형 사이드바를 내 손으로 직접 얹어 가며 코딩 지식이 가져다주는 엄청난 비즈니스 포텐셜을 짜릿하게 즐겨 보시기 바랍니다. 본 스타로프 IT 마스터 스쿨은 입문자 눈높이에 꼭 맞춰 가장 실전적이고 유용한 테크 정보만을 다듬어 안내하겠습니다. 문의 사항은 메일로 연락 주세요. 감사합니다!</p>
+      
+    </article>
+    
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="sidebar">
+      
+      <!-- Bio Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">운영자 프로필</h3>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background-color: var(--primary-color); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">S</div>
+          <div>
+            <h4 style="font-size: 15px;">Starrope</h4>
+            <span style="font-size: 12px; color: var(--text-muted);">IT 기술 & SEO 파트너</span>
+          </div>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">실전 SEO 전략 및 IT 기술 블로그 최적화 파트너입니다. 최고의 퍼포먼스를 내는 고성능 블로그 정보를 제공합니다.</p>
+      </div>
+      
+      <!-- Ad Widget -->
+      <ins class="adsbygoogle ad-slot ad-sidebar sidebar-widget"
+           style="display:block"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="9876543210"
+           data-ad-format="rectangle"
+           data-full-width-responsive="true">
+        <div class="ad-slot-label">사이드바 스폰서 링크</div>
+      </ins>
+      
+      <!-- Navigation Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">바로가기</h3>
+        <ul class="categories-list">
+          <li><a href="../index.html">🏠 홈으로 돌아가기</a></li>
+          <li><a href="../about.html">👤 필자 소개 보기</a></li>
+        </ul>
+      </div>
+      
+    </aside>
+  </main>
+
+  <!-- AD SLOT (POST BOTTOM DISPLAY) -->
+  <div class="container" style="margin-bottom: 60px;">
+    <ins class="adsbygoogle ad-slot ad-footer"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1122334455"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 하단 반응형 매칭 광고</div>
+    </ins>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <a href="../index.html" class="logo footer-info-logo">
+          <div class="logo-icon">S</div>
+          <span class="gradient-text">Starrope IT</span>
+        </a>
+        <p>최신 IT 기술 트렌드, AI 생산성 도구 사용법 및 디지털 노마드의 삶을 위한 유용한 지식을 공유하는 전문 기술 블로그.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h4>중요 문서</h4>
+        <ul>
+          <li><a href="../privacy-policy.html">개인정보처리방침</a></li>
+          <li><a href="../terms-of-service.html">서비스 이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Starrope IT. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Link JS (relative path) -->
+  <script src="../assets/main.js"></script>
+  
+  <!-- Trigger Adsense rendering loop -->
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>온페이지 SEO 핵심 기술적 가이드 | 스타로프 IT 블로그</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="검색 포털 사이트 상위 랭킹을 차지하기 위한 타이틀 태그 최적화, 이미지 alt 속성 기재 및 HTML5 시맨틱 마크업 코딩 실전 가이드입니다.">
+  
+  <!-- Link CSS (relative path to main assets) -->
+  <link rel="stylesheet" href="../assets/style.css">
+  
+  <!-- Pre-configured Google AdSense Auto Ads Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1692428092138510" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">S</div>
+        <span class="gradient-text">Starrope IT</span>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-item">홈</a>
+        <a href="../index.html#articles" class="nav-item">포스트</a>
+        <a href="../about.html" class="nav-item">소개</a>
+        <a href="../privacy-policy.html" class="nav-item">개인정보처리방침</a>
+        <a href="../terms-of-service.html" class="nav-item">이용약관</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="다크 모드 전환">
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- POST HEADER -->
+  <header class="post-header">
+    <div class="post-header-tag">검색엔진 최적화 (SEO)</div>
+    <h1 class="post-header-title">검색 상위 노출을 결정하는 온페이지 SEO 핵심 가이드: 타이틀, Alt 태그, 시맨틱 마크업</h1>
+    <div class="post-header-meta">
+      <span>작성자: Starrope</span>
+      <span>•</span>
+      <span>2026. 06. 02 (오후 4:00)</span>
+      <span>•</span>
+      <span>읽는 시간: 약 4분</span>
+    </div>
+  </header>
+
+  <!-- AD SLOT (POST TOP DISPLAY) -->
+  <div class="container">
+    <ins class="adsbygoogle ad-slot ad-header"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 상단 반응형 광고</div>
+    </ins>
+  </div>
+
+  <!-- ARTICLE LAYOUT -->
+  <main class="container post-article-layout">
+    
+    <!-- LEFT: MAIN CONTENT -->
+    <article class="post-content">
+      
+      <div class="post-main-image" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'); height: 350px; background-size: cover; background-position: center; border-radius: 12px; margin-bottom: 24px;"></div>
+      
+      <p>검색엔진 최적화(SEO)는 외부 백링크를 획득하는 오프페이지(Off-page) 전략도 중요하지만, 가장 근본이 되고 내 통제하에 바로 실행 가능한 <strong>온페이지(On-page) SEO</strong>에서 승패가 갈립니다. 내 블로그 코드 자체가 로봇이 읽기 힘들게 꼬여있다면, 아무리 좋은 글을 써도 구글 랭킹 상위에 오를 수 없습니다.</p>
+      
+      <p>오늘 글에서는 구글과 네이버 검색 상위 상단 노출을 위한 <strong>기술적 온페이지 SEO의 3대 핵심 기둥인 타이틀 태그 최적화, 이미지 대체 텍스트(alt), 그리고 HTML5 시맨틱 마크업</strong>을 알기 쉽게 풀어 설명해 드리겠습니다.</p>
+      
+      <h2>1. 첫눈에 반하게 만드는 '타이틀 태그(Title Tag) & 메타 디스크립션'</h2>
+      <p>타이틀 태그와 메타 디스크립션은 검색 결과창에 파란 링크 제목과 그 아래 회색 요약글로 직관적으로 출력되는 가장 중요한 소스입니다.</p>
+      
+      <ul>
+        <li><strong>타이틀 설계 규칙:</strong> 핵심 타겟 키워드는 반드시 제목의 <strong>가장 앞쪽(좌측)</strong>에 위치시키는 것이 좋습니다. 글자 수는 한글 기준 <strong>30자~40자 내외</strong>가 잘림 현상 없이 깔끔하게 나타납니다.</li>
+        <li><strong>메타 디스크립션(Meta Description):</strong> 해당 글의 전체 요약을 약 80자~120자 내외로 자연스럽게 키워드를 녹여 작성해 줍니다. 사용자의 클릭율(CTR)에 절대적인 기여를 합니다.</li>
+      </ul>
+      
+      <blockquote>
+        <strong>[바람직한 타이틀 구조 예시]</strong><br>
+        - <strong>올바른 예:</strong> `온페이지 SEO 가이드 | 타이틀 및 시맨틱 태그 설정법`<br>
+        - <strong>아쉬운 예:</strong> `안녕하세요! 제 블로그에 오신 것을 환영합니다 - 오늘의 SEO 일기`
+      </blockquote>
+      
+      <h2>2. 시각장애인과 검색 로봇의 눈이 되는 '이미지 Alt 태그 속성'</h2>
+      <p>구글 로봇은 시각 지능이 뛰어나지만, 코드에 적혀 있는 텍스트 속성을 보고 이미지의 의미를 100% 명확히 판독합니다. 따라서 이미지를 넣을 때 `alt` 속성을 빠뜨리는 것은 SEO의 치명타입니다.</p>
+      
+      <p>단순히 파일명 `image1.jpg`로 두지 마시고 아래와 같이 명확한 의미 속성을 코딩해 넣어주어야 합니다.</p>
+      <p>예: `<img src="seo-chart.jpg" alt="구글 검색엔진 최적화 온페이지 분석 지표를 나타내는 통계 차트 그래프" />`</p>
+      
+      <!-- AD SLOT (IN-CONTENT DISPLAY) -->
+      <ins class="adsbygoogle ad-slot ad-content"
+           style="display:block; text-align:center;"
+           data-ad-layout="in-article"
+           data-ad-format="fluid"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="5566778899">
+        <div class="ad-slot-label">본문 중간 인피드 광고 영역</div>
+      </ins>
+
+      <h2>3. 뼈대를 논리적으로 밝히는 'HTML5 시맨틱 마크업(Semantic Markup)'</h2>
+      <p>모든 레이아웃을 알맹이 의미 없는 일반 `<div class="content">`로 도배하여 코딩하는 것을 지양해야 합니다. HTML5는 각 영역이 무슨 역할을 하는지 태그 자체에 의미를 담은 <strong>시맨틱 태그</strong>들을 제공합니다.</p>
+      
+      <ul>
+        <li><strong>`<header>`:</strong> 상단 로고 및 내비게이션 영역임을 선언합니다.</li>
+        <li><strong>`<nav>`:</strong> 웹사이트의 주요 링크 네비게이션바임을 알립니다.</li>
+        <li><strong>`<main>`:</strong> 해당 웹 문서에서 딱 하나만 존재해야 하는 핵심 본문 영역을 규정합니다.</li>
+        <li><strong>`<article>`:</strong> 독립적으로 배포 및 재사용이 가능한 하나의 독립된 완결된 포스트 글임을 규정합니다.</li>
+        <li><strong>`<footer>`:</strong> 주소, 카피라이트, 이용약관 등 하단 정보 영역을 정의합니다.</li>
+      </ul>
+
+      <h2>마치며</h2>
+      <p>온페이지 SEO의 본질은 <strong>"로봇과 사람 모두에게 막힘없이 시원하고 논리적인 독서 환경을 만들어주는 것"</strong>입니다. 오늘 가이드해 드린 타이틀 위치, 이미지 alt 태그, 시맨틱 레이아웃 3가지만 철저하게 블로그 코드에 적용하셔도 경쟁사 대비 검색 결과 상위 등극 확률이 비약적으로 점프할 것임을 약속드립니다!</p>
+      
+    </article>
+    
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="sidebar">
+      
+      <!-- Bio Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">운영자 프로필</h3>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background-color: var(--primary-color); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">S</div>
+          <div>
+            <h4 style="font-size: 15px;">Starrope</h4>
+            <span style="font-size: 12px; color: var(--text-muted);">IT 기술 & SEO 파트너</span>
+          </div>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">실전 SEO 전략 및 IT 기술 블로그 최적화 파트너입니다. 최고의 퍼포먼스를 내는 고성능 블로그 정보를 제공합니다.</p>
+      </div>
+      
+      <!-- Ad Widget -->
+      <ins class="adsbygoogle ad-slot ad-sidebar sidebar-widget"
+           style="display:block"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="9876543210"
+           data-ad-format="rectangle"
+           data-full-width-responsive="true">
+        <div class="ad-slot-label">사이드바 스폰서 링크</div>
+      </ins>
+      
+      <!-- Navigation Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">바로가기</h3>
+        <ul class="categories-list">
+          <li><a href="../index.html">🏠 홈으로 돌아가기</a></li>
+          <li><a href="../about.html">👤 필자 소개 보기</a></li>
+        </ul>
+      </div>
+      
+    </aside>
+  </main>
+
+  <!-- AD SLOT (POST BOTTOM DISPLAY) -->
+  <div class="container" style="margin-bottom: 60px;">
+    <ins class="adsbygoogle ad-slot ad-footer"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1122334455"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 하단 반응형 매칭 광고</div>
+    </ins>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <a href="../index.html" class="logo footer-info-logo">
+          <div class="logo-icon">S</div>
+          <span class="gradient-text">Starrope IT</span>
+        </a>
+        <p>최신 IT 기술 트렌드, AI 생산성 도구 사용법 및 디지털 노마드의 삶을 위한 유용한 지식을 공유하는 전문 기술 블로그.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h4>중요 문서</h4>
+        <ul>
+          <li><a href="../privacy-policy.html">개인정보처리방침</a></li>
+          <li><a href="../terms-of-service.html">서비스 이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Starrope IT. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Link JS (relative path) -->
+  <script src="../assets/main.js"></script>
+  
+  <!-- Trigger Adsense rendering loop -->
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</body>
+</html>

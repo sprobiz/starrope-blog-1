@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>데이터베이스 DB SQL 기초 쿼리 입문 | 스타로프 IT 블로그</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="비전공자 및 개발 입문자를 위한 데이터베이스(DB)의 개념 원리와 데이터 수집 가공을 위한 필수 SQL(에스큐엘) 기초 문법 4가지를 30분 만에 완전 정복합니다.">
+  
+  <!-- Link CSS (relative path to main assets) -->
+  <link rel="stylesheet" href="../assets/style.css">
+  
+  <!-- Pre-configured Google AdSense Auto Ads Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1692428092138510" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">S</div>
+        <span class="gradient-text">Starrope IT</span>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-item">홈</a>
+        <a href="../index.html#articles" class="nav-item">포스트</a>
+        <a href="../about.html" class="nav-item">소개</a>
+        <a href="../privacy-policy.html" class="nav-item">개인정보처리방침</a>
+        <a href="../terms-of-service.html" class="nav-item">이용약관</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="다크 모드 전환">
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- POST HEADER -->
+  <header class="post-header">
+    <div class="post-header-tag">코딩 및 웹 개발 입문</div>
+    <h1 class="post-header-title">데이터가 자산이다: 데이터베이스(DB)와 SQL 쿼리 기초 문법 30분 마스터</h1>
+    <div class="post-header-meta">
+      <span>작성자: Starrope</span>
+      <span>•</span>
+      <span>2026. 06. 13 (오전 8:00)</span>
+      <span>•</span>
+      <span>읽는 시간: 약 4분</span>
+    </div>
+  </header>
+
+  <!-- AD SLOT (POST TOP DISPLAY) -->
+  <div class="container">
+    <ins class="adsbygoogle ad-slot ad-header"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 상단 반응형 광고</div>
+    </ins>
+  </div>
+
+  <!-- ARTICLE LAYOUT -->
+  <main class="container post-article-layout">
+    
+    <!-- LEFT: MAIN CONTENT -->
+    <article class="post-content">
+      
+      <p>현대의 고부가가치 비즈니스와 온라인 플랫폼 사업을 지탱하는 가장 거대하고 막강한 핵심 자원은 단연 **'데이터(Data)'**입니다. 우리가 매일 스마트폰 앱에 로그인하고, 쇼핑몰 장바구니에 물건을 담고, 포털 뉴스에 댓글을 쓰는 모든 행동들은 컴퓨터 시스템 뒤편에 위치한 거대한 디지털 금고에 빼곡하게 영구 보관됩니다. 이 금고를 전문 기술 용어로 <strong>데이터베이스(Database)</strong>라고 칭하며, 이 금고 속에서 내가 원하는 특정 데이터만 요술봉 부리듯 신속하게 정렬하여 뽑아내는 만국 공통어 주문서가 바로 <strong>SQL(Structured Query Language)</strong>입니다. 기획, 마케팅, 재무, 그리고 개발 협업에 이르기까지 일잘러의 필수 자양분이 될 데이터베이스 기초 작동 개념과 4대 마법 쿼리 문법을 30분 초단기 마스터 코스로 안내해 드립니다.</p>
+      
+      <div class="post-main-image" style="background-image: url('https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&fit=crop&w=800&q=80'); height: 350px; background-size: cover; background-position: center; border-radius: 12px; margin-bottom: 24px;"></div>
+
+      <h2>1. 엑셀을 넘어선 신세계: 데이터베이스와 관계형 모델(RDBMS)의 원리</h2>
+      <p>많은 분들이 "데이터 관리는 이미 엑셀(Excel) 스프레드시트로 충분히 잘하고 있는데 굳이 왜 복잡한 데이터베이스가 필요하냐"라며 반문을 제기합니다. 엑셀은 가볍고 눈에 보이는 단순 수치 정리에는 훌륭하지만, <strong>데이터 용량이 수백만 행을 초과하고 여러 명의 사용자가 실시간으로 동시 접속해 데이터를 추가/수정하는 가혹한 비즈니스 환경</strong>에서는 순식간에 파일이 깨지거나 로딩이 멈춰버리는 한계를 직면하게 됩니다.</p>
+      
+      <ul>
+        <li><strong>관계형 데이터베이스(RDBMS)의 뼈대:</strong> 가장 대중적인 데이터베이스 모델로, 데이터를 바둑판 격자 모양의 **'테이블(Table)'** 단위로 보관합니다. 예를 들어 회원 정보를 담은 'User' 테이블과, 상품 구매 목록을 모아둔 'Order' 테이블을 상호 연결(Relation)하여 관리합니다.</li>
+        <li><strong>데이터 무결성(Data Integrity) 사수:</strong> 동일한 회원에게 중복된 고유 회원 ID가 발급되는 등의 치명적인 비즈니스 꼬임 오류를 데이터베이스 엔진단에서 철저한 제약 조건(Primary Key 등)을 걸어 사전에 철통 방어해 냅니다.</li>
+      </ul>
+
+      <blockquote>
+        "웹 비즈니스의 지적 설계도란 데이터를 무작정 쌓아두는 축적이 아니라, 데이터 간의 긴밀한 상호 연관 관계를 정돈하여 필요할 때 단 0.1초 만에 깔끔하게 추려내 가치로 변환하는 합리적 연결에 있습니다."
+      </blockquote>
+      
+      <h2>2. 반드시 외워야 할 4대 핵심 SQL 기초 문법 (CRUD 프로세스)</h2>
+      <p>터미널의 검은 화면을 켜고 데이터베이스 금고지기에게 원하는 데이터를 꺼내달라고 정중히 지시할 수 있는 만국 공통 4대 핵심 기초 주문서를 확인해 봅시다.</p>
+      
+      <ol>
+        <li><strong>SELECT (조회):</strong> 금고 속 데이터를 꺼내어 보여달라는 가장 많이 쓰이는 문장입니다.
+          <pre style="background-color: var(--card-bg); padding: 12px; border-radius: 6px; font-family: monospace; font-size: 13px; margin: 8px 0; border: 1px solid var(--border-color);">
+SELECT name, email FROM users WHERE age >= 30;
+          </pre>
+          `users` 테이블에서 나이가 30세 이상인 고객들의 '이름(name)'과 '이메일(email)' 필드 데이터만 핀셋으로 집어내어 내 브라우저 화면에 출력해 달라는 명료한 주문서입니다.
+        </li>
+        <li><strong>INSERT (추가):</strong> 새로운 회원 가입이 터졌을 때 테이블에 한 줄 데이터를 집어넣는 동작입니다.
+          <pre style="background-color: var(--card-bg); padding: 12px; border-radius: 6px; font-family: monospace; font-size: 13px; margin: 8px 0; border: 1px solid var(--border-color);">
+INSERT INTO users (name, age) VALUES ('Starrope', 28);
+          </pre>
+        </li>
+        <li><strong>UPDATE (수정):</strong> 기존 고객이 전화번호나 이메일 주소를 변경했을 때, 해당 행의 정보를 찾아 새 값으로 갱신해 줍니다.
+          <pre style="background-color: var(--card-bg); padding: 12px; border-radius: 6px; font-family: monospace; font-size: 13px; margin: 8px 0; border: 1px solid var(--border-color);">
+UPDATE users SET email = 'help@new.com' WHERE id = 4;
+          </pre>
+        </li>
+        <li><strong>DELETE (삭제):</strong> 더 이상 가치가 없어진 데이터나 탈퇴한 회원의 개인정보를 테이블 안에서 영구히 도려내 줍니다.
+          <pre style="background-color: var(--card-bg); padding: 12px; border-radius: 6px; font-family: monospace; font-size: 13px; margin: 8px 0; border: 1px solid var(--border-color);">
+DELETE FROM users WHERE id = 7;
+          </pre>
+        </li>
+      </ol>
+
+      <!-- AD SLOT (IN-CONTENT DISPLAY) -->
+      <ins class="adsbygoogle ad-slot ad-content"
+           style="display:block; text-align:center;"
+           data-ad-layout="in-article"
+           data-ad-format="fluid"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="5566778899">
+        <div class="ad-slot-label">본문 중간 인피드 광고 영역</div>
+      </ins>
+
+      <h2>3. 비전공자 마케터와 서비스 기획자를 위한 RDBMS 3대 공부 수칙</h2>
+      <p>비개발 실무자로서 회사 내 개발팀과 데이터 추출 협업 조율을 매끄럽게 이끌고 1인 창업가로서 성장하기 위해 아래의 **'RDBMS 자립 학습 가이드'**를 실천해 보십시오.</p>
+      
+      <ol>
+        <li><strong>무료 실습 툴 DBeaver 장착:</strong> 터미널 까만 화면에서 직접 타이핑하는 피로를 덜기 위해, 전 세계 표준 무료 데이터베이스 시각화 클라이언트인 **DBeaver(디비버)**를 설치해 마우스 조작으로 테이블 구조를 입체적으로 모니터링하십시오.</li>
+        <li><strong>JOIN(조인) 개념의 명확한 정복:</strong> 서로 다른 테이블들(예: 회원 정보 테이블과 상품 결제 내역 테이블)을 공통 식별값인 `id`를 기준으로 접착제처럼 이어 붙여 종합 리포트를 생산하는 `JOIN` 기법을 마스터하는 것입니다. 이것이 데이터 활용 능력의 진짜 승부처입니다.</li>
+        <li><strong>ChatGPT/Claude 프롬프트 쿼리 생성 요청 비법:</strong> 쿼리 문법이 헷갈린다면 내 데이터베이스 테이블의 컬럼 구조명들을 간단히 적어준 후 인공지능에게 "이 구조를 토대로 특정 조건의 연령별 월 총매출액을 연산해 주는 완벽한 SQL SELECT문을 즉석 설계해 줘"라고 요청해 정답을 따내는 비결을 사용하십시오.</li>
+      </ol>
+
+      <h2>마치며</h2>
+      <p>데이터베이스의 작동 메커니즘을 정확히 파악하고, 단 몇 줄의 간단한 SQL 질의어로 거대한 금고 속에서 내 비즈니스에 황금 같은 성찰을 가져다줄 핵심 정보를 스스로 채굴해 내는 힘을 손가락에 장착했다는 것은, 남의 리포트 조작을 마냥 기다리지 않고 주체적으로 시장의 흐름을 리드하는 고급 의사결정자로 도약했음을 뜻합니다. 오늘 다듬어 드린 SELECT, INSERT, UPDATE, DELETE 4대 마법 주문을 시작으로, 데이터 활용의 든든한 날개를 달고 2026년 첨단 지식 산업 무대의 최전선에서 남보다 세 걸음 앞선 퍼포먼스를 당당히 펼치시길 기원합니다. 본 스타로프 IT 가이드 블로그는 실용적인 기술 성장에 늘 최고의 나침반이 되겠습니다. 질문은 메일로 상시 접수 중입니다. 고맙습니다!</p>
+      
+    </article>
+    
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="sidebar">
+      
+      <!-- Bio Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">운영자 프로필</h3>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background-color: var(--primary-color); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">S</div>
+          <div>
+            <h4 style="font-size: 15px;">Starrope</h4>
+            <span style="font-size: 12px; color: var(--text-muted);">IT 기술 & SEO 파트너</span>
+          </div>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">실전 SEO 전략 및 IT 기술 블로그 최적화 파트너입니다. 최고의 퍼포먼스를 내는 고성능 블로그 정보를 제공합니다.</p>
+      </div>
+      
+      <!-- Ad Widget -->
+      <ins class="adsbygoogle ad-slot ad-sidebar sidebar-widget"
+           style="display:block"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="9876543210"
+           data-ad-format="rectangle"
+           data-full-width-responsive="true">
+        <div class="ad-slot-label">사이드바 스폰서 링크</div>
+      </ins>
+      
+      <!-- Navigation Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">바로가기</h3>
+        <ul class="categories-list">
+          <li><a href="../index.html">🏠 홈으로 돌아가기</a></li>
+          <li><a href="../about.html">👤 필자 소개 보기</a></li>
+        </ul>
+      </div>
+      
+    </aside>
+  </main>
+
+  <!-- AD SLOT (POST BOTTOM DISPLAY) -->
+  <div class="container" style="margin-bottom: 60px;">
+    <ins class="adsbygoogle ad-slot ad-footer"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1122334455"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 하단 반응형 매칭 광고</div>
+    </ins>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <a href="../index.html" class="logo footer-info-logo">
+          <div class="logo-icon">S</div>
+          <span class="gradient-text">Starrope IT</span>
+        </a>
+        <p>최신 IT 기술 트렌드, AI 생산성 도구 사용법 및 디지털 노마드의 삶을 위한 유용한 지식을 공유하는 전문 기술 블로그.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h4>중요 문서</h4>
+        <ul>
+          <li><a href="../privacy-policy.html">개인정보처리방침</a></li>
+          <li><a href="../terms-of-service.html">서비스 이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Starrope IT. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Link JS (relative path) -->
+  <script src="../assets/main.js"></script>
+  
+  <!-- Trigger Adsense rendering loop -->
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</body>
+</html>

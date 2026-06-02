@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>개인 도메인 구매 DNS 레코드 연동 가이드 | 스타로프 IT 블로그</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="나만의 브랜드 정체성 확립과 검색 포털 수집율 상승을 위한 닷컴 개인 도메인 구매, 가비아 또는 호스팅kr DNS 레코드(A, CNAME, TXT) 설정법을 5분 정리합니다.">
+  
+  <!-- Link CSS (relative path to main assets) -->
+  <link rel="stylesheet" href="../assets/style.css">
+  
+  <!-- Pre-configured Google AdSense Auto Ads Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1692428092138510" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">S</div>
+        <span class="gradient-text">Starrope IT</span>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-item">홈</a>
+        <a href="../index.html#articles" class="nav-item">포스트</a>
+        <a href="../about.html" class="nav-item">소개</a>
+        <a href="../privacy-policy.html" class="nav-item">개인정보처리방침</a>
+        <a href="../terms-of-service.html" class="nav-item">이용약관</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="다크 모드 전환">
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- POST HEADER -->
+  <header class="post-header">
+    <div class="post-header-tag">코딩 및 웹 개발 입문</div>
+    <h1 class="post-header-title">개인 도메인 구매부터 DNS 레코드 매칭까지 내 브랜드 사이트 구축 실전 바이블</h1>
+    <div class="post-header-meta">
+      <span>작성자: Starrope</span>
+      <span>•</span>
+      <span>2026. 06. 14 (오후 4:00)</span>
+      <span>•</span>
+      <span>읽는 시간: 약 5분</span>
+    </div>
+  </header>
+
+  <!-- AD SLOT (POST TOP DISPLAY) -->
+  <div class="container">
+    <ins class="adsbygoogle ad-slot ad-header"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 상단 반응형 광고</div>
+    </ins>
+  </div>
+
+  <!-- ARTICLE LAYOUT -->
+  <main class="container post-article-layout">
+    
+    <!-- LEFT: MAIN CONTENT -->
+    <article class="post-content">
+      
+      <p>온라인 세상에 나만의 고유한 지식 블로그나 1인 크리에이티브 브랜딩 채널을 개설하기 위해 첫걸음을 내딛다 보면, 처음 가입 시 주어지는 조악하고 긴 임시 웹 주소(예: `username.github.io` 또는 `mystore.cafe24.com` 등)의 투박함 때문에 큰 아쉬움을 느끼게 됩니다. 이러한 길고 복잡한 주소는 사용자에게 아마추어의 느낌을 물씬 풍겨 신뢰도를 깎아먹을 뿐만 아니라, 검색 로봇 입장에서도 수집 순위 우선권을 매기는 데 있어 마이너스 감점으로 작용합니다. 따라서 나만의 깔끔한 닷컴(**.com** 또는 **.co.kr**) **개인 독립 도메인**을 1년에 만 원도 안 되는 저렴한 금액에 영입하여 장착하는 것은 1인 사업가의 필수 통과의례입니다. 도메인 대행업체 선정 구매 단계부터, 초보자가 가장 많이 헤매고 뇌정지가 오는 **DNS(도메인 네임 시스템) 레코드 세팅 프로세스**를 5분 완성 바이블로 상세히 다듬어 드리겠습니다.</p>
+      
+      <div class="post-main-image" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80'); height: 350px; background-size: cover; background-position: center; border-radius: 12px; margin-bottom: 24px;"></div>
+
+      <h2>1. 개인 도메인 왜 구매해야 할까요? 브랜딩과 검색 최적화의 숨은 과학</h2>
+      <p>단순히 외우기 쉬운 이름표를 넘어, 내 브랜드 고유의 독립 루트 주소를 쓴다는 것은 온라인 마케팅 생태계 전체에서 **'영구 지배권과 자산 가치'**를 사수한다는 든든한 권리를 확보하는 행동입니다.</p>
+      
+      <ul>
+        <li><strong>이전 및 이사의 자유로움 사수:</strong> 플랫폼 임시 서브도메인을 그대로 쓰다가 서비스 업체를 옮기게 되면 기존에 피땀 흘려 쌓아 올린 포스트 백링크 주소들이 전부 폭사해 버리는 위기를 겪습니다. 개인 도메인을 심어두면, 호스팅 서버 주방을 Jekyll에서 Astro로 혹은 Cafe24에서 해외 인프라로 언제든 자유롭게 통째로 갈아 끼워도 유저와 구글 로봇은 내 평생 도메인 주소 그대로 유입되므로 안전합니다.</li>
+        <li><strong>구글 검색 봇의 압도적 신뢰 획득:</strong> 검색엔진은 고유한 루트 도메인(Root Domain)을 가진 1차 독립 사이트들에 더 높은 콘텐츠 전문성 지수(DA - Domain Authority)를 우선 배정하여, 상위 노출에 유리하도록 유도합니다.</li>
+      </ul>
+
+      <blockquote>
+        "독립 도메인을 소유한다는 것은 거대 플랫폼의 소작농에서 벗어나, 온라인 영토 위에 언제든 이사 가능한 나만의 고유한 100% 자가 부동산 등기부등본을 올리는 짜릿한 권리 장착입니다."
+      </blockquote>
+      
+      <h2>2. 초보자 뇌정지 해결: 3대 핵심 DNS 레코드 완벽 정복 (A, CNAME, TXT)</h2>
+      <p>도메인 구매 대행 대기업(가비아, 호스팅kr, 후이즈 등)에서 내 마음에 쏙 드는 영문 주소를 무사히 선점 구매했다면, 이제 이 주소를 실제 내 블로그 웹 서버 컴퓨터 IP 주소에 접착제처럼 연결해 줘야 합니다. 이 연결 장치를 **DNS 레코드 설정**이라고 부르며, 딱 3가지만 알면 끝납니다.</p>
+      
+      <ol>
+        <li><strong>A 레코드 (Address):</strong> 내 영어 도메인 이름을 숫자로 된 **실제 웹서버 컴퓨터의 고유 IP 주소(예: 185.199.108.153)**로 1:1 다이렉트로 직접 매칭해 주는 가장 강력한 척추 뼈대 신호입니다.
+          <pre style="background-color: var(--card-bg); padding: 12px; border-radius: 6px; font-family: monospace; font-size: 13px; margin: 8px 0; border: 1px solid var(--border-color);">
+타입: A | 호스트: @ | 값: 185.199.108.153
+          </pre>
+        </li>
+        <li><strong>CNAME 레코드 (Canonical Name):</strong> 내 진짜 도메인 주소에 별명(별칭)을 얹어 우회 연결하는 장치입니다. 대표적으로 내 메인 도메인 앞에 서브 이름표인 **'www'**를 얹거나, 별도의 모바일 전용 페이지 서브 도메인(예: `m.starrope.com`)을 엮을 때 주로 웨이터 역할을 대행시킵니다.
+          <pre style="background-color: var(--card-bg); padding: 12px; border-radius: 6px; font-family: monospace; font-size: 13px; margin: 8px 0; border: 1px solid var(--border-color);">
+타입: CNAME | 호스트: www | 값: username.github.io
+          </pre>
+        </li>
+        <li><strong>TXT 레코드 (Text Record):</strong> 구글 서치콘솔 소유권 확인이나 네이버 서치어드바이저 사이트 연동 시, 해당 포털 검색 로봇들이 "이 도메인의 진짜 주인장이 맞는지 입증해 봐라"라고 요구할 때, 도메인 관리 지소에 **인증 텍스트 코드값**을 주입하여 가볍게 입증 사본을 등록해 두는 장치입니다.
+          <pre style="background-color: var(--card-bg); padding: 12px; border-radius: 6px; font-family: monospace; font-size: 13px; margin: 8px 0; border: 1px solid var(--border-color);">
+타입: TXT | 호스트: @ | 값: google-site-verification=xxxxxx
+          </pre>
+        </li>
+      </ol>
+
+      <!-- AD SLOT (IN-CONTENT DISPLAY) -->
+      <ins class="adsbygoogle ad-slot ad-content"
+           style="display:block; text-align:center;"
+           data-ad-layout="in-article"
+           data-ad-format="fluid"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="5566778899">
+        <div class="ad-slot-label">본문 중간 인피드 광고 영역</div>
+      </ins>
+
+      <h2>3. 안전한 도메인 보안 관리를 위한 두 가지 철칙 (SSL 및 자동 연장)</h2>
+      <p>도메인을 웹서버 컴퓨터에 성공적으로 연결했다 하더라도, 매년 주기적인 관리 태만이나 보안 지수 누락이 있으면 큰 낭패를 봅니다.</p>
+      
+      <ol>
+        <li><strong>HTTPS 암호화 프로토콜(SSL 인증서)의 필수 장착:</strong> 내 주소창 맨 앞에 열쇠고리 자물쇠 마크인 **'https://'**가 아닌 빨간색 경고 딱지인 '주의 요함(http://)'이 노출된다면, 크롬 브라우저가 사용자 차단 경고를 유도할 뿐만 아니라 구글 상위 노출 기회도 처참하게 잃게 됩니다. 요즘은 무료 SSL 연동 대행 기능(Cloudflare 또는 Let's Encrypt)을 지원하므로 무조건 보안 인증서를 탑재하십시오.</li>
+        <li><strong>도메인 자동 결제 및 만료일 상시 체크:</strong> 내 손에 익어 트래픽이 비약적으로 성장한 효자 도메인의 연간 만료 갱신 타이밍을 깜빡 놓치는 실수를 범하면, 악의적인 도메인 사냥꾼(도메이너)들이 즉시 그 낙하 도메인을 헐값에 채가서 수천만 원의 인질 요금을 요구하는 참사가 실생활에 비일비재합니다. 무조건 등록 대행 사이트에 **'자동 연장 결제'** 카드를 박아두는 똑똑한 지혜를 발휘하십시오.</li>
+      </ol>
+
+      <h2>마치며</h2>
+      <p>단순히 남이 던져준 복잡한 가상 무료 주소창의 한계를 걷어내고, 내 비즈니스의 이름과 가치를 닷컴 개인 도메인이라는 선명하고 세련된 간판 아래 우뚝 세웠다는 것은 웹 비즈니스의 참주인장 무대에 올랐음을 공표하는 씩씩한 시작입니다. 오늘 알려드린 A 레코드 IP 연결, CNAME 별칭 지정, TXT 인증 수칙을 마음에 단단히 저장하여, 지구 반대편 어느 곳에서도 흔들리지 않는 튼튼하고 독보적인 나만의 지식 비즈니스 성곽을 쾌속 건축해 나가시길 진심으로 응원합니다. 본 스타로프 IT 기초 개발부는 언제나 여러분의 든든한 기술 인프라 파트너가 되겠습니다. 막히는 네임서버 연동 질문은 언제든 메일 문의해 주십시오. 감사합니다!</p>
+      
+    </article>
+    
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="sidebar">
+      
+      <!-- Bio Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">운영자 프로필</h3>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background-color: var(--primary-color); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">S</div>
+          <div>
+            <h4 style="font-size: 15px;">Starrope</h4>
+            <span style="font-size: 12px; color: var(--text-muted);">IT 기술 & SEO 파트너</span>
+          </div>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">실전 SEO 전략 및 IT 기술 블로그 최적화 파트너입니다. 최고의 퍼포먼스를 내는 고성능 블로그 정보를 제공합니다.</p>
+      </div>
+      
+      <!-- Ad Widget -->
+      <ins class="adsbygoogle ad-slot ad-sidebar sidebar-widget"
+           style="display:block"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="9876543210"
+           data-ad-format="rectangle"
+           data-full-width-responsive="true">
+        <div class="ad-slot-label">사이드바 스폰서 링크</div>
+      </ins>
+      
+      <!-- Navigation Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">바로가기</h3>
+        <ul class="categories-list">
+          <li><a href="../index.html">🏠 홈으로 돌아가기</a></li>
+          <li><a href="../about.html">👤 필자 소개 보기</a></li>
+        </ul>
+      </div>
+      
+    </aside>
+  </main>
+
+  <!-- AD SLOT (POST BOTTOM DISPLAY) -->
+  <div class="container" style="margin-bottom: 60px;">
+    <ins class="adsbygoogle ad-slot ad-footer"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1122334455"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 하단 반응형 매칭 광고</div>
+    </ins>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <a href="../index.html" class="logo footer-info-logo">
+          <div class="logo-icon">S</div>
+          <span class="gradient-text">Starrope IT</span>
+        </a>
+        <p>최신 IT 기술 트렌드, AI 생산성 도구 사용법 및 디지털 노마드의 삶을 위한 유용한 지식을 공유하는 전문 기술 블로그.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h4>중요 문서</h4>
+        <ul>
+          <li><a href="../privacy-policy.html">개인정보처리방침</a></li>
+          <li><a href="../terms-of-service.html">서비스 이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Starrope IT. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Link JS (relative path) -->
+  <script src="../assets/main.js"></script>
+  
+  <!-- Trigger Adsense rendering loop -->
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</body>
+</html>

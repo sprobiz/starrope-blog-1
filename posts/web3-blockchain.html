@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>웹3(Web3)와 블록체인 스마트 컨트랙트 기초 개념 이해하기 | 스타로프 IT 블로그</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="탈중앙화 인터넷 패러다임인 웹3.0의 정의와 블록체인을 구동하는 핵심 기술인 스마트 컨트랙트(Smart Contract)의 원리 및 솔리디티(Solidity) 코딩 기초를 명쾌하게 이해합니다.">
+  
+  <!-- Link CSS (relative path to main assets) -->
+  <link rel="stylesheet" href="../assets/style.css">
+  
+  <!-- Pre-configured Google AdSense Auto Ads Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1692428092138510" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">S</div>
+        <span class="gradient-text">Starrope IT</span>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-item">홈</a>
+        <a href="../index.html#articles" class="nav-item">포스트</a>
+        <a href="../about.html" class="nav-item">소개</a>
+        <a href="../privacy-policy.html" class="nav-item">개인정보처리방침</a>
+        <a href="../terms-of-service.html" class="nav-item">이용약관</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="다크 모드 전환">
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- POST HEADER -->
+  <header class="post-header">
+    <div class="post-header-tag">코딩 / 웹3</div>
+    <h1 class="post-header-title">웹3(Web3)와 블록체인 스마트 컨트랙트 기초 핵심 원리 해독하기</h1>
+    <div class="post-header-meta">
+      <span>작성자: Starrope</span>
+      <span>•</span>
+      <span>2026. 06. 20 (오후 4:00)</span>
+      <span>•</span>
+      <span>읽는 시간: 약 4분</span>
+    </div>
+  </header>
+
+  <!-- AD SLOT (POST TOP DISPLAY) -->
+  <div class="container">
+    <ins class="adsbygoogle ad-slot ad-header"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 상단 반응형 광고</div>
+    </ins>
+  </div>
+
+  <!-- ARTICLE LAYOUT -->
+  <main class="container post-article-layout">
+    
+    <!-- LEFT: MAIN CONTENT -->
+    <article class="post-content">
+      
+      <p>오늘날 IT 기술 생태계에서 가장 격렬하고 뜨거운 이념 논쟁과 기술적 혁신을 불러일으키고 있는 거대한 패러다임의 명칭은 다름 아닌 **웹3.0(Web3)**입니다. 대다수 대중들은 웹3를 단순한 가상자산 투기나 일회성 NFT 열풍 정도로 폄하하거나 거리를 두곤 하지만, 이는 컴퓨터 공학적 지평에서 불어오는 인터넷 주권의 근본적 이동 흐름을 오독하는 오판입니다. 웹3는 플랫폼 대기업에 영구 귀속되어 있던 '내 개인 정보와 데이터 통제권'을 암호학적 블록체인 분산 원장 기술을 활용해 개인에게 온전히 귀환시키는 탈중앙화 인터넷 아키텍처 구조의 대전환입니다. 이번 입문 백서 포스트에서는 웹3의 기본 개념 정의와 블록체인을 실질적으로 구동하고 자동 실행시키는 핵심 메커니즘인 <strong>스마트 컨트랙트(Smart Contract)</strong>의 작동 원리를 누구나 알기 쉽게 완벽 정밀 분석해 드립니다.</p>
+      
+      <div class="post-main-image" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80'); height: 350px; background-size: cover; background-position: center; border-radius: 12px; margin-bottom: 24px;"></div>
+
+      <h2>1. 웹의 세대별 대전환: 웹1.0부터 탈중앙화 웹3.0까지의 정의</h2>
+      <p>웹3를 바르게 이해하기 위해선, 우리가 매일 사용하는 월드와이드웹(WWW)이 겪어온 세대별 철학의 도약 단계를 명쾌히 이해할 필요가 있습니다.</p>
+      
+      <p>가장 태동기였던 **웹1.0(Web1.0)**은 일방통행형 <strong>'읽기 전용(Read-only)'</strong> 공간이었습니다. 신문 기사나 박물관 문서처럼 서버에 올려진 포스트 텍스트를 사용자가 수동적으로 읽기만 하는 단방향 구조였습니다. 이후 2000년대 후반에 만개한 **웹2.0(Web2.0)**은 사용자가 직접 글을 쓰고 사진을 올리는 <strong>'읽기 및 쓰기(Read-write)'</strong> 쌍방향 소셜 공유 플랫폼의 시대입니다. 하지만 이 과정에서 수천억의 부를 일궈낸 페이스북, 유튜브, 구글 등 대형 테크 공룡들이 우리의 기여 데이터와 사생활 정보를 독점하고 중개 통제한다는 한계에 부딪혔습니다.</p>
+      
+      <p>이를 깨부수고 도래한 **웹3.0(Web3.0)**은 <strong>'읽기, 쓰기, 그리고 소유하기(Read-write-own)'</strong>가 결합한 온전한 디지털 주권의 쟁취 패러다임입니다. 특정 중앙 서버나 검열관 없이, 지구상의 수만 대 컴퓨터에 투명하게 분산 복제되어 암증되는 블록체인 시스템을 통해 나만의 자산 가치와 데이터를 중앙 매개인 없이 안전하게 영구적 소유하고 보존할 수 있게 됩니다.</p>
+      
+      <blockquote>
+        "웹2.0이 타인의 거대한 플랫폼 영토 안에서 일하는 소작농의 삶이었다면, 웹3.0은 암호학적 블록체인 프로토콜 위에 나의 영구적인 주권을 등기하는 디지털 자영농의 탄생입니다."
+      </blockquote>
+      
+      <h2>2. 블록체인의 심장: 스마트 컨트랙트(Smart Contract)의 개념과 원리</h2>
+      <p>블록체인이 그저 금융 장부를 전송하는 분산 원장 수준을 넘어서서 복잡한 금융 계약, 투표 시스템, 게임 아이템 거래 등을 자동 처리하도록 생명을 불어넣어 준 결정적 기술이 바로 <strong>스마트 컨트랙트(Smart Contract)</strong>입니다.</p>
+      
+      <p>스마트 컨트랙트는 쉽게 말해 **'스스로 실행되는 코드 계약서'**입니다. "만약 A 조건이 충족되면, B 지불을 예외 없이 자동 집행한다(If-Then)"는 명확한 조항 코드를 블록체인 데이터베이스 내에 단단히 박아놓는 것입니다. 이 계약서는 중앙 중개 에이전트(예: 변호사, 에스크로 은행, 부동산 중개인)의 도장 날인이 없더라도 조건 부합 시 코드가 자동 연산되어 계약을 1초 만에 완수해 버립니다. 위변조가 영구적으로 원천 불가능한 분산 원장 시스템 내에서 굴러가기 때문에 계약 미이행이나 배신에 따른 신용 리스크가 제로에 수렴하게 됩니다.</p>
+
+      <!-- AD SLOT (IN-CONTENT DISPLAY) -->
+      <ins class="adsbygoogle ad-slot ad-content"
+           style="display:block; text-align:center;"
+           data-ad-layout="in-article"
+           data-ad-format="fluid"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="5566778899">
+        <div class="ad-slot-label">본문 중간 인피드 광고 영역</div>
+      </ins>
+
+      <h2>3. 스마트 컨트랙트 구현을 위한 이더리움과 Solidity 기초 지식</h2>
+      <p>스마트 컨트랙트 생태계의 절대적인 압도적 연산 플랫폼은 바로 <strong>이더리움(Ethereum)</strong>입니다. 비트코인이 단순 결제 기능에 포커스되었다면, 이더리움은 블록체인 위에 거대한 컴퓨터 연산 장치인 EVM(Ethereum Virtual Machine)을 통째로 얹어, 전 세계 누구나 원하는 모든 자동화 어플리케이션을 코딩할 수 있는 거대한 분산 슈퍼컴퓨터를 완성했습니다.</p>
+      
+      <p>이를 개발하기 위한 프로그래밍 표준 규격 개발 언어가 바로 <strong>솔리디티(Solidity)</strong>입니다. 솔리디티는 우리에게 매우 친숙한 자바스크립트(JavaScript) 및 C++ 문법과 상당히 닮아있어 기본 개발자라면 배우기 수월합니다. 다만, 단 한 번 블록체인에 등록(Deploy) 완료된 컨트랙트 코드는 버그가 발생해도 수정하거나 지울 수 없기 때문에, 보안 해킹 위협 방어를 위한 소스코드 취약점 정밀 감리(Audit)와 극한의 디버깅 안정성 테스트가 최고로 높게 요구된다는 특징이 있습니다.</p>
+
+      <h2>마치며</h2>
+      <p>웹3.0 패러다임과 스마트 컨트랙트의 출현은 단순한 기술적 혁신 수준을 넘어, 우리가 디지털 가치와 계약 신용을 담보하고 상호작용하는 모든 방식을 완전히 재편하고 있습니다. 투기라는 투박한 장막을 한 겹 걷어내고, 그 본질을 관통하는 고성능 컴파일 분산 분할 기술을 지적으로 흡수하여 차세대 비즈니스의 성장동력 기회로 삼으시기 바랍니다. 스타로프 IT 가이드 블로그는 앞으로도 이와 같이 전 세계를 뒤흔드는 최첨단 코딩 정보와 트렌디한 IT 개발 꿀팁들을 가장 차원 높고 알찬 분석으로 알기 쉽게 전달해 드릴 것을 약속합니다. 웹3 및 스마트 컨트랙트 개념에 대해 덧붙이고 싶으신 의견이 있다면 언제든 영리한 댓글로 목소리를 더해 주시기 바랍니다. 감사합니다!</p>
+      
+    </article>
+    
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="sidebar">
+      
+      <!-- Bio Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">운영자 프로필</h3>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background-color: var(--primary-color); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">S</div>
+          <div>
+            <h4 style="font-size: 15px;">Starrope</h4>
+            <span style="font-size: 12px; color: var(--text-muted);">IT 기술 & SEO 파트너</span>
+          </div>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">실전 SEO 전략 및 IT 기술 블로그 최적화 파트너입니다. 최고의 퍼포먼스를 내는 고성능 블로그 정보를 제공합니다.</p>
+      </div>
+      
+      <!-- Ad Widget -->
+      <ins class="adsbygoogle ad-slot ad-sidebar sidebar-widget"
+           style="display:block"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="9876543210"
+           data-ad-format="rectangle"
+           data-full-width-responsive="true">
+        <div class="ad-slot-label">사이드바 스폰서 링크</div>
+      </ins>
+      
+      <!-- Navigation Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">바로가기</h3>
+        <ul class="categories-list">
+          <li><a href="../index.html">🏠 홈으로 돌아가기</a></li>
+          <li><a href="../about.html">👤 필자 소개 보기</a></li>
+        </ul>
+      </div>
+      
+    </aside>
+  </main>
+
+  <!-- AD SLOT (POST BOTTOM DISPLAY) -->
+  <div class="container" style="margin-bottom: 60px;">
+    <ins class="adsbygoogle ad-slot ad-footer"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1122334455"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 하단 반응형 매칭 광고</div>
+    </ins>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <a href="../index.html" class="logo footer-info-logo">
+          <div class="logo-icon">S</div>
+          <span class="gradient-text">Starrope IT</span>
+        </a>
+        <p>최신 IT 기술 트렌드, AI 생산성 도구 사용법 및 디지털 노마드의 삶을 위한 유용한 지식을 공유하는 전문 기술 블로그.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h4>중요 문서</h4>
+        <ul>
+          <li><a href="../privacy-policy.html">개인정보처리방침</a></li>
+          <li><a href="../terms-of-service.html">서비스 이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Starrope IT. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Link JS (relative path) -->
+  <script src="../assets/main.js"></script>
+  
+  <!-- Trigger Adsense rendering loop -->
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</body>
+</html>

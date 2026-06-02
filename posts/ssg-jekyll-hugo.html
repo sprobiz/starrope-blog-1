@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jekyll, Hugo, Astro SSG 비교 및 블로그 빌드 가이드 | 스타로프 IT 블로그</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="서버 없이 빠르고 가볍게 고성능 정적 웹사이트를 구축할 수 있게 돕는 대표적인 정적 사이트 생성기(SSG)인 Jekyll, Hugo, Astro의 특장점과 나에게 맞는 도구 선택법을 제시합니다.">
+  
+  <!-- Link CSS (relative path to main assets) -->
+  <link rel="stylesheet" href="../assets/style.css">
+  
+  <!-- Pre-configured Google AdSense Auto Ads Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1692428092138510" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">S</div>
+        <span class="gradient-text">Starrope IT</span>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-item">홈</a>
+        <a href="../index.html#articles" class="nav-item">포스트</a>
+        <a href="../about.html" class="nav-item">소개</a>
+        <a href="../privacy-policy.html" class="nav-item">개인정보처리방침</a>
+        <a href="../terms-of-service.html" class="nav-item">이용약관</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="다크 모드 전환">
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- POST HEADER -->
+  <header class="post-header">
+    <div class="post-header-tag">코딩 / 웹 개발</div>
+    <h1 class="post-header-title">정적 사이트 생성기(SSG) 대결: Jekyll vs Hugo vs Astro 완벽 해부</h1>
+    <div class="post-header-meta">
+      <span>작성자: Starrope</span>
+      <span>•</span>
+      <span>2026. 06. 17 (오후 4:00)</span>
+      <span>•</span>
+      <span>읽는 시간: 약 5분</span>
+    </div>
+  </header>
+
+  <!-- AD SLOT (POST TOP DISPLAY) -->
+  <div class="container">
+    <ins class="adsbygoogle ad-slot ad-header"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 상단 반응형 광고</div>
+    </ins>
+  </div>
+
+  <!-- ARTICLE LAYOUT -->
+  <main class="container post-article-layout">
+    
+    <!-- LEFT: MAIN CONTENT -->
+    <article class="post-content">
+      
+      <p>서버 통신 비용을 최소화하고 검색엔진 크롤링 최적화를 극대화하는 동시에, 단 1초의 로딩 지연조차 허용하지 않는 고성능 개인 미디어 블로그나 포트폴리오 사이트 구축을 염원하시나요? 그렇다면 워드프레스와 같이 복잡하고 무거운 데이터베이스(DB) 기반의 동적 사이트 툴 대신 **정적 사이트 생성기(Static Site Generator, SSG)**가 가장 완벽한 현대적 대안이 될 것입니다. SSG는 작성된 마크다운 포맷 텍스트와 템플릿 컴포넌트 파일들을 사전에 완전한 하나의 정적 HTML 파일들로 변환 빌드해 주기 때문에 별도의 백엔드 호스팅 인프라 없이도 환상적인 페이지 로딩 퍼포먼스를 내뿜습니다. 이번 시간에는 정적 웹 생태계를 견인하고 있는 대표적인 세 가지 프레임워크인 <strong>Jekyll, Hugo, Astro</strong>의 세부 기술 스펙과 장단점을 전격 비교 분석합니다.</p>
+      
+      <div class="post-main-image" style="background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&q=80'); height: 350px; background-size: cover; background-position: center; border-radius: 12px; margin-bottom: 24px;"></div>
+
+      <h2>1. 클래식의 대명사 Jekyll(지킬)과 세계 최고 빌드 속도의 Hugo(휴고)</h2>
+      <p>가장 먼저 정적 웹 생성기 생태계의 유서 깊은 왕좌를 지켜오던 <strong>Jekyll(지킬)</strong>은 Ruby 언어로 구축되었습니다. 지킬이 압도적인 인기를 누려온 결정적인 요인은 다름 아닌 <strong>GitHub Pages(깃허브 페이지스)</strong>가 공식적으로 지킬 엔진의 자동 빌드를 디폴트로 내장 연동하여 지원하기 때문입니다. 마크다운으로 쓴 글을 깃 레포지토리에 푸시하는 것만으로 서버 호스팅 인프라가 완전 무료로 세팅되는 편리함 덕분에 수많은 오픈소스 커뮤니티의 기술 문서 표준으로 오랜 시간 자리를 꿰찼습니다. 다만, 글 개수가 수백 수천 개로 증가할 경우 빌드 타임이 수분 이상으로 급격히 늘어나는 해비한 한계가 존재합니다.</p>
+      
+      <p>이러한 지킬의 컴파일 성능 한계를 해결하기 위해 탄생한 구원투수가 바로 <strong>Hugo(휴고)</strong>입니다. Go 언어로 작성된 휴고는 비교 불가한 압도적인 **'컴파일 빌드 속도'**를 제1의 핵심 무기로 내세웁니다. 수천 편에 달하는 막대한 볼륨의 블로그 포스트를 단 몇 초(millisecond) 만에 빌드해내는 비현실적인 속도를 내기 때문에, 대단위 미디어 뉴스 플랫폼이나 오랜 연식의 파워블로그 아카이브에 가장 최적화되어 있습니다. 다만 Go 언어 템플릿 문법이 다소 복잡하여 프로그래밍 비전공자가 초기 커스터마이징 스킨 디자인을 변경하는 데 상당한 진입장벽을 선사합니다.</p>
+      
+      <blockquote>
+        "지킬이 검증된 생태계와 편리한 기본 퍼블리싱의 표본이라면, 휴고는 수천 개의 콘텐츠를 가볍게 소화하는 막강한 퍼포먼스 마라토너와 같습니다."
+      </blockquote>
+      
+      <h2>2. 차세대 프론트엔드의 구원자: Astro(아스트로)의 강점 분석</h2>
+      <p>그렇다면 최근 모던 자바스크립트 프론트엔드 생태계에서 가장 뜨거운 사랑을 받으며 부상 중인 <strong>Astro(아스트로)</strong>는 어떤 차별점이 있을까요? 아스트로는 기존 지킬이나 휴고와는 설계 철학부터가 완전히 다른 차세대 컴포넌트 프레임워크입니다. 아스트로의 시그니처 핵심 무기는 바로 <strong>아일랜드 아키텍처(Islands Architecture)</strong>입니다.</p>
+      
+      <p>보통 리액트나 뷰를 이용하여 웹앱을 만들면 화면 구동을 위해 상당한 용량의 자바스크립트 번들이 브라우저로 한꺼번에 전송되어 초기 로딩 속도에 악영향을 주게 됩니다. 하지만 아스트로는 기본적으로 웹페이지의 모든 요소를 순수한 '제로 자바스크립트 HTML' 상태로 빌드합니다. 오직 스크롤 상호작용이나 실시간 장바구니 등 클라이언트 단의 자바스크립트 작동이 필수적인 특수 구역만 가상의 '섬(Island)' 형태로 규정하여 동적으로 활성화(Hydration)해 줍니다. 이 덕분에 개발자는 친숙한 React, Vue, Svelte 컴포넌트 코딩을 마음껏 변용하면서도 웹 성능 측정 도구에서 백점 만점의 기적적인 하드웨어 경량 점수를 쟁취해 낼 수 있습니다.</p>
+
+      <!-- AD SLOT (IN-CONTENT DISPLAY) -->
+      <ins class="adsbygoogle ad-slot ad-content"
+           style="display:block; text-align:center;"
+           data-ad-layout="in-article"
+           data-ad-format="fluid"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="5566778899">
+        <div class="ad-slot-label">본문 중간 인피드 광고 영역</div>
+      </ins>
+
+      <h2>3. 나에게 최적화된 정적 웹 사이트 생성기(SSG) 선택 비결</h2>
+      <p>이렇듯 각기 매력이 넘치는 세 가지 대표적인 SSG 기술 사이에서 무엇을 내 미디어 블로그의 뼈대로 정해야 할지 판단이 서지 않는다면 다음 세 가지 직관적인 선택 규칙 가이드를 숙지해 보세요.</p>
+      
+      <ul>
+        <li><strong>가장 단순하고 보편적인 템플릿의 시작:</strong> 루비 기반 코딩이나 부가 패키지 빌드 없이 순수 마크다운과 깃허브 Pages 시스템으로 편안하게 안착하길 원한다면 전통적인 <code>Jekyll</code>을 권장합니다.</li>
+        <li><strong>방대한 글 수량과 미친 듯한 렌더링 성능 지향:</strong> 향후 작성할 정보 글 수가 무려 수천 개 이상 예정되어 있으며, 고성능 컴파일 속도와 CLI 관리 체계를 지배하고 싶다면 무조건 <code>Hugo</code>가 탁월한 정답입니다.</li>
+        <li><strong>리액트 및 컴포넌트 개발 경험 탑재:</strong> UI 디자인 컴포넌트 관리가 주특기이며, 테일윈드CSS 등 최신 웹 패키지를 손쉽게 접목하면서 초기 자바스크립트 전송량을 0KB에 가깝게 줄인 초고속 성능 반응형 레이아웃을 창조하고 싶다면 고민 없이 <code>Astro</code>를 쥐어야 합니다.</li>
+      </ul>
+
+      <h2>마치며</h2>
+      <p>서버 자원이나 데이터베이스 오버헤드가 없다는 점은 정적 사이트가 주는 최대 축복이며, 이는 고품질 미디어로서의 도달 효율성과 최고의 성능 퍼포먼스로 직결됩니다. 본인에게 가장 편하고 강력한 정적 사이트 엔진을 장착해 보시기 바라며, 스타로프 블로그는 언제나 한 걸음 더 앞서 나간 프리미엄 모던 웹 아키텍처 정보와 실전에 활용 가능한 코딩 팁들을 풍성히 다뤄 드릴 것을 약속합니다. 본 블로그 글이나 정적 블로그 구축에 대해 의견이 있으시다면 언제나 든든한 피드백 코멘트와 이메일을 열어두고 있사오니 많은 문의 바랍니다. 감사합니다!</p>
+      
+    </article>
+    
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="sidebar">
+      
+      <!-- Bio Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">운영자 프로필</h3>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background-color: var(--primary-color); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">S</div>
+          <div>
+            <h4 style="font-size: 15px;">Starrope</h4>
+            <span style="font-size: 12px; color: var(--text-muted);">IT 기술 & SEO 파트너</span>
+          </div>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">실전 SEO 전략 및 IT 기술 블로그 최적화 파트너입니다. 최고의 퍼포먼스를 내는 고성능 블로그 정보를 제공합니다.</p>
+      </div>
+      
+      <!-- Ad Widget -->
+      <ins class="adsbygoogle ad-slot ad-sidebar sidebar-widget"
+           style="display:block"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="9876543210"
+           data-ad-format="rectangle"
+           data-full-width-responsive="true">
+        <div class="ad-slot-label">사이드바 스폰서 링크</div>
+      </ins>
+      
+      <!-- Navigation Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">바로가기</h3>
+        <ul class="categories-list">
+          <li><a href="../index.html">🏠 홈으로 돌아가기</a></li>
+          <li><a href="../about.html">👤 필자 소개 보기</a></li>
+        </ul>
+      </div>
+      
+    </aside>
+  </main>
+
+  <!-- AD SLOT (POST BOTTOM DISPLAY) -->
+  <div class="container" style="margin-bottom: 60px;">
+    <ins class="adsbygoogle ad-slot ad-footer"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1122334455"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 하단 반응형 매칭 광고</div>
+    </ins>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <a href="../index.html" class="logo footer-info-logo">
+          <div class="logo-icon">S</div>
+          <span class="gradient-text">Starrope IT</span>
+        </a>
+        <p>최신 IT 기술 트렌드, AI 생산성 도구 사용법 및 디지털 노마드의 삶을 위한 유용한 지식을 공유하는 전문 기술 블로그.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h4>중요 문서</h4>
+        <ul>
+          <li><a href="../privacy-policy.html">개인정보처리방침</a></li>
+          <li><a href="../terms-of-service.html">서비스 이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Starrope IT. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Link JS (relative path) -->
+  <script src="../assets/main.js"></script>
+  
+  <!-- Trigger Adsense rendering loop -->
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</body>
+</html>

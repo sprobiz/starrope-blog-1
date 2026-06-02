@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Flexbox 핵심 속성과 정렬 완벽 가이드 | 스타로프 IT 블로그</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="웹 프론트엔드 개발의 핵심인 CSS Flexbox의 주요 속성(justify-content, align-items, flex-direction)과 완벽한 중앙 정렬 레이아웃 구성법을 실제 코드 예제와 함께 마스터합니다.">
+  
+  <!-- Link CSS (relative path to main assets) -->
+  <link rel="stylesheet" href="../assets/style.css">
+  
+  <!-- Pre-configured Google AdSense Auto Ads Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1692428092138510" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">S</div>
+        <span class="gradient-text">Starrope IT</span>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-item">홈</a>
+        <a href="../index.html#articles" class="nav-item">포스트</a>
+        <a href="../about.html" class="nav-item">소개</a>
+        <a href="../privacy-policy.html" class="nav-item">개인정보처리방침</a>
+        <a href="../terms-of-service.html" class="nav-item">이용약관</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="다크 모드 전환">
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- POST HEADER -->
+  <header class="post-header">
+    <div class="post-header-tag">코딩 / 프론트엔드</div>
+    <h1 class="post-header-title">CSS Flexbox 핵심 속성과 정렬 레이아웃 설계 완벽 마스터</h1>
+    <div class="post-header-meta">
+      <span>작성자: Starrope</span>
+      <span>•</span>
+      <span>2026. 06. 16 (오후 4:00)</span>
+      <span>•</span>
+      <span>읽는 시간: 약 4분</span>
+    </div>
+  </header>
+
+  <!-- AD SLOT (POST TOP DISPLAY) -->
+  <div class="container">
+    <ins class="adsbygoogle ad-slot ad-header"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 상단 반응형 광고</div>
+    </ins>
+  </div>
+
+  <!-- ARTICLE LAYOUT -->
+  <main class="container post-article-layout">
+    
+    <!-- LEFT: MAIN CONTENT -->
+    <article class="post-content">
+      
+      <p>웹 사이트를 제작할 때 가장 까다로우면서도 핵심적인 과정 중 하나가 바로 레이아웃 설계입니다. 과거의 테이블 레이아웃이나 float 속성을 이용해 억지로 요소들을 배치하던 시절과 달리, 현대의 프론트엔드 개발 환경은 혁명적인 정렬 시스템인 <strong>CSS Flexbox(Flexible Box Layout)</strong> 덕분에 비약적인 생산성 발전을 이뤄냈습니다. Flexbox를 능숙하게 제어하면 복잡하고 정밀한 모바일 및 PC 데스크톱 반응형 카드 그리드, 탐색 바 메뉴, 콘텐츠 균등 정렬 등을 단 몇 줄의 간단한 마크업 속성만으로 손쉽게 구현해낼 수 있습니다. 본 포스트에서는 실무 웹 퍼블리싱 및 프론트엔드 엔지니어링에서 반드시 체득해야 할 Flexbox의 핵심 방향 제어 기법과 다차원 중앙 배치 전략을 집중 탐구합니다.</p>
+      
+      <div class="post-main-image" style="background-image: url('https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80'); height: 350px; background-size: cover; background-position: center; border-radius: 12px; margin-bottom: 24px;"></div>
+
+      <h2>1. Flexbox 레이아웃의 구조적 원리: 컨테이너와 아이템</h2>
+      <p>Flexbox 레이아웃을 바르게 사용하기 위해서는 가장 먼저 부모 요소인 <strong>Flex Container(플렉스 컨테이너)</strong>와 자식 요소인 <strong>Flex Item(플렉스 아이템)</strong>의 구조적 위계를 철저하게 구분해야 합니다. 정렬을 적용하고자 하는 타겟들을 감싸고 있는 최상위 태그에 <code>display: flex;</code>를 적용하는 것으로 정렬 시스템이 비로소 발현됩니다.</p>
+      
+      <p>이렇게 플렉스 컨테이너가 생성되면, 브라우저는 내부 공간을 두 가지 축을 기준으로 설정합니다. 바로 아이템이 배치되는 주축인 <strong>메인 축(Main Axis)</strong>과 이에 직교하는 <strong>교차 축(Cross Axis)</strong>입니다. 이 가상의 방향축을 제대로 정복하지 못하면, 아이템들이 엉뚱하게 찌그러지거나 다른 행으로 줄 바꿈이 생기는 부조화 현상을 겪게 됩니다.</p>
+      
+      <blockquote>
+        "어떤 공간에서 정렬이 일어날지 결정하는 가장 기초적인 조건은 플렉스 컨테이너 선언이며, 모든 배치는 메인 축과 교차 축이라는 2차원 공간 지평선 위에서 설계됩니다."
+      </blockquote>
+      
+      <h2>2. 메인 축 방향 지배자: justify-content 속성 완전 정리</h2>
+      <p>플렉스 아이템을 컨테이너의 중심이나 좌우 끝단에 어떻게 수평(혹은 주축 기준 수직)으로 고르게 배치할 것인가에 대한 답은 <strong>justify-content</strong> 속성이 담당합니다. 주축의 빈 공간을 효과적으로 재분배하여 아름다운 콘텐츠 구성을 만들어 내는 주요 옵션들은 다음과 같습니다.</p>
+      
+      <ul>
+        <li><strong>flex-start:</strong> 모든 플렉스 아이템을 시작 지점부터 틈새 없이 차례대로 다닥다닥 밀착 배치합니다. (기본값)</li>
+        <li><strong>flex-end:</strong> 모든 자식 요소들을 주축의 끝부분으로 쏠리게 한데 모아 우측 또는 하단 정렬을 완성합니다.</li>
+        <li><strong>center:</strong> 남는 빈 여백을 정밀하게 반으로 갈라 모든 아이템을 정확히 복판에 밀집시킵니다.</li>
+        <li><strong>space-between:</strong> 첫 자식은 시작 지점에, 마지막 자식은 끝 지점에 단단히 밀착시키고 나머지 중간 요소들 사이에 공평하게 일정한 비율로 공간을 띄웁니다.</li>
+        <li><strong>space-around:</strong> 각각의 아이템의 양 옆에 균등한 너비의 여백 공간을 제공합니다. 따라서 아이템 간 간격은 양 끝 여백의 두 배가 됩니다.</li>
+        <li><strong>space-evenly:</strong> 모든 요소 간의 빈 여백 너비뿐만 아니라, 컨테이너 양 끝과 요소 사이의 틈새까지 완벽하게 동일하도록 완전한 정적 대칭을 만듭니다.</li>
+      </ul>
+
+      <!-- AD SLOT (IN-CONTENT DISPLAY) -->
+      <ins class="adsbygoogle ad-slot ad-content"
+           style="display:block; text-align:center;"
+           data-ad-layout="in-article"
+           data-ad-format="fluid"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="5566778899">
+        <div class="ad-slot-label">본문 중간 인피드 광고 영역</div>
+      </ins>
+
+      <h2>3. 교차 축 배치의 최강자: align-items와 flex-direction 조합</h2>
+      <p>수평축뿐만 아니라 수직축 정렬까지 한 번에 컨트롤할 수 있는 것이 Flexbox의 가장 큰 차별점입니다. <strong>align-items</strong> 속성은 교차 축 상에서 아이템들을 어떻게 수직으로 끌어올리거나 내릴지를 지정해 줍니다. 대표적으로 <code>align-items: center;</code>는 모든 높이가 다른 요소들을 세로 복판 기준선에 맞추어 깔끔하게 정렬시켜 줍니다.</p>
+      
+      <p>만약 레이아웃을 위에서 아래로 흐르는 모바일 전용 수직 리스트로 꺾어야 할 경우, 컨테이너에 <code>flex-direction: column;</code>을 기입하면 주축과 교차 축의 방향이 90도 회전되어 뒤바뀌게 됩니다. 이때는 <code>justify-content</code>가 상하 수직 배치를 지배하고, <code>align-items</code>가 좌우 수평 배치를 통제하게 된다는 점을 명확히 알아두어야 복잡한 레이아웃 버그를 사전에 차단할 수 있습니다.</p>
+
+      <h2>마치며</h2>
+      <p>단순하고 딱딱한 레이아웃에서 탈피하여, 기기의 화면 크기가 늘어나거나 줄어들어도 마치 살아서 움직이는 유기체처럼 부드럽게 재배치되는 프리미엄 디자인의 핵심은 바로 CSS Flexbox의 유연한 활용 능력에 달려있습니다. 본인만의 포트폴리오 사이트나 상업적 웹페이지를 빌드할 때, 무작정 마진 값을 주기보다 플렉스 박스의 체계적인 분할 정렬을 접목해 보시기 바랍니다. 앞으로도 모던 웹 디자인의 정수인 CSS 레이아웃 구조와 실전 기술 노하우를 가장 알기 쉽고 풍부한 코드 중심 가이드로 꾸준히 포스팅해 드리겠습니다. 궁금한 점이나 의견이 있으시면 주저 없이 코멘트를 달아 소통해 주시기 바랍니다. 감사합니다!</p>
+      
+    </article>
+    
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="sidebar">
+      
+      <!-- Bio Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">운영자 프로필</h3>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background-color: var(--primary-color); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">S</div>
+          <div>
+            <h4 style="font-size: 15px;">Starrope</h4>
+            <span style="font-size: 12px; color: var(--text-muted);">IT 기술 & SEO 파트너</span>
+          </div>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">실전 SEO 전략 및 IT 기술 블로그 최적화 파트너입니다. 최고의 퍼포먼스를 내는 고성능 블로그 정보를 제공합니다.</p>
+      </div>
+      
+      <!-- Ad Widget -->
+      <ins class="adsbygoogle ad-slot ad-sidebar sidebar-widget"
+           style="display:block"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="9876543210"
+           data-ad-format="rectangle"
+           data-full-width-responsive="true">
+        <div class="ad-slot-label">사이드바 스폰서 링크</div>
+      </ins>
+      
+      <!-- Navigation Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">바로가기</h3>
+        <ul class="categories-list">
+          <li><a href="../index.html">🏠 홈으로 돌아가기</a></li>
+          <li><a href="../about.html">👤 필자 소개 보기</a></li>
+        </ul>
+      </div>
+      
+    </aside>
+  </main>
+
+  <!-- AD SLOT (POST BOTTOM DISPLAY) -->
+  <div class="container" style="margin-bottom: 60px;">
+    <ins class="adsbygoogle ad-slot ad-footer"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1122334455"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 하단 반응형 매칭 광고</div>
+    </ins>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <a href="../index.html" class="logo footer-info-logo">
+          <div class="logo-icon">S</div>
+          <span class="gradient-text">Starrope IT</span>
+        </a>
+        <p>최신 IT 기술 트렌드, AI 생산성 도구 사용법 및 디지털 노마드의 삶을 위한 유용한 지식을 공유하는 전문 기술 블로그.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h4>중요 문서</h4>
+        <ul>
+          <li><a href="../privacy-policy.html">개인정보처리방침</a></li>
+          <li><a href="../terms-of-service.html">서비스 이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Starrope IT. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Link JS (relative path) -->
+  <script src="../assets/main.js"></script>
+  
+  <!-- Trigger Adsense rendering loop -->
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>비전공자 웹 프로그래밍 입문 로드맵 | 스타로프 IT 블로그</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="코딩 지식이 전혀 없는 비전공자를 위한 초고속 웹 프로그래밍 첫걸음 가이드입니다. HTML과 CSS를 활용해 나만의 웹페이지를 설계해 보세요.">
+  
+  <!-- Link CSS (relative path to main assets) -->
+  <link rel="stylesheet" href="../assets/style.css">
+  
+  <!-- Pre-configured Google AdSense Auto Ads Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1692428092138510" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">S</div>
+        <span class="gradient-text">Starrope IT</span>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-item">홈</a>
+        <a href="../index.html#articles" class="nav-item">포스트</a>
+        <a href="../about.html" class="nav-item">소개</a>
+        <a href="../privacy-policy.html" class="nav-item">개인정보처리방침</a>
+        <a href="../terms-of-service.html" class="nav-item">이용약관</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="다크 모드 전환">
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- POST HEADER -->
+  <header class="post-header">
+    <div class="post-header-tag">코딩 및 웹 개발 입문</div>
+    <h1 class="post-header-title">비전공자 개발 입문 로드맵: HTML과 CSS로 나만의 웹 사이트 설계 첫걸음 시작하기</h1>
+    <div class="post-header-meta">
+      <span>작성자: Starrope</span>
+      <span>•</span>
+      <span>2026. 06. 01 (오전 8:00)</span>
+      <span>•</span>
+      <span>읽는 시간: 약 4분</span>
+    </div>
+  </header>
+
+  <!-- AD SLOT (POST TOP DISPLAY) -->
+  <div class="container">
+    <ins class="adsbygoogle ad-slot ad-header"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 상단 반응형 광고</div>
+    </ins>
+  </div>
+
+  <!-- ARTICLE LAYOUT -->
+  <main class="container post-article-layout">
+    
+    <!-- LEFT: MAIN CONTENT -->
+    <article class="post-content">
+      
+      <div class="post-main-image" style="background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&q=80'); height: 350px; background-size: cover; background-position: center; border-radius: 12px; margin-bottom: 24px;"></div>
+      
+      <p>컴퓨터공학을 전공하지 않은 일반 직장인이나 문과생들도 "나만의 홈페이지나 웹서비스를 직접 만들어보고 싶다"라는 꿈을 한 번씩 꿉니다. 요즘은 노코드(No-code) 툴도 많지만, 컴퓨터가 화면을 구성하는 가장 원초적인 원리인 <strong>HTML과 CSS</strong>를 조금이라도 이해해 두면 웹마케팅이나 수익형 블로그 레이아웃 커스텀 시 엄청난 퍼포먼스 차이를 낼 수 있습니다.</p>
+      
+      <p>오늘 글에서는 코딩 지식이 0%인 완전 초보자를 눈높이로 하여, <strong>웹 개발의 세계에 가장 안전하고 빠르게 입문할 수 있는 로드맵</strong>을 핵심 개념 위주로 정밀 가하지 가이드해 드립니다.</p>
+      
+      <h2>1. 웹 빌드의 2대 기둥: HTML과 CSS란 무엇인가?</h2>
+      <p>우리가 보는 모든 웹페이지는 결국 아래의 두 가지 언어가 상호작용하여 출력되는 결과물에 지나지 않습니다.</p>
+      
+      <ul>
+        <li><strong>HTML (HyperText Markup Language):</strong> 웹사이트의 <strong>'뼈대이자 텍스트 알맹이'</strong>입니다. 제목(h1, h2), 문단(p), 링크(a), 구역(div) 등의 태그(Tag)를 사용해 웹 문서의 구조를 잡는 역할을 담당합니다.</li>
+        <li><strong>CSS (Cascading Style Sheets):</strong> 뼈대 위에 예쁜 <strong>'옷을 입히고 화장하는'</strong> 디자인 언어입니다. 글씨 크기, 배경색, 레이아웃의 구조적 정렬(Flexbox, Grid), 마우스 호버 애니메이션 등을 지시합니다.</li>
+      </ul>
+      
+      <blockquote>
+        <strong>[뼈대와 피부의 비유]</strong><br>
+        HTML이 건물의 콘크리트 골조와 벽돌이라면, CSS는 건물의 외벽 페인트칠과 인테리어 가구 배치라고 생각하시면 이해하기 매우 쉽습니다.
+      </blockquote>
+      
+      <h2>2. 첫 코딩 코스: VS Code 설치 및 5분 만에 첫 페이지 띄우기</h2>
+      <p>코딩을 시작하기 위해 필요한 도구는 딱 두 가지입니다: 무료 코드 편집기인 <strong>VS Code (Visual Studio Code)</strong>와 웹 브라우저(Chrome)입니다.</p>
+      
+      <ol>
+        <li>구글 검색창에 'VS Code'를 검색하여 공식 사이트에서 무료 프로그램을 다운로드하고 설치합니다.</li>
+        <li>새 파일을 만들고 파일명을 반드시 <strong><code>index.html</code></strong>로 저장합니다.</li>
+        <li>에디터 화면에 `!`를 입력한 뒤 엔터를 누르면, 구글 로봇과 브라우저가 인식하는 완벽한 표준 HTML5 기본 템플릿이 자동으로 완성되는 마법을 보실 수 있습니다.</li>
+      </ol>
+      
+      <!-- AD SLOT (IN-CONTENT DISPLAY) -->
+      <ins class="adsbygoogle ad-slot ad-content"
+           style="display:block; text-align:center;"
+           data-ad-layout="in-article"
+           data-ad-format="fluid"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="5566778899">
+        <div class="ad-slot-label">본문 중간 인피드 광고 영역</div>
+      </ins>
+
+      <h2>3. 초보자가 반드시 마스터해야 할 핵심 HTML 태그 4선</h2>
+      <p>수백 개의 태그가 있지만, 아래의 대표적인 4가지 태그만 다룰 줄 알아도 웬만한 정보형 글이나 블로그 뼈대는 직접 코딩으로 수정할 수 있습니다.</p>
+      
+      <ul>
+        <li><strong>`<h1>` ~ `<h6>`:</strong> 대제목부터 소제목까지 순차적으로 중요도를 지정하여 로봇이 글의 논리를 이해하도록 돕습니다.</li>
+        <li><strong>`<p>`:</strong> 일반 텍스트 문단을 나타내는 본문 전용 태그입니다.</li>
+        <li><strong>`<a>`:</strong> 하이퍼링크를 삽입해 다른 사이트나 내부 글로 이동시킬 때 사용합니다. (`<a href="주소">클릭</a>`)</li>
+        <li><strong>`<img>`:</strong> 이미지를 삽입할 때 사용하며, 반드시 대체 텍스트 `alt`를 적어야 구글 SEO 점수에서 만점을 받습니다.</li>
+      </ul>
+
+      <h2>4. 그 다음 단계: JavaScript와 프레임워크 학습 순서</h2>
+      <p>HTML과 CSS를 익혀서 예쁜 정적 웹페이지를 설계했다면, 마우스를 클릭했을 때 다이내믹하게 팝업창이 열리거나 다크 모드로 슝슝 전환되는 동작을 제어해야 합니다. 이 동작을 부르는 생명을 불어넣는 언어가 바로 <strong>JavaScript(자바스크립트)</strong>입니다. HTML/CSS 기초를 대략 2주일 정도 직접 짜보시며 감을 익힌 뒤 자바스크립트로 넘어가시길 추천합니다.</p>
+
+      <h2>마치며</h2>
+      <p>코딩은 머리로 외워서 푸는 수학 공식이 아니라, 직접 손으로 키보드를 두드리며 화면이 변하는 것을 눈으로 체험하는 <strong>실전 기술</strong>입니다. 지금 바로 가벼운 마음으로 메모장을 열어 나만의 첫 번째 웹 타이틀 한 줄을 손수 코딩해 보세요. 새로운 디지털 노마드의 세계가 눈앞에 활짝 펼쳐질 것입니다!</p>
+      
+    </article>
+    
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="sidebar">
+      
+      <!-- Bio Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">운영자 프로필</h3>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background-color: var(--primary-color); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">S</div>
+          <div>
+            <h4 style="font-size: 15px;">Starrope</h4>
+            <span style="font-size: 12px; color: var(--text-muted);">IT 기술 & SEO 파트너</span>
+          </div>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">실전 SEO 전략 및 IT 기술 블로그 최적화 파트너입니다. 최고의 퍼포먼스를 내는 고성능 블로그 정보를 제공합니다.</p>
+      </div>
+      
+      <!-- Ad Widget -->
+      <ins class="adsbygoogle ad-slot ad-sidebar sidebar-widget"
+           style="display:block"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="9876543210"
+           data-ad-format="rectangle"
+           data-full-width-responsive="true">
+        <div class="ad-slot-label">사이드바 스폰서 링크</div>
+      </ins>
+      
+      <!-- Navigation Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">바로가기</h3>
+        <ul class="categories-list">
+          <li><a href="../index.html">🏠 홈으로 돌아가기</a></li>
+          <li><a href="../about.html">👤 필자 소개 보기</a></li>
+        </ul>
+      </div>
+      
+    </aside>
+  </main>
+
+  <!-- AD SLOT (POST BOTTOM DISPLAY) -->
+  <div class="container" style="margin-bottom: 60px;">
+    <ins class="adsbygoogle ad-slot ad-footer"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1122334455"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 하단 반응형 매칭 광고</div>
+    </ins>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <a href="../index.html" class="logo footer-info-logo">
+          <div class="logo-icon">S</div>
+          <span class="gradient-text">Starrope IT</span>
+        </a>
+        <p>최신 IT 기술 트렌드, AI 생산성 도구 사용법 및 디지털 노마드의 삶을 위한 유용한 지식을 공유하는 전문 기술 블로그.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h4>중요 문서</h4>
+        <ul>
+          <li><a href="../privacy-policy.html">개인정보처리방침</a></li>
+          <li><a href="../terms-of-service.html">서비스 이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Starrope IT. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Link JS (relative path) -->
+  <script src="../assets/main.js"></script>
+  
+  <!-- Trigger Adsense rendering loop -->
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</body>
+</html>

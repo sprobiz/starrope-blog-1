@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>페이지로 이동 중 | 스타로프 IT 블로그</title>
+  
+  <!-- Link CSS (relative path) -->
+  <link rel="stylesheet" href="assets/style.css">
+  
+  <!-- Pre-configured Google AdSense Auto Ads Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1692428092138510" crossorigin="anonymous"></script>
+
+  <style>
+    .bridge-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      text-align: center;
+      padding: 24px;
+    }
+    .loading-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--border-radius-md);
+      padding: 48px;
+      box-shadow: var(--shadow-lg);
+      max-width: 500px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid var(--border-light);
+      border-top: 4px solid var(--primary-color);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 24px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .loading-title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      font-family: var(--font-title);
+    }
+    .loading-desc {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+    .manual-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--primary-color);
+      color: white !important;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 12px hsla(var(--hue), 85%, 58%, 0.2);
+    }
+    .manual-btn:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px hsla(var(--hue), 85%, 58%, 0.35);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR (Simplified) -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">S</div>
+        <span class="gradient-text">Starrope IT</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="container bridge-container">
+    <div class="loading-card">
+      <div class="spinner"></div>
+      <h2 class="loading-title">공식 신청 페이지로 안전하게 이동 중입니다</h2>
+      <p class="loading-desc">
+        보안 상태를 점검하고 연결을 최적화하고 있습니다.<br>
+        잠시 후 자동으로 신청 페이지로 이동합니다.
+      </p>
+      <a id="manual-link" href="#" class="manual-btn">지금 즉시 이동하기</a>
+    </div>
+  </main>
+
+  <!-- FOOTER (Simplified) -->
+  <footer class="footer" style="padding: 30px 0; margin-top: auto;">
+    <div class="container" style="text-align: center; color: var(--text-muted); font-size: 13.5px;">
+      <p>&copy; 2026 Starrope IT. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Link JS -->
+  <script src="assets/main.js"></script>
+  
+  <script>
+    // URL에서 target 파라미터 추출
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    const targetUrl = getQueryParam('target');
+    const manualLink = document.getElementById('manual-link');
+
+    if (targetUrl && (targetUrl.startsWith('http://') || targetUrl.startsWith('https://'))) {
+      manualLink.href = targetUrl;
+      
+      // 1.5초 후 자동 리다이렉션 (전면 광고 노출 시간 버퍼 확보)
+      setTimeout(() => {
+        window.location.href = targetUrl;
+      }, 1500);
+    } else {
+      // 파라미터가 없거나 잘못된 주소일 경우 홈으로 리다이렉트
+      document.querySelector('.loading-title').textContent = "올바르지 않은 접근입니다";
+      document.querySelector('.loading-desc').textContent = "메인 홈 페이지로 자동 이동합니다.";
+      manualLink.href = "index.html";
+      manualLink.textContent = "홈으로 돌아가기";
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 2000);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>파이썬 초보 업무 자동화 가이드 | 스타로프 IT 블로그</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="비전공자 초보자도 단 10줄의 파이썬 코드로 컴퓨터 폴더 내 수많은 파일을 확장자별로 한 번에 즉시 분류하는 파일 자동화 분류기 프로그램 만들기 실습 가이드를 제시합니다.">
+  
+  <!-- Link CSS (relative path to main assets) -->
+  <link rel="stylesheet" href="../assets/style.css">
+  
+  <!-- Pre-configured Google AdSense Auto Ads Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1692428092138510" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">S</div>
+        <span class="gradient-text">Starrope IT</span>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-item">홈</a>
+        <a href="../index.html#articles" class="nav-item">포스트</a>
+        <a href="../about.html" class="nav-item">소개</a>
+        <a href="../privacy-policy.html" class="nav-item">개인정보처리방침</a>
+        <a href="../terms-of-service.html" class="nav-item">이용약관</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="다크 모드 전환">
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- POST HEADER -->
+  <header class="post-header">
+    <div class="post-header-tag">코딩 및 웹 개발 입문</div>
+    <h1 class="post-header-title">비전공자 파이썬 입문: 10줄 코드로 지루한 반복 업무 자동화 파일 분류기 만들기</h1>
+    <div class="post-header-meta">
+      <span>작성자: Starrope</span>
+      <span>•</span>
+      <span>2026. 06. 05 (오후 4:00)</span>
+      <span>•</span>
+      <span>읽는 시간: 약 5분</span>
+    </div>
+  </header>
+
+  <!-- AD SLOT (POST TOP DISPLAY) -->
+  <div class="container">
+    <ins class="adsbygoogle ad-slot ad-header"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 상단 반응형 광고</div>
+    </ins>
+  </div>
+
+  <!-- ARTICLE LAYOUT -->
+  <main class="container post-article-layout">
+    
+    <!-- LEFT: MAIN CONTENT -->
+    <article class="post-content">
+      
+      <p>매일 퇴근 직전, 컴퓨터 바탕화면이나 다운로드 폴더에 가득 찬 수백 개의 업무용 이미지, 엑셀, 텍스트 파일을 보며 한숨을 쉰 적이 있으신가요? 날짜별, 프로젝트별 혹은 파일의 확장자 유형별로 일일이 마우스 드래그를 하며 폴더를 새로 만들고 집어넣는 작업은 인간의 소중한 뇌세포를 낭비하는 대표적인 지루한 단순 반복 업무입니다. 이럴 때 프로그래밍에 문외한인 비전공자라도 단 10분 만에 배워 적용할 수 있는 강력한 무기가 있으니, 바로 <strong>파이썬(Python) 자동화</strong>입니다. 본 포스팅에서는 기초적인 설치법부터 단 10줄의 초간단 파이썬 소스코드로 폴더 내 파일들을 일괄 정리해 주는 똑똑한 수집 정리 분류기를 만드는 비결을 알려드리겠습니다.</p>
+      
+      <div class="post-main-image" style="background-image: url('https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=800&q=80'); height: 350px; background-size: cover; background-position: center; border-radius: 12px; margin-bottom: 24px;"></div>
+
+      <h2>1. 비전공자도 파이썬 자동화에 쉽게 도전할 수 있는 이유</h2>
+      <p>많은 분들이 '코딩'이라는 단어를 듣는 순간 복잡한 영문 수학 공식과 전문 지식이 필요하다고 생각하여 뒤로 물러섭니다. 하지만 파이썬은 다른 프로그래밍 언어(C언어, 자바 등)에 비해 컴퓨터가 아닌 <strong>인간이 읽는 자연어(영어)와 매우 유사한 직관적인 구조</strong>를 가지고 있어 초보자 접근성이 최상급에 속합니다. 특히 복잡한 알고리즘을 설계하는 개발 업무와 달리, 사무용 파일 자동정리나 웹 크롤링 등의 업무 자동화 영역은 이미 검증된 기초적인 코드 라이브러리를 가져와 조합하는 수준이므로 진입 장벽이 매우 낮습니다.</p>
+      
+      <ul>
+        <li><strong>쉬운 문법과 강력한 기본 패키지:</strong> 파이썬은 운영체제(Windows, MacOS)의 디렉토리를 제어할 수 있는 표준 라이브러리인 'os'와 파일 복사/이동을 돕는 'shutil' 모듈을 기본으로 제공하므로 번거로운 추가 설치 과정이 없습니다.</li>
+        <li><strong>압도적인 실무 적용 파급력:</strong> 1시간씩 걸리던 엑셀 파일 수십 개 병합하기, 다운로드 파일 정리하기 등의 작업을 단 1초 만에 완료하는 짜릿한 자동화 경험을 통해 실무 효율과 만족도를 수십 배 상승시킵니다.</li>
+        <li><strong>폭넓은 오픈소스 커뮤니티:</strong> 전 세계 수백만 명의 학습자가 남긴 자료와 에러 해결 노하우가 널리 누적되어 있어, 막히는 부분이 있을 때 검색이나 커뮤니티 도움을 받아 해결하기 무척 수월합니다.</li>
+      </ul>
+
+      <blockquote>
+        "가장 훌륭한 자동화란 아주 멋진 거대 프로그램을 구축하는 것이 아니라, 매일 내 시간을 야금야금 갉아먹는 눈앞의 지루한 행동을 코드 10줄로 즉시 없애 버리는 데서 시작됩니다."
+      </blockquote>
+      
+      <h2>2. 파일 분류 자동화 프로그램: 단 10줄의 마법 소스코드</h2>
+      <p>본격적인 실습을 위해 파이썬을 컴퓨터에 가볍게 설치하고(기본값 체크박스 설정 필수), VS Code 등의 편리한 편집기를 켭니다. 바탕화면이나 다운로드 폴더에서 파일 확장자(예: .jpg, .xlsx, .pdf, .txt 등)를 판별하여 스스로 폴더를 생성하고 해당 파일을 알아서 이동해 주는 핵심 코드는 다음과 같이 작성됩니다.</p>
+      
+      <pre style="background-color: var(--card-bg); padding: 16px; border-radius: 8px; overflow-x: auto; font-family: monospace; font-size: 13.5px; border: 1px solid var(--border-color); line-height: 1.6;">
+import os
+import shutil
+
+target_dir = "./my_files"
+for filename in os.listdir(target_dir):
+    filepath = os.path.join(target_dir, filename)
+    if os.path.isfile(filepath):
+        ext = filename.split(".")[-1]
+        folder_path = os.path.join(target_dir, ext)
+        os.makedirs(folder_path, exist_ok=True)
+        shutil.move(filepath, os.path.join(folder_path, filename))
+      </pre>
+
+      <p>코드 동작 흐름을 한 단계씩 쉽게 뜯어봅시다. `import os, shutil`은 컴퓨터의 파일 관리 기능을 소환하겠다는 약속입니다. `target_dir` 변수에 정리를 원하는 임의의 폴더 경로를 입력하고, 그 안에 담긴 파일 목록들을 `os.listdir()` 명령어로 전부 순회합니다. 파일명에서 온점(`.`) 뒤의 맨 마지막 문자인 확장자(`ext`)를 분리해 낸 후, 해당 확장자명으로 된 새 폴더를 없으면 새로 만듭니다(`os.makedirs`). 마지막으로 `shutil.move`를 통해 파일을 새로 생성된 디렉토리로 밀어 넣어주면 마법처럼 확장자별 군집 정리가 순식간에 끝납니다.</p>
+
+      <!-- AD SLOT (IN-CONTENT DISPLAY) -->
+      <ins class="adsbygoogle ad-slot ad-content"
+           style="display:block; text-align:center;"
+           data-ad-layout="in-article"
+           data-ad-format="fluid"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="5566778899">
+        <div class="ad-slot-label">본문 중간 인피드 광고 영역</div>
+      </ins>
+
+      <h2>3. 일잘러가 되기 위한 파이썬 실무 업무 자동화 로드맵</h2>
+      <p>단순히 하나의 폴더 파일을 정리하는 것에서 성장을 멈추기에는 파이썬 자동화의 포텐셜이 너무나도 강력합니다. 이번 첫 성공 체험을 발판 삼아 아래의 확장 방향으로 공부를 조금만 더 넓혀나가면, 회사나 1인 비즈니스 사업장에서 누구도 대체 불가능한 핵심 인재이자 초고속 일잘러로 도약할 수 있습니다.</p>
+      
+      <ol>
+        <li><strong>엑셀 및 오피스 문서 자동화:</strong> 파이썬 라이브러리인 'openpyxl' 또는 'pandas'를 사용해 보세요. 여러 거래처에서 보내온 수십 장의 수발주 데이터 엑셀 파일을 하나로 합치고, 조건에 따라 필터링하여 보고서 파일로 가공하는 과정이 마우스 클릭 한 번에 진행됩니다.</li>
+        <li><strong>인터넷 웹 크롤링 및 수집:</strong> 'BeautifulSoup'이나 'Selenium' 같은 패키지를 다룰 수 있게 되면, 매일 아침 내가 일일이 포털이나 특정 사이트에 들어가 정보를 수집할 필요가 전혀 없어집니다. 신문 기사 키워드 검색 리스트, 원자재 단가 시세 정보 등을 매일 특정 시간에 맞춰 긁어와 컴퓨터 화면에 리포팅 해주는 나만의 정보 수집 봇을 구축해 보십시오.</li>
+        <li><strong>이메일 및 메시지 발송 자동화:</strong> 수집되거나 가공된 정밀 분석 보고서 결과를 바탕으로, 약속된 수백 명의 클라이언트 이메일 주소로 맞춤 첨부파일을 얹어 이메일을 대량 발송하는 귀찮은 수작업 또한 스케줄러 코딩 하나로 안전하게 끝낼 수 있습니다.</li>
+      </ol>
+
+      <h2>마치며</h2>
+      <p>처음에는 코드를 작성하고 실행하는 환경을 세팅하는 일 자체가 낯설고 두렵게 느껴질 수 있지만, 이를 이겨내고 한 번 수작업의 굴레에서 벗어나는 희열을 맛본다면 완전히 다른 생산성의 신세계를 만나게 될 것입니다. 여러분의 컴퓨터 바탕화면에 아무렇게나 흩어져 있는 자료들을 오늘 바로 10줄의 코드를 얹어 깔끔하게 정돈해 보시는 것은 어떨까요? 본 IT 교육 블로그에서는 코알못 비전공자 눈높이에 맞춰 다양하고 알찬 실전 예제를 지속 배포해 드리겠습니다. 진행 과정에서 에러나 궁금한 부분이 생긴다면 망설이지 말고 이메일로 질의해 주세요. 항상 환영합니다. 감사합니다!</p>
+      
+    </article>
+    
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="sidebar">
+      
+      <!-- Bio Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">운영자 프로필</h3>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background-color: var(--primary-color); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">S</div>
+          <div>
+            <h4 style="font-size: 15px;">Starrope</h4>
+            <span style="font-size: 12px; color: var(--text-muted);">IT 기술 & SEO 파트너</span>
+          </div>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">실전 SEO 전략 및 IT 기술 블로그 최적화 파트너입니다. 최고의 퍼포먼스를 내는 고성능 블로그 정보를 제공합니다.</p>
+      </div>
+      
+      <!-- Ad Widget -->
+      <ins class="adsbygoogle ad-slot ad-sidebar sidebar-widget"
+           style="display:block"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="9876543210"
+           data-ad-format="rectangle"
+           data-full-width-responsive="true">
+        <div class="ad-slot-label">사이드바 스폰서 링크</div>
+      </ins>
+      
+      <!-- Navigation Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">바로가기</h3>
+        <ul class="categories-list">
+          <li><a href="../index.html">🏠 홈으로 돌아가기</a></li>
+          <li><a href="../about.html">👤 필자 소개 보기</a></li>
+        </ul>
+      </div>
+      
+    </aside>
+  </main>
+
+  <!-- AD SLOT (POST BOTTOM DISPLAY) -->
+  <div class="container" style="margin-bottom: 60px;">
+    <ins class="adsbygoogle ad-slot ad-footer"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1122334455"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 하단 반응형 매칭 광고</div>
+    </ins>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <a href="../index.html" class="logo footer-info-logo">
+          <div class="logo-icon">S</div>
+          <span class="gradient-text">Starrope IT</span>
+        </a>
+        <p>최신 IT 기술 트렌드, AI 생산성 도구 사용법 및 디지털 노마드의 삶을 위한 유용한 지식을 공유하는 전문 기술 블로그.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h4>중요 문서</h4>
+        <ul>
+          <li><a href="../privacy-policy.html">개인정보처리방침</a></li>
+          <li><a href="../terms-of-service.html">서비스 이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Starrope IT. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Link JS (relative path) -->
+  <script src="../assets/main.js"></script>
+  
+  <!-- Trigger Adsense rendering loop -->
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Projects 완벽 활용법: 1인 개발자의 체계적인 칸반보드 일정 및 이슈 관리 | 스타로프 IT 블로그</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="혼자서도 헤매지 않고 복잡한 개발 단계를 일목요연하게 파악하기 위한 깃허브 프로젝트 보드 연동, 마일스톤 및 이슈 템플릿 설계로 일정 단축 노하우를 알아봅니다.">
+  
+  <!-- Link CSS (relative path to main assets) -->
+  <link rel="stylesheet" href="../assets/style.css">
+  
+  <!-- Pre-configured Google AdSense Auto Ads Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1692428092138510" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">S</div>
+        <span class="gradient-text">Starrope IT</span>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-item">홈</a>
+        <a href="../index.html#articles" class="nav-item">포스트</a>
+        <a href="../about.html" class="nav-item">소개</a>
+        <a href="../privacy-policy.html" class="nav-item">개인정보처리방침</a>
+        <a href="../terms-of-service.html" class="nav-item">이용약관</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="다크 모드 전환">
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- POST HEADER -->
+  <header class="post-header">
+    <div class="post-header-tag">코딩 / 협업 관리</div>
+    <h1 class="post-header-title">GitHub Projects 완벽 활용법: 1인 개발자의 체계적인 칸반보드 일정 및 이슈 관리</h1>
+    <div class="post-header-meta">
+      <span>작성자: Starope</span>
+      <span>•</span>
+      <span>2026. 06. 25</span>
+      <span>•</span>
+      <span>읽는 시간: 약 4분</span>
+    </div>
+  </header>
+
+  <!-- AD SLOT (POST TOP DISPLAY) -->
+  <div class="container">
+    <ins class="adsbygoogle ad-slot ad-header"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 상단 반응형 광고</div>
+    </ins>
+  </div>
+
+  <!-- ARTICLE LAYOUT -->
+  <main class="container post-article-layout">
+    
+    <!-- LEFT: MAIN CONTENT -->
+    <article class="post-content">
+      
+      <img src="https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=800&q=80" alt="GitHub Projects Kanban" style="width:100%; border-radius:12px; margin-bottom:32px; box-shadow:var(--shadow-md);">
+
+      <p>보통 깃허브(GitHub)는 소스 코드 저장소나 협업 프로젝트 버전 관리를 위한 단순 '저장 탱크' 정도로만 생각하기 쉽습니다. 그러나 깃허브 내부에는 트렐로(Trello)나 아사나(Asana), 지라(Jira) 같은 고가의 전문 프로젝트 관리 소프트웨어와 어깨를 나란히 할 정도로 막강하고 현대적인 워크플로우 자동화 관리 도구인 <strong>GitHub Projects</strong>가 내장되어 있습니다.</p>
+      
+      <p>특히 기획, 디자인, 마크업, 백엔드 개발, 그리고 마케팅까지 모든 영역을 혼자서 도맡아 처리해야 하는 **1인 풀스택 개발자 및 디지털 노마드**에게 스케줄 관리는 생존의 핵심 열쇠입니다. 여러 협업 툴 사이를 전전하며 일정 데이터를 동기화하는 귀찮은 작업을 완전히 탈피하여, 내 소스 코드와 완벽하게 융합 작동하는 깃허브 프로젝트 보드를 활용해 고성능 칸반 시스템을 무료로 구축하는 실전 팁을 대공개합니다.</p>
+      
+      <h2>1. 내 저장소(Repo)와 유기적으로 맞물려 굴러가는 칸반(Kanban) 구조 빌드</h2>
+      <p>깃허브 메인 페이지에서 상단 <code>Projects</code> 탭을 누르고 <strong>New Project</strong>를 클릭해 나만의 맞춤형 칸반 보드를 활성화합니다.</p>
+      
+      <ul>
+        <li><strong>기본 열(Column) 셋업:</strong> <code>Todo(할 일)</code>, <code>In Progress(진행 중)</code>, <code>Blocked(장애 발생)</code>, <code>Done(완료)</code> 구조를 가장 심플하게 구성합니다. 1인 개발 시에는 흐름을 직관적으로 보는 것이 최고입니다.</li>
+        <li><strong>이슈(Issues)와 연동:</strong> 내가 개발해야 할 구체적인 스펙(예: <code>"로그인 모달 구현 및 유효성 검증"</code>)을 하나의 독립된 깃허브 이슈 카드로 열고, 프로젝트 보드 상의 카드로 즉시 연동시킵니다.</li>
+        <li><strong>로컬 브랜치(Branch)와의 일치:</strong> 이슈 카드 우측에서 'Create a Branch' 링크를 클릭하면 로컬 소스 코드 상의 개발 브랜치가 해당 이슈 카드를 추적하여 자동으로 바인딩됩니다.</li>
+      </ul>
+      
+      <blockquote>
+        "가장 훌륭한 생산성 관리 도구는 내 소스 코드와 가장 가까이에 밀착되어 작동하는 시스템입니다. 깃허브 프로젝트는 코드 그 자체와 호흡을 같이합니다."
+      </blockquote>
+      
+      <h2>2. 마법 같은 깃허브 워크플로우(Workflows) 자동화 세팅</h2>
+      <p>깃허브 프로젝트가 제공하는 <strong>자동화 트리거 규칙(Built-in Workflows)</strong>을 적용하면, 개발자가 마우스로 카드를 수동 드래그해 옮기는 무의미한 관리 리소스를 0에 가깝게 소멸시킬 수 있습니다.</p>
+      
+      <ul>
+        <li><strong>자동 진행 상태 추적:</strong> 내 컴퓨터 터미널에서 개발 작업을 마치고 원격 저장소로 풀 리퀘스트(Pull Request)를 보내는 순간, 관련 이슈 카드는 보드 상에서 자동으로 <code>Todo</code>에서 <code>In Progress</code>로 옮겨갑니다.</li>
+        <li><strong>종료 자동 트리거:</strong> 풀 리퀘스트가 승인되어 메인(Main) 브랜치로 병합(Merge)되는 순간, 수많은 연관 이슈 카드들이 알아서 <code>Done</code> 열로 일제히 이동하며 즉석 아카이빙을 마칩니다.</li>
+      </ul>
+      
+      <h2>3. 마일스톤(Milestone) 설정을 통한 릴리즈 및 데드라인 엄수</h2>
+      <p>아무리 열심히 일해도 런칭일(Deadline)이 명확히 박혀 있지 않다면 일정이 끝없이 늘어지는 피터팬 증후군에 빠지기 십상입니다.</p>
+      
+      <p>깃허브의 <strong>마일스톤(Milestone)</strong> 기능에 <code>"Beta Launching (06월 30일)"</code> 과 같이 구체적인 타겟팅을 해두고, 관련 이슈 카드들을 이 마일스톤에 연계해 두세요. 서치 바 아래에서 전체 이슈 대비 완수율이 게이지 그래프(ProgressBar)로 시각화되어 1인 개발자의 해이해질 수 있는 멘탈을 타이트하게 조여주는 훌륭한 페이스메이커 역할을 해줄 것입니다.</p>
+
+      <!-- AD SLOT (IN-CONTENT DISPLAY) -->
+      <ins class="adsbygoogle ad-slot ad-content"
+           style="display:block; text-align:center;"
+           data-ad-layout="in-article"
+           data-ad-format="fluid"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="5566778899">
+        <div class="ad-slot-label">본문 중간 인피드 광고 영역</div>
+      </ins>
+
+      <h2>마치며</h2>
+      <p>GitHub Projects는 1인 개발자가 혼자서도 복잡한 여러 요구사항에 짓눌리지 않고, **대형 테크 기업처럼 민첩하고 정교하게 일정을 지배할 수 있게 돕는 숨겨진 최고의 관리 무기**입니다. 지금 즉시 포스트잇 메모장이나 복잡했던 일정 앱들을 한편으로 치우고, 내 프로젝트 저장소 바로 옆의 프로젝트 탭을 열어 1인 개발 보드를 구축해 보세요. 프로젝트 완수율이 급상승하는 쾌감을 맛보게 될 것입니다. 자동화 파이프라인이나 깃허브 연동 중 막히는 점이 있다면 언제든지 편하게 질문 이메일을 보내주세요!</p>
+      
+    </article>
+    
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="sidebar">
+      
+      <!-- Bio Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">운영자 프로필</h3>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background-color: var(--primary-color); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">S</div>
+          <div>
+            <h4 style="font-size: 15px;">Starrope</h4>
+            <span style="font-size: 12px; color: var(--text-muted);">IT 기술 & SEO 파트너</span>
+          </div>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">실전 SEO 전략 및 IT 기술 블로그 최적화 파트너입니다. 최고의 퍼포먼스를 내는 고성능 블로그 정보를 제공합니다.</p>
+      </div>
+      
+      <!-- Ad Widget -->
+      <ins class="adsbygoogle ad-slot ad-sidebar sidebar-widget"
+           style="display:block"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="9876543210"
+           data-ad-format="rectangle"
+           data-full-width-responsive="true">
+        <div class="ad-slot-label">사이드바 스폰서 링크</div>
+      </ins>
+      
+      <!-- Navigation Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">바로가기</h3>
+        <ul class="categories-list">
+          <li><a href="../index.html">🏠 홈으로 돌아가기</a></li>
+          <li><a href="../about.html">👤 필자 소개 보기</a></li>
+        </ul>
+      </div>
+      
+    </aside>
+  </main>
+
+  <!-- AD SLOT (POST BOTTOM DISPLAY) -->
+  <div class="container" style="margin-bottom: 60px;">
+    <ins class="adsbygoogle ad-slot ad-footer"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1122334455"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 하단 반응형 매칭 광고</div>
+    </ins>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <a href="../index.html" class="logo footer-info-logo">
+          <div class="logo-icon">S</div>
+          <span class="gradient-text">Starrope IT</span>
+        </a>
+        <p>최신 IT 기술 트렌드, AI 생산성 도구 사용법 및 디지털 노마드의 삶을 위한 유용한 지식을 공유하는 전문 기술 블로그.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h4>중요 문서</h4>
+        <ul>
+          <li><a href="../privacy-policy.html">개인정보처리방침</a></li>
+          <li><a href="../terms-of-service.html">서비스 이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Starrope IT. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Link JS (relative path) -->
+  <script src="../assets/main.js"></script>
+  
+  <!-- Trigger Adsense rendering loop -->
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</body>
+</html>

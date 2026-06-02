@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>모던 웹 디자인의 완성: CSS Grid 핵심 레이아웃 구조와 반응형 웹 설계 입문 | 스타로프 IT 블로그</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Flexbox를 넘어 2차원 레이아웃을 지배하는 CSS Grid의 필수 개념(grid-template, gap, autofit)과 직관적인 반응형 그리드 페이지 빌딩 노하우를 알아봅니다.">
+  
+  <!-- Link CSS (relative path to main assets) -->
+  <link rel="stylesheet" href="../assets/style.css">
+  
+  <!-- Pre-configured Google AdSense Auto Ads Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1692428092138510" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">S</div>
+        <span class="gradient-text">Starrope IT</span>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-item">홈</a>
+        <a href="../index.html#articles" class="nav-item">포스트</a>
+        <a href="../about.html" class="nav-item">소개</a>
+        <a href="../privacy-policy.html" class="nav-item">개인정보처리방침</a>
+        <a href="../terms-of-service.html" class="nav-item">이용약관</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="다크 모드 전환">
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- POST HEADER -->
+  <header class="post-header">
+    <div class="post-header-tag">코딩 / 웹 개발</div>
+    <h1 class="post-header-title">모던 웹 디자인의 완성: CSS Grid 핵심 레이아웃 구조와 반응형 웹 설계 입문</h1>
+    <div class="post-header-meta">
+      <span>작성자: Starope</span>
+      <span>•</span>
+      <span>2026. 06. 22</span>
+      <span>•</span>
+      <span>읽는 시간: 약 4분</span>
+    </div>
+  </header>
+
+  <!-- AD SLOT (POST TOP DISPLAY) -->
+  <div class="container">
+    <ins class="adsbygoogle ad-slot ad-header"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 상단 반응형 광고</div>
+    </ins>
+  </div>
+
+  <!-- ARTICLE LAYOUT -->
+  <main class="container post-article-layout">
+    
+    <!-- LEFT: MAIN CONTENT -->
+    <article class="post-content">
+      
+      <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="CSS Grid Layout" style="width:100%; border-radius:12px; margin-bottom:32px; box-shadow:var(--shadow-md);">
+
+      <p>웹 표준 기술이 빠르게 발전하면서 과거 테이블 레이아웃이나 float, inline-block을 활용한 편법 레이아웃의 시대는 저물었습니다. 그 자리를 꿰찬 두 주인공이 바로 <strong>CSS Flexbox</strong>와 <strong>CSS Grid</strong>입니다. 특히 1차원 선형 정렬(가로 혹은 세로)에 최적화된 Flexbox와 달리, CSS Grid는 행(Row)과 열(Column)을 동시에 제어하는 강력한 <strong>2차원 레이아웃 모듈</strong>을 제공하여 그 어떤 복잡한 잡지식 디자인 구조도 아주 간결한 코드로 완벽하게 구현할 수 있게 돕습니다.</p>
+      
+      <p>그럼에도 여전히 많은 초보 웹 퍼블리셔나 프론트엔드 개발 입문자분들은 CSS Grid의 수많은 속성들 때문에 입문을 망설이거나 어렵게 느끼곤 합니다. 하지만 핵심적인 개념 몇 가지만 제대로 이해한다면 미디어 쿼리(`@media`)를 거의 쓰지 않고도 극적인 반응형 레이아웃을 단 서너 줄의 CSS로 구축할 수 있습니다. 이번 포스팅에서는 모던 웹 레이아웃의 필수 무기인 CSS Grid의 핵심 3대 천왕 속성과 실제 실무형 반응형 카드 그리드 예제를 함께 파헤쳐 보겠습니다.</p>
+      
+      <h2>1. CSS Grid의 뼈대 세우기: Container와 Item의 관계</h2>
+      <p>CSS Grid는 Flexbox와 마찬가지로 **부모 요소(Container)**에 Grid 선언을 해두면, 그 직속 자식 요소들(Items)이 자동으로 그리드 시스템의 영향권 안에 들어오는 부모-자식 레이아웃 모델을 채택하고 있습니다. 첫 시작은 매우 직관적입니다.</p>
+      
+      <ul>
+        <li><strong>display: grid;</strong> 부모 컨테이너에 이 코드를 선언하는 것만으로 2차원 공간 제어기가 활성화됩니다.</li>
+        <li><strong>grid-template-columns & grid-template-rows:</strong> 이 속성을 사용해 컨테이너 안에 몇 개의 기둥(열)과 행을 배치할지 비율이나 절대 크기를 명시합니다. 예를 들어 <code>grid-template-columns: repeat(3, 1fr);</code> 이라고 적으면 동일한 너비(1fr)를 가진 기둥 3개가 나란히 배치됩니다. 여기서 <code>fr(Fraction)</code>은 남은 공간을 분할하는 그리드 특유의 고도화된 유연 유닛입니다.</li>
+        <li><strong>gap (혹은 grid-gap):</strong> 복잡한 margin이나 padding 계산 없이 자식 요소들 간의 간격을 <code>gap: 24px;</code> 처럼 한 번에 직관적으로 줄 수 있습니다.</li>
+      </ul>
+      
+      <blockquote>
+        "Flexbox가 콘텐츠 중심의 1차원 정렬이라면, CSS Grid는 레이아웃 외곽선 틀을 먼저 짜놓고 콘텐츠를 자유롭게 배치하는 2차원 퍼즐입니다."
+      </blockquote>
+      
+      <h2>2. 미디어 쿼리가 필요 없는 마법: auto-fit과 minmax()의 힘</h2>
+      <p>CSS Grid를 진정으로 빛나게 만들어주는 실전 치트키 속성은 바로 <strong>repeat() 내부에 auto-fit 및 minmax()를 혼합하여 배치</strong>하는 기법입니다. 이 방법을 마스터하면 반응형 레이아웃 구축 속도가 비약적으로 향상됩니다.</p>
+      
+      <p>예를 들어, 컨테이너 크기에 따라 카드 목록이 4개에서 3개, 2개, 마침내 1개로 자연스럽게 줄어들어야 한다고 가정해 봅시다. 기존에는 매번 뷰포트 너비 단절 구간(Breakpoint)마다 미디어 쿼리 코드를 수십 줄 작성해야 했습니다. 그러나 Grid를 쓰면 단 한 줄로 해결됩니다.</p>
+      
+      <code style="display:block; padding: 16px; margin: 16px 0; background: var(--bg-main); border-left: 4px solid var(--primary-color);">
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      </code>
+      
+      <p>이 마법 같은 코드는 "각 아이템의 최소 너비는 <code>280px</code>을 보장하되, 부모 박스의 여유 공간이 생긴다면 최대한 많이 배치하고(`auto-fit`), 남은 잔여 너비는 <code>1fr</code>의 비율로 똑같이 늘려서 나눠 가져라"는 의미입니다. 브라우저 창을 직접 줄여보면 아이템 개수가 반응형으로 물 흐르듯 변하는 것을 볼 수 있습니다.</p>
+      
+      <h2>3. 2차원 제어의 끝판왕: Grid Area 배치 공식</h2>
+      <p>컨테이너 격자 안에 아이템들을 특정 규칙 없이 임의의 영역에 걸치게 만들고 싶을 때 사용하는 것이 <strong>grid-row</strong>와 <strong>grid-column</strong> 혹은 <strong>grid-template-areas</strong> 속성입니다.</p>
+      
+      <ul>
+        <li><strong>grid-column: 1 / 3;</strong> 그리드 아이템이 첫 번째 세로선부터 세 번째 세로선(즉, 2개의 열 너비)까지 걸쳐서 병합되도록 만듭니다.</li>
+        <li><strong>grid-template-areas:</strong> 직관적인 글자 매칭 디자인 기법입니다. 부모에 <code>"header header" "sidebar main" "footer footer"</code> 와 같이 격자 레이아웃 지도를 텍스트로 적어두고, 각 자식에 <code>grid-area: header;</code> 형태로 맵핑해주면 복잡한 좌표 계산 없이 거대한 포털 사이트 레이아웃도 단번에 빌드할 수 있습니다.</li>
+      </ul>
+
+      <!-- AD SLOT (IN-CONTENT DISPLAY) -->
+      <ins class="adsbygoogle ad-slot ad-content"
+           style="display:block; text-align:center;"
+           data-ad-layout="in-article"
+           data-ad-format="fluid"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="5566778899">
+        <div class="ad-slot-label">본문 중간 인피드 광고 영역</div>
+      </ins>
+
+      <h2>마치며</h2>
+      <p>CSS Grid는 단순한 신기술이 아닌, 웹 퍼블리싱의 패러다임을 바꾼 모던 웹 디자인의 정수입니다. 본 블로그의 메인 그리드 레이아웃 역시 이 Grid 시스템을 적극적으로 채용하여 강력한 확장성과 모바일 호환성을 유지하고 있습니다. 지금 바로 여러분의 프로젝트 코드를 열고 Flexbox로 길게 짜였던 복잡한 소스 구조를 간결하고 직관적인 CSS Grid로 리팩토링해 보세요. 디자인 퀄리티와 퍼포먼스 둘 다를 움켜쥐게 될 것입니다. 추가적인 코딩 질문이나 레이아웃 막힘이 있으시면 언제든지 편하게 질문 남겨주세요!</p>
+      
+    </article>
+    
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="sidebar">
+      
+      <!-- Bio Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">운영자 프로필</h3>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background-color: var(--primary-color); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">S</div>
+          <div>
+            <h4 style="font-size: 15px;">Starrope</h4>
+            <span style="font-size: 12px; color: var(--text-muted);">IT 기술 & SEO 파트너</span>
+          </div>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">실전 SEO 전략 및 IT 기술 블로그 최적화 파트너입니다. 최고의 퍼포먼스를 내는 고성능 블로그 정보를 제공합니다.</p>
+      </div>
+      
+      <!-- Ad Widget -->
+      <ins class="adsbygoogle ad-slot ad-sidebar sidebar-widget"
+           style="display:block"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="9876543210"
+           data-ad-format="rectangle"
+           data-full-width-responsive="true">
+        <div class="ad-slot-label">사이드바 스폰서 링크</div>
+      </ins>
+      
+      <!-- Navigation Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">바로가기</h3>
+        <ul class="categories-list">
+          <li><a href="../index.html">🏠 홈으로 돌아가기</a></li>
+          <li><a href="../about.html">👤 필자 소개 보기</a></li>
+        </ul>
+      </div>
+      
+    </aside>
+  </main>
+
+  <!-- AD SLOT (POST BOTTOM DISPLAY) -->
+  <div class="container" style="margin-bottom: 60px;">
+    <ins class="adsbygoogle ad-slot ad-footer"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1122334455"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 하단 반응형 매칭 광고</div>
+    </ins>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <a href="../index.html" class="logo footer-info-logo">
+          <div class="logo-icon">S</div>
+          <span class="gradient-text">Starrope IT</span>
+        </a>
+        <p>최신 IT 기술 트렌드, AI 생산성 도구 사용법 및 디지털 노마드의 삶을 위한 유용한 지식을 공유하는 전문 기술 블로그.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h4>중요 문서</h4>
+        <ul>
+          <li><a href="../privacy-policy.html">개인정보처리방침</a></li>
+          <li><a href="../terms-of-service.html">서비스 이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Starrope IT. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Link JS (relative path) -->
+  <script src="../assets/main.js"></script>
+  
+  <!-- Trigger Adsense rendering loop -->
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</body>
+</html>
