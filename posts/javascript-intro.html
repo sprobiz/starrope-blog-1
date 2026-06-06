@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+  <!-- JSON-LD Structured Data (Alphanahm Skill) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "자바스크립트 초보 첫걸음 동적 버튼 클릭 구현",
+    "description": "코딩 초보 비전공자를 위한 JavaScript(자바스크립트) 기초 개념과, 내 웹사이트 버튼에 생동감을 불어넣는 클릭 이벤트 리스너 마스터 가이드를 제시합니다.",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+    "author": { "@type": "Person", "name": "Starrope" },
+    "publisher": { "@type": "Organization", "name": "Starrope IT & AI", "url": "https://blog1.starrope2023.com" },
+    "datePublished": "2026-06-06",
+    "dateModified": "2026-06-06",
+    "url": "https://blog1.starrope2023.com/posts/javascript-intro.html",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://blog1.starrope2023.com/posts/javascript-intro.html" }
+  }
+  </script>
+  <meta name="keywords" content="코딩 및 웹 개발 입문, 자산관리, IT기술, AI도구, 개발생산성">
+  <meta name="author" content="Starrope">
+  <meta property="og:title" content="자바스크립트 초보 첫걸음 동적 버튼 클릭 구현">
+  <meta property="og:description" content="코딩 초보 비전공자를 위한 JavaScript(자바스크립트) 기초 개념과, 내 웹사이트 버튼에 생동감을 불어넣는 클릭 이벤트 리스너 마스터 가이드를 제시합니다.">
+  <meta property="og:type" content="article">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://blog1.starrope2023.com/posts/javascript-intro.html">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>자바스크립트 초보 첫걸음 동적 버튼 클릭 구현 | 스타로프 IT 블로그</title>
@@ -77,6 +100,31 @@
     <article class="post-content">
       
       <p>HTML로 웹사이트의 탄탄한 뼈대를 짜고, CSS로 화려한 디자인의 옷을 입혔다면, 이제 나만의 웹 서비스를 살아 움직이는 생명체로 거듭나게 할 차례입니다. 사용자가 마우스를 올렸을 때 알람 팝업이 부드럽게 튀어나오거나, 다크 모드 스위치 버튼을 눌렀을 때 배경색이 암흑 속으로 스르륵 바뀌고, 장바구니 담기 카드를 클릭했을 때 카운트 수량이 실시간으로 변경되는 등의 환상적인 동적 제어는 전적으로 **'자바스크립트(JavaScript)'**라는 프로그래밍 언어의 몫입니다. 본 포스팅에서는 코딩에 전혀 베이스가 없는 완전 초보 비전공자의 눈높이에 맞추어 자바스크립트의 필수 기초 동작 구조를 규명하고, 내 웹페이지 버튼에 생동감을 불어넣는 <strong>실전 동적 버튼 이벤트 리스너 구현법</strong>을 단 10분 만에 정복하도록 이끌어 드리겠습니다.</p>
+      <!-- Key Summary Table (Alphanahm Skill) -->
+      <div class="summary-table-container" style="margin: 30px 0;">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid var(--border-light); font-size: 14.5px; background-color: var(--bg-surface);">
+          <thead>
+            <tr style="background-color: var(--bg-ad); border-bottom: 1px solid var(--border-light);">
+              <th style="padding: 12px 16px; border-right: 1px solid var(--border-light); text-align: left; font-weight: 700; color: var(--text-main);">핵심 영역</th>
+              <th style="padding: 12px 16px; text-align: left; font-weight: 700; color: var(--text-main);">상세 가이드 & 실전 가치</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 12px 16px; border-right: 1px solid var(--border-light); font-weight: 600; color: var(--primary-color);">주요 목표</td>
+              <td style="padding: 12px 16px; color: var(--text-main);">자바스크립트 초보 첫걸음 동적 버튼 클릭 구현를 위한 핵심 전략 및 기초 이론 수립</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 12px 16px; border-right: 1px solid var(--border-light); font-weight: 600; color: var(--primary-color);">실전 분석</td>
+              <td style="padding: 12px 16px; color: var(--text-main);">자바스크립트(JavaScript)란 무엇이며 웹의 3대 요소 중 어떤 역할일까요? 단계별 구현 가이드 및 세부 실행 방안</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px 16px; border-right: 1px solid var(--border-light); font-weight: 600; color: var(--primary-color);">최적화 팁</td>
+              <td style="padding: 12px 16px; color: var(--text-main);">단 5줄로 배우는 클릭 이벤트 리스너(Event Listener) 구현법 적용을 통한 성능 고도화 및 리스크 예방</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       
       <div class="post-main-image" style="background-image: url('https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?auto=format&fit=crop&w=800&q=80'); height: 350px; background-size: cover; background-position: center; border-radius: 12px; margin-bottom: 24px;"></div>
 
@@ -135,7 +183,32 @@ myButton.addEventListener("click", function() {
       <h2>마치며</h2>
       <p>자바스크립트라는 프로그래밍 도구의 아주 단순한 한 숟가락 지식을 내 사이트에 장착하기 시작했다는 것은, 남들이 미리 정해둔 고정된 웹 디자인의 틀 안에 수동적으로 갇히지 않고, 내가 상상하는 최상의 동적 편의성을 사용자들에게 직접 조작해 선물할 수 있는 능동적 웹 마스터 무대에 진입했음을 공표하는 멋진 발걸음입니다. 오늘 배운 5줄의 클릭 리스너 코드를 시작으로, 다크 모드 스위치나 정돈된 반응형 사이드바를 내 손으로 직접 얹어 가며 코딩 지식이 가져다주는 엄청난 비즈니스 포텐셜을 짜릿하게 즐겨 보시기 바랍니다. 본 스타로프 IT 마스터 스쿨은 입문자 눈높이에 꼭 맞춰 가장 실전적이고 유용한 테크 정보만을 다듬어 안내하겠습니다. 문의 사항은 메일로 연락 주세요. 감사합니다!</p>
       
-    </article>
+    
+      <!-- FAQ Section (Alphanahm Skill) -->
+      <div class="faq-section" style="margin-top: 40px; border-top: 1px solid var(--border-light); padding-top: 30px; margin-bottom: 30px;">
+        <h3 style="font-size: 20px; margin-bottom: 20px; color: var(--text-main);">❓ 자주 묻는 질문 (FAQ)</h3>
+        <details style="margin-bottom: 16px; padding: 16px; background-color: var(--bg-main); border: 1px solid var(--border-light); border-radius: var(--border-radius-sm); cursor: pointer;">
+          <summary style="font-weight: 600; font-size: 15px; color: var(--text-main); outline: none;">자바스크립트(JavaScript)란 무엇이며 웹의 3대 요소 중 어떤 역할일까요?</summary>
+          <p style="margin-top: 12px; margin-bottom: 0; font-size: 14.5px; color: var(--text-muted); line-height: 1.6;">앞서 배운 웹 빌드 지도를 가볍게 환기해 봅시다. 레고 성을 만든다고 치면, **HTML은 플라스틱 블록**으로 성벽 구조를 쌓는 기본 골격 작업이고, **CSS는 그 블록에 색칠하고 조명**을 비추어 멋지게 꾸미는 인테리어입니다. 그렇다면 **자바스크립트는 레고 성의 성문을 여닫는 도르래 모터나 회전 다리 작동 버튼**과 같습니다.</p>
+        </details>
+        <details style="margin-bottom: 16px; padding: 16px; background-color: var(--bg-main); border: 1px solid var(--border-light); border-radius: var(--border-radius-sm); cursor: pointer;">
+          <summary style="font-weight: 600; font-size: 15px; color: var(--text-main); outline: none;">단 5줄로 배우는 클릭 이벤트 리스너(Event Listener) 구현법의 핵심 내용은 무엇인가요?</summary>
+          <p style="margin-top: 12px; margin-bottom: 0; font-size: 14.5px; color: var(--text-muted); line-height: 1.6;">본격적인 실습을 위해, 내 HTML 문서에 간단한 버튼 하나를 배치하고, 사용자가 이 버튼을 클릭했을 때 배경 색상이 화사하게 바뀌도록 명령하는 핵심 코드를 작성해 봅시다.</p>
+        </details>
+        <details style="margin-bottom: 16px; padding: 16px; background-color: var(--bg-main); border: 1px solid var(--border-light); border-radius: var(--border-radius-sm); cursor: pointer;">
+          <summary style="font-weight: 600; font-size: 15px; color: var(--text-main); outline: none;">1인 마케터와 블로거가 자바스크립트를 배울 때 지켜야 할 학습 가이드의 핵심 내용은 무엇인가요?</summary>
+          <p style="margin-top: 12px; margin-bottom: 0; font-size: 14.5px; color: var(--text-muted); line-height: 1.6;">비전공자가 자바스크립트를 공부할 때 가장 빈번하게 겪는 좌절은, 시중에 나와 있는 두꺼운 프로그래밍 교과서의 '변수 체계', '자료형', '객체 지향 프로그래밍' 등의 기하학적인 컴퓨터 과학 기초 이론을 처음부터 정독하다가 지쳐 코딩을 포기해 버리는 흐름입니다. 여러분은 개발자 취업이 목적이 아니라 실무 효율 증폭과 웹 비즈니스 커스텀이 목적이므로 아래의 ...</p>
+        </details>
+      </div>
+      <!-- Author Profile Box (Alphanahm Skill) -->
+      <div class="author-box" style="margin-top: 50px; padding: 24px; border: 1px solid var(--border-light); border-radius: var(--border-radius-md); display: flex; align-items: center; gap: 20px; background: rgba(255, 255, 255, 0.02); margin-bottom: 20px;">
+        <div style="font-size: 28px; background: linear-gradient(135deg, var(--primary-color), hsl(265, 90%, 60%)); width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; flex-shrink: 0; box-shadow: 0 4px 12px hsla(var(--hue), 95%, 48%, 0.2);">✍️</div>
+        <div>
+          <h5 style="margin: 0; font-size: 15.5px; font-weight: 700; color: var(--text-main);">Starrope IT 에디터</h5>
+          <p style="margin: 6px 0 0 0; font-size: 13.5px; color: var(--text-muted); line-height: 1.5;">IT 기술 및 AI 도구 파트너. 코딩, 인공지능 활용법, 디바이스 리뷰, 그리고 개발 생산성 향상을 위한 최신 트렌드를 알기 쉽게 전달합니다.</p>
+        </div>
+      </div>
+</article>
     
     <!-- RIGHT: SIDEBAR -->
     <aside class="sidebar">

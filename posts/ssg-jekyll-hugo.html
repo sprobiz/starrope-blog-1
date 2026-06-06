@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+  <!-- JSON-LD Structured Data (Alphanahm Skill) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Jekyll, Hugo, Astro SSG 비교 및 블로그 빌드 가이드",
+    "description": "서버 없이 빠르고 가볍게 고성능 정적 웹사이트를 구축할 수 있게 돕는 대표적인 정적 사이트 생성기(SSG)인 Jekyll, Hugo, Astro의 특장점과 나에게 맞는 도구 선택법을 제시합니다.",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+    "author": { "@type": "Person", "name": "Starrope" },
+    "publisher": { "@type": "Organization", "name": "Starrope IT & AI", "url": "https://blog1.starrope2023.com" },
+    "datePublished": "2026-06-06",
+    "dateModified": "2026-06-06",
+    "url": "https://blog1.starrope2023.com/posts/ssg-jekyll-hugo.html",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://blog1.starrope2023.com/posts/ssg-jekyll-hugo.html" }
+  }
+  </script>
+  <meta name="keywords" content="코딩, 웹 개발, 자산관리, IT기술, AI도구, 개발생산성">
+  <meta name="author" content="Starrope">
+  <meta property="og:title" content="Jekyll, Hugo, Astro SSG 비교 및 블로그 빌드 가이드">
+  <meta property="og:description" content="서버 없이 빠르고 가볍게 고성능 정적 웹사이트를 구축할 수 있게 돕는 대표적인 정적 사이트 생성기(SSG)인 Jekyll, Hugo, Astro의 특장점과 나에게 맞는 도구 선택법을 제시합니다.">
+  <meta property="og:type" content="article">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://blog1.starrope2023.com/posts/ssg-jekyll-hugo.html">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jekyll, Hugo, Astro SSG 비교 및 블로그 빌드 가이드 | 스타로프 IT 블로그</title>
@@ -77,6 +100,31 @@
     <article class="post-content">
       
       <p>서버 통신 비용을 최소화하고 검색엔진 크롤링 최적화를 극대화하는 동시에, 단 1초의 로딩 지연조차 허용하지 않는 고성능 개인 미디어 블로그나 포트폴리오 사이트 구축을 염원하시나요? 그렇다면 워드프레스와 같이 복잡하고 무거운 데이터베이스(DB) 기반의 동적 사이트 툴 대신 **정적 사이트 생성기(Static Site Generator, SSG)**가 가장 완벽한 현대적 대안이 될 것입니다. SSG는 작성된 마크다운 포맷 텍스트와 템플릿 컴포넌트 파일들을 사전에 완전한 하나의 정적 HTML 파일들로 변환 빌드해 주기 때문에 별도의 백엔드 호스팅 인프라 없이도 환상적인 페이지 로딩 퍼포먼스를 내뿜습니다. 이번 시간에는 정적 웹 생태계를 견인하고 있는 대표적인 세 가지 프레임워크인 <strong>Jekyll, Hugo, Astro</strong>의 세부 기술 스펙과 장단점을 전격 비교 분석합니다.</p>
+      <!-- Key Summary Table (Alphanahm Skill) -->
+      <div class="summary-table-container" style="margin: 30px 0;">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid var(--border-light); font-size: 14.5px; background-color: var(--bg-surface);">
+          <thead>
+            <tr style="background-color: var(--bg-ad); border-bottom: 1px solid var(--border-light);">
+              <th style="padding: 12px 16px; border-right: 1px solid var(--border-light); text-align: left; font-weight: 700; color: var(--text-main);">핵심 영역</th>
+              <th style="padding: 12px 16px; text-align: left; font-weight: 700; color: var(--text-main);">상세 가이드 & 실전 가치</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 12px 16px; border-right: 1px solid var(--border-light); font-weight: 600; color: var(--primary-color);">주요 목표</td>
+              <td style="padding: 12px 16px; color: var(--text-main);">Jekyll, Hugo, Astro SSG 비교 및 블로그 빌드 가이드를 위한 핵심 전략 및 기초 이론 수립</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 12px 16px; border-right: 1px solid var(--border-light); font-weight: 600; color: var(--primary-color);">실전 분석</td>
+              <td style="padding: 12px 16px; color: var(--text-main);">클래식의 대명사 Jekyll(지킬)과 세계 최고 빌드 속도의 Hugo(휴고) 단계별 구현 가이드 및 세부 실행 방안</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px 16px; border-right: 1px solid var(--border-light); font-weight: 600; color: var(--primary-color);">최적화 팁</td>
+              <td style="padding: 12px 16px; color: var(--text-main);">차세대 프론트엔드의 구원자: Astro(아스트로)의 강점 분석 적용을 통한 성능 고도화 및 리스크 예방</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       
       <div class="post-main-image" style="background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&q=80'); height: 350px; background-size: cover; background-position: center; border-radius: 12px; margin-bottom: 24px;"></div>
 
@@ -116,7 +164,32 @@
       <h2>마치며</h2>
       <p>서버 자원이나 데이터베이스 오버헤드가 없다는 점은 정적 사이트가 주는 최대 축복이며, 이는 고품질 미디어로서의 도달 효율성과 최고의 성능 퍼포먼스로 직결됩니다. 본인에게 가장 편하고 강력한 정적 사이트 엔진을 장착해 보시기 바라며, 스타로프 블로그는 언제나 한 걸음 더 앞서 나간 프리미엄 모던 웹 아키텍처 정보와 실전에 활용 가능한 코딩 팁들을 풍성히 다뤄 드릴 것을 약속합니다. 본 블로그 글이나 정적 블로그 구축에 대해 의견이 있으시다면 언제나 든든한 피드백 코멘트와 이메일을 열어두고 있사오니 많은 문의 바랍니다. 감사합니다!</p>
       
-    </article>
+    
+      <!-- FAQ Section (Alphanahm Skill) -->
+      <div class="faq-section" style="margin-top: 40px; border-top: 1px solid var(--border-light); padding-top: 30px; margin-bottom: 30px;">
+        <h3 style="font-size: 20px; margin-bottom: 20px; color: var(--text-main);">❓ 자주 묻는 질문 (FAQ)</h3>
+        <details style="margin-bottom: 16px; padding: 16px; background-color: var(--bg-main); border: 1px solid var(--border-light); border-radius: var(--border-radius-sm); cursor: pointer;">
+          <summary style="font-weight: 600; font-size: 15px; color: var(--text-main); outline: none;">클래식의 대명사 Jekyll(지킬)과 세계 최고 빌드 속도의 Hugo(휴고)의 핵심 내용은 무엇인가요?</summary>
+          <p style="margin-top: 12px; margin-bottom: 0; font-size: 14.5px; color: var(--text-muted); line-height: 1.6;">가장 먼저 정적 웹 생성기 생태계의 유서 깊은 왕좌를 지켜오던 Jekyll(지킬)은 Ruby 언어로 구축되었습니다. 지킬이 압도적인 인기를 누려온 결정적인 요인은 다름 아닌 GitHub Pages(깃허브 페이지스)가 공식적으로 지킬 엔진의 자동 빌드를 디폴트로 내장 연동하여 지원하기 때문입니다. 마크다운으로 쓴 글을 깃 레포지토리에 푸시하는 것만으로 서버 ...</p>
+        </details>
+        <details style="margin-bottom: 16px; padding: 16px; background-color: var(--bg-main); border: 1px solid var(--border-light); border-radius: var(--border-radius-sm); cursor: pointer;">
+          <summary style="font-weight: 600; font-size: 15px; color: var(--text-main); outline: none;">차세대 프론트엔드의 구원자: Astro(아스트로)의 강점 분석의 핵심 내용은 무엇인가요?</summary>
+          <p style="margin-top: 12px; margin-bottom: 0; font-size: 14.5px; color: var(--text-muted); line-height: 1.6;">그렇다면 최근 모던 자바스크립트 프론트엔드 생태계에서 가장 뜨거운 사랑을 받으며 부상 중인 Astro(아스트로)는 어떤 차별점이 있을까요? 아스트로는 기존 지킬이나 휴고와는 설계 철학부터가 완전히 다른 차세대 컴포넌트 프레임워크입니다. 아스트로의 시그니처 핵심 무기는 바로 아일랜드 아키텍처(Islands Architecture)입니다.</p>
+        </details>
+        <details style="margin-bottom: 16px; padding: 16px; background-color: var(--bg-main); border: 1px solid var(--border-light); border-radius: var(--border-radius-sm); cursor: pointer;">
+          <summary style="font-weight: 600; font-size: 15px; color: var(--text-main); outline: none;">나에게 최적화된 정적 웹 사이트 생성기(SSG) 선택 비결의 핵심 내용은 무엇인가요?</summary>
+          <p style="margin-top: 12px; margin-bottom: 0; font-size: 14.5px; color: var(--text-muted); line-height: 1.6;">이렇듯 각기 매력이 넘치는 세 가지 대표적인 SSG 기술 사이에서 무엇을 내 미디어 블로그의 뼈대로 정해야 할지 판단이 서지 않는다면 다음 세 가지 직관적인 선택 규칙 가이드를 숙지해 보세요.</p>
+        </details>
+      </div>
+      <!-- Author Profile Box (Alphanahm Skill) -->
+      <div class="author-box" style="margin-top: 50px; padding: 24px; border: 1px solid var(--border-light); border-radius: var(--border-radius-md); display: flex; align-items: center; gap: 20px; background: rgba(255, 255, 255, 0.02); margin-bottom: 20px;">
+        <div style="font-size: 28px; background: linear-gradient(135deg, var(--primary-color), hsl(265, 90%, 60%)); width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; flex-shrink: 0; box-shadow: 0 4px 12px hsla(var(--hue), 95%, 48%, 0.2);">✍️</div>
+        <div>
+          <h5 style="margin: 0; font-size: 15.5px; font-weight: 700; color: var(--text-main);">Starrope IT 에디터</h5>
+          <p style="margin: 6px 0 0 0; font-size: 13.5px; color: var(--text-muted); line-height: 1.5;">IT 기술 및 AI 도구 파트너. 코딩, 인공지능 활용법, 디바이스 리뷰, 그리고 개발 생산성 향상을 위한 최신 트렌드를 알기 쉽게 전달합니다.</p>
+        </div>
+      </div>
+</article>
     
     <!-- RIGHT: SIDEBAR -->
     <aside class="sidebar">

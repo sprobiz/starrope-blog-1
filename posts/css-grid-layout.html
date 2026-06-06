@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+  <!-- JSON-LD Structured Data (Alphanahm Skill) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "모던 웹 디자인의 완성: CSS Grid 핵심 레이아웃 구조와 반응형 웹 설계 입문",
+    "description": "Flexbox를 넘어 2차원 레이아웃을 지배하는 CSS Grid의 필수 개념(grid-template, gap, autofit)과 직관적인 반응형 그리드 페이지 빌딩 노하우를 알아봅니다.",
+    "image": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80",
+    "author": { "@type": "Person", "name": "Starrope" },
+    "publisher": { "@type": "Organization", "name": "Starrope IT & AI", "url": "https://blog1.starrope2023.com" },
+    "datePublished": "2026-06-22",
+    "dateModified": "2026-06-22",
+    "url": "https://blog1.starrope2023.com/posts/css-grid-layout.html",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://blog1.starrope2023.com/posts/css-grid-layout.html" }
+  }
+  </script>
+  <meta name="keywords" content="코딩, 웹 개발, 자산관리, IT기술, AI도구, 개발생산성">
+  <meta name="author" content="Starrope">
+  <meta property="og:title" content="모던 웹 디자인의 완성: CSS Grid 핵심 레이아웃 구조와 반응형 웹 설계 입문">
+  <meta property="og:description" content="Flexbox를 넘어 2차원 레이아웃을 지배하는 CSS Grid의 필수 개념(grid-template, gap, autofit)과 직관적인 반응형 그리드 페이지 빌딩 노하우를 알아봅니다.">
+  <meta property="og:type" content="article">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://blog1.starrope2023.com/posts/css-grid-layout.html">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>모던 웹 디자인의 완성: CSS Grid 핵심 레이아웃 구조와 반응형 웹 설계 입문 | 스타로프 IT 블로그</title>
@@ -77,6 +100,31 @@
     <article class="post-content">
       
       <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="CSS Grid Layout" style="width:100%; border-radius:12px; margin-bottom:32px; box-shadow:var(--shadow-md);">
+      <!-- Key Summary Table (Alphanahm Skill) -->
+      <div class="summary-table-container" style="margin: 30px 0;">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid var(--border-light); font-size: 14.5px; background-color: var(--bg-surface);">
+          <thead>
+            <tr style="background-color: var(--bg-ad); border-bottom: 1px solid var(--border-light);">
+              <th style="padding: 12px 16px; border-right: 1px solid var(--border-light); text-align: left; font-weight: 700; color: var(--text-main);">핵심 영역</th>
+              <th style="padding: 12px 16px; text-align: left; font-weight: 700; color: var(--text-main);">상세 가이드 & 실전 가치</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 12px 16px; border-right: 1px solid var(--border-light); font-weight: 600; color: var(--primary-color);">주요 목표</td>
+              <td style="padding: 12px 16px; color: var(--text-main);">모던 웹 디자인의 완성를 위한 핵심 전략 및 기초 이론 수립</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 12px 16px; border-right: 1px solid var(--border-light); font-weight: 600; color: var(--primary-color);">실전 분석</td>
+              <td style="padding: 12px 16px; color: var(--text-main);">CSS Grid의 뼈대 세우기: Container와 Item의 관계 단계별 구현 가이드 및 세부 실행 방안</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px 16px; border-right: 1px solid var(--border-light); font-weight: 600; color: var(--primary-color);">최적화 팁</td>
+              <td style="padding: 12px 16px; color: var(--text-main);">미디어 쿼리가 필요 없는 마법: auto-fit과 minmax()의 힘 적용을 통한 성능 고도화 및 리스크 예방</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <p>웹 표준 기술이 빠르게 발전하면서 과거 테이블 레이아웃이나 float, inline-block을 활용한 편법 레이아웃의 시대는 저물었습니다. 그 자리를 꿰찬 두 주인공이 바로 <strong>CSS Flexbox</strong>와 <strong>CSS Grid</strong>입니다. 특히 1차원 선형 정렬(가로 혹은 세로)에 최적화된 Flexbox와 달리, CSS Grid는 행(Row)과 열(Column)을 동시에 제어하는 강력한 <strong>2차원 레이아웃 모듈</strong>을 제공하여 그 어떤 복잡한 잡지식 디자인 구조도 아주 간결한 코드로 완벽하게 구현할 수 있게 돕습니다.</p>
       
@@ -127,7 +175,32 @@
       <h2>마치며</h2>
       <p>CSS Grid는 단순한 신기술이 아닌, 웹 퍼블리싱의 패러다임을 바꾼 모던 웹 디자인의 정수입니다. 본 블로그의 메인 그리드 레이아웃 역시 이 Grid 시스템을 적극적으로 채용하여 강력한 확장성과 모바일 호환성을 유지하고 있습니다. 지금 바로 여러분의 프로젝트 코드를 열고 Flexbox로 길게 짜였던 복잡한 소스 구조를 간결하고 직관적인 CSS Grid로 리팩토링해 보세요. 디자인 퀄리티와 퍼포먼스 둘 다를 움켜쥐게 될 것입니다. 추가적인 코딩 질문이나 레이아웃 막힘이 있으시면 언제든지 편하게 질문 남겨주세요!</p>
       
-    </article>
+    
+      <!-- FAQ Section (Alphanahm Skill) -->
+      <div class="faq-section" style="margin-top: 40px; border-top: 1px solid var(--border-light); padding-top: 30px; margin-bottom: 30px;">
+        <h3 style="font-size: 20px; margin-bottom: 20px; color: var(--text-main);">❓ 자주 묻는 질문 (FAQ)</h3>
+        <details style="margin-bottom: 16px; padding: 16px; background-color: var(--bg-main); border: 1px solid var(--border-light); border-radius: var(--border-radius-sm); cursor: pointer;">
+          <summary style="font-weight: 600; font-size: 15px; color: var(--text-main); outline: none;">CSS Grid의 뼈대 세우기: Container와 Item의 관계의 핵심 내용은 무엇인가요?</summary>
+          <p style="margin-top: 12px; margin-bottom: 0; font-size: 14.5px; color: var(--text-muted); line-height: 1.6;">CSS Grid는 Flexbox와 마찬가지로 **부모 요소(Container)**에 Grid 선언을 해두면, 그 직속 자식 요소들(Items)이 자동으로 그리드 시스템의 영향권 안에 들어오는 부모-자식 레이아웃 모델을 채택하고 있습니다. 첫 시작은 매우 직관적입니다.</p>
+        </details>
+        <details style="margin-bottom: 16px; padding: 16px; background-color: var(--bg-main); border: 1px solid var(--border-light); border-radius: var(--border-radius-sm); cursor: pointer;">
+          <summary style="font-weight: 600; font-size: 15px; color: var(--text-main); outline: none;">미디어 쿼리가 필요 없는 마법: auto-fit과 minmax()의 힘의 핵심 내용은 무엇인가요?</summary>
+          <p style="margin-top: 12px; margin-bottom: 0; font-size: 14.5px; color: var(--text-muted); line-height: 1.6;">CSS Grid를 진정으로 빛나게 만들어주는 실전 치트키 속성은 바로 repeat() 내부에 auto-fit 및 minmax()를 혼합하여 배치하는 기법입니다. 이 방법을 마스터하면 반응형 레이아웃 구축 속도가 비약적으로 향상됩니다.</p>
+        </details>
+        <details style="margin-bottom: 16px; padding: 16px; background-color: var(--bg-main); border: 1px solid var(--border-light); border-radius: var(--border-radius-sm); cursor: pointer;">
+          <summary style="font-weight: 600; font-size: 15px; color: var(--text-main); outline: none;">2차원 제어의 끝판왕: Grid Area 배치 공식의 핵심 내용은 무엇인가요?</summary>
+          <p style="margin-top: 12px; margin-bottom: 0; font-size: 14.5px; color: var(--text-muted); line-height: 1.6;">컨테이너 격자 안에 아이템들을 특정 규칙 없이 임의의 영역에 걸치게 만들고 싶을 때 사용하는 것이 grid-row와 grid-column 혹은 grid-template-areas 속성입니다.</p>
+        </details>
+      </div>
+      <!-- Author Profile Box (Alphanahm Skill) -->
+      <div class="author-box" style="margin-top: 50px; padding: 24px; border: 1px solid var(--border-light); border-radius: var(--border-radius-md); display: flex; align-items: center; gap: 20px; background: rgba(255, 255, 255, 0.02); margin-bottom: 20px;">
+        <div style="font-size: 28px; background: linear-gradient(135deg, var(--primary-color), hsl(265, 90%, 60%)); width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; flex-shrink: 0; box-shadow: 0 4px 12px hsla(var(--hue), 95%, 48%, 0.2);">✍️</div>
+        <div>
+          <h5 style="margin: 0; font-size: 15.5px; font-weight: 700; color: var(--text-main);">Starrope IT 에디터</h5>
+          <p style="margin: 6px 0 0 0; font-size: 13.5px; color: var(--text-muted); line-height: 1.5;">IT 기술 및 AI 도구 파트너. 코딩, 인공지능 활용법, 디바이스 리뷰, 그리고 개발 생산성 향상을 위한 최신 트렌드를 알기 쉽게 전달합니다.</p>
+        </div>
+      </div>
+</article>
     
     <!-- RIGHT: SIDEBAR -->
     <aside class="sidebar">
