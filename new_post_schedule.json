@@ -1,0 +1,14 @@
+{
+  "posts": [
+    {
+      "filename": "cursor-composer-fullstack-app.html",
+      "title": "Cursor AI Composer로 풀스택 웹 애플리케이션 10분 만에 빌드하기",
+      "description": "차세대 AI 에디터 Cursor의 핵심 기능인 Composer(멀티파일 편집)를 활용하여 API 연동부터 프론트엔드 UI까지 한 번에 자동 구축하는 실전 10분 마스터 가이드를 알아봅니다.",
+      "image_url": "https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=800&q=80",
+      "tag": "AI 도구 / 프로그래밍",
+      "date_display": "2026. 06. 16 (오전 10:00)",
+      "publish_date": "2026-06-16",
+      "publish_time": "10:00"
+    }
+  ]
+}
