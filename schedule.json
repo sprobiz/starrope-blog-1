@@ -133,7 +133,7 @@
     {
       "filename": "perplexity-search.html",
       "title": "챗GPT를 넘어선 핵심 AI 검색 엔진 Perplexity 실전 활용 꿀팁",
-      "description": "단순 챗봇을 넘어선 인공지능 기반 실시간 검색 엔진 Perplexity의 실전 유용 꿀팁 and 검색 정확도를 300% 이상 향상시키는 핵심 프롬프트 활용 기술을 제시합니다.",
+      "description": "단순 챗봇을 넘어선 인공지능 기반 실시간 검색 엔진 Perplexity의 실전 유용 꿀팁과 검색 정확도를 300% 이상 향상시키는 핵심 프롬프트 활용 기술을 제시합니다.",
       "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
       "tag": "AI 도구 / 생산성",
       "date_display": "2026. 06. 05 (오전 8:00)",
@@ -553,7 +553,7 @@
     {
       "filename": "gemini-ai-guide.html",
       "title": "구글 Gemini AI 완전 정복: ChatGPT를 위협하는 멀티모달 AI 실전 활용법",
-      "description": "구글이 출시한 최강 멀티모달 AI Gemini의 이미지·문서·코드 분석 기능 and Google Workspace 연동 업무 자동화 실전 활용법을 낱낱이 공개합니다.",
+      "description": "구글이 출시한 최강 멀티모달 AI Gemini의 이미지·문서·코드 분석 기능과 Google Workspace 연동 업무 자동화 실전 활용법을 낱낱이 공개합니다.",
       "image_url": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=800&q=80",
       "tag": "AI 도구 / 생산성",
       "date_display": "2026. 06. 26 (오전 8:00)",
@@ -652,13 +652,23 @@
     },
     {
       "filename": "cursor-ai-composer-shortcuts.html",
-      "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+      "title": "Cursor AI Composer 단축키 가이드: 웹 애플리케이션 개발 생산성 300% 향상",
+      "description": "Cursor AI Editor의 차별화된 멀티파일 편집 기능인 Composer의 핵심 단축키 조합, 프로젝트 생성 시 Context 연결 최적화 기법을 실전 가이드로 정리합니다.",
+      "image_url": "https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=800&q=80",
+      "tag": "AI 도구 / 프로그래밍",
+      "date_display": "2026. 06. 17 (오전 10:00)",
+      "publish_date": "2026-06-17",
+      "publish_time": "08:00"
+    },
+    {
+      "filename": "claude-artifacts-vs-chatgpt-canvas.html",
+      "title": "Claude 3.5 Sonnet Artifacts vs ChatGPT Canvas: 어떤 AI가 프로젝트 빌딩에 최선인가?",
+      "description": "클로드 3.5 소네트의 Artifacts와 챗GPT Canvas 기능을 집중 비교 분석합니다. 코드 생성, 실시간 편집, 웹 앱 시각화 및 개발 생산성 관점에서의 실전 선택 가이드를 제공합니다.",
+      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
       "tag": "AI Tools",
-      "date_display": "2026. 06. 18 (오전 8:20)",
-      "title": "Cursor AI 단축키 및 Composer 활용법: 10배 빠른 코딩 생산성 가이드",
-      "description": "Cursor AI 에디터의 핵심 단축키와 Composer 기능을 마스터하여 코딩 속도와 생산성을 10배 이상 극대화하는 실전 노하우를 알아봅니다.",
+      "date_display": "2026. 06. 18",
       "publish_date": "2026-06-18",
-      "publish_time": "08:20"
+      "publish_time": "08:00"
     }
   ]
 }
