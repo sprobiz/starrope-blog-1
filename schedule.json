@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "filename": "deepseek-r1-vscode-ollama.html",
+      "title": "OpenAI o1을 위협하는 무료 AI DeepSeek-R1 사용법 및 VS Code 로컬 연동 코딩 가이드",
+      "description": "구독료 없이 로컬 PC에서 100% 무료로 고성능 코딩 AI를 구동하는 방법! DeepSeek-R1의 특징부터 Ollama를 활용한 설치, VS Code Continue 연동까지 상세한 실전 바이블을 만나보세요.",
+      "image_url": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=800&q=80",
+      "tag": "AI 도구 / 프로그래밍",
+      "date_display": "2026. 06. 19 (오후 10:00)",
+      "publish_date": "2026-06-19",
+      "publish_time": "22:00"
+    },
+    {
       "filename": "cursor-composer-fullstack-app.html",
       "title": "Cursor AI Composer로 풀스택 웹 애플리케이션 10분 만에 빌드하기",
       "description": "차세대 AI 에디터 Cursor의 핵심 기능인 Composer(멀티파일 편집)를 활용하여 API 연동부터 프론트엔드 UI까지 한 번에 자동 구축하는 실전 10분 마스터 가이드를 알아봅니다.",
@@ -283,7 +293,7 @@
     {
       "filename": "capcut-video-edit.html",
       "title": "숏폼 전성시대의 필수품: 캡컷(CapCut) 영상 편집 입문 및 크리에이터 가이드",
-      "description": "유튜브 쇼츠, 인스타그램 릴스, 틱톡 등 숏폼 전성시대에 스마트폰 and PC로 누구나 10분 만에 화려한 자막과 템플릿 효과를 연출할 수 있는 캡컷 활용법을 마스터합니다.",
+      "description": "유튜브 쇼츠, 인스타그램 릴스, 틱톡 등 숏폼 전성시대에 스마트폰과 PC로 누구나 10분 만에 화려한 자막과 템플릿 효과를 연출할 수 있는 캡컷 활용법을 마스터합니다.",
       "image_url": "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=800&q=80",
       "tag": "AI 도구 / 영상 편집",
       "date_display": "2026. 06. 12 (오후 4:00)",
@@ -553,7 +563,7 @@
     {
       "filename": "gemini-ai-guide.html",
       "title": "구글 Gemini AI 완전 정복: ChatGPT를 위협하는 멀티모달 AI 실전 활용법",
-      "description": "구글이 출시한 최강 멀티모달 AI Gemini의 이미지·문서·코드 분석 기능 및 Google Workspace 연동 업무 자동화 실전 활용법을 낱낱이 공개합니다.",
+      "description": "구글이 출시한 최강 멀티모달 AI Gemini의 이미지·문서·코드 분석 기능과 Google Workspace 연동 업무 자동화 실전 활용법을 낱낱이 공개합니다.",
       "image_url": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=800&q=80",
       "tag": "AI 도구 / 생산성",
       "date_display": "2026. 06. 26 (오전 8:00)",
@@ -652,21 +662,21 @@
     },
     {
       "filename": "cursor-ai-composer-shortcuts.html",
+      "title": "Cursor AI 단축키 및 Composer 활용법: 10배 빠른 코딩 생산성 가이드",
+      "description": "Cursor AI 에디터의 핵심 단축키와 Composer 기능을 마스터하여 코딩 속도와 생산성을 10배 이상 극대화하는 실전 노하우를 알아봅니다.",
       "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
       "tag": "AI Tools",
       "date_display": "2026. 06. 18 (오전 8:20)",
-      "title": "Cursor AI 단축키 및 Composer 활용법: 10배 빠른 코딩 생산성 가이드",
-      "description": "Cursor AI 에디터의 핵심 단축키와 Composer 기능을 마스터하여 코딩 속도와 생산성을 10배 이상 극대화하는 실전 노하우를 알아봅니다.",
       "publish_date": "2026-06-18",
       "publish_time": "08:20"
     },
     {
       "filename": "claude-artifacts-vs-chatgpt-canvas.html",
+      "title": "Claude 3.5 Sonnet Artifacts vs ChatGPT Canvas: 어떤 AI가 프로젝트 빌딩에 최선인가?",
+      "description": "클로드 3.5 소네트의 Artifacts와 챗GPT Canvas 기능을 집중 비교 분석합니다. 코드 생성, 실시간 편집, 웹 앱 시각화 및 개발 생산성 관점에서의 실전 선택 가이드를 제공합니다.",
       "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
       "tag": "AI Tools",
       "date_display": "2026. 06. 18",
-      "title": "Claude 3.5 Sonnet Artifacts vs ChatGPT Canvas: 어떤 AI가 프로젝트 빌딩에 최선인가?",
-      "description": "클로드 3.5 소네트의 Artifacts와 챗GPT Canvas 기능을 집중 비교 분석합니다. 코드 생성, 실시간 편집, 웹 앱 시각화 및 개발 생산성 관점에서의 실전 선택 가이드를 제공합니다.",
       "publish_date": "2026-06-18",
       "publish_time": "08:00"
     },
@@ -676,7 +686,7 @@
       "tag": "AI 도구",
       "date_display": "06. 19",
       "title": "v0 by Vercel: 프론트엔드 UI 디자인을 말 한마디로 완성하는 AI 활용 실전 가이드",
-      "description": "버셀(Vercel)이 개발한 혁신적인 UI 생성 AI 도구인 v0의 핵심 기능, 자연어 프롬프트 작성 꿀팁, 그리고 피그마나 코딩 작업 없이 즉석에서 모던 반응형 웹 페이지를 설계하고 리액트/테일윈드 코드로 추출하는 방법을 상세히 안내합니다.",
+      "description": "버셀(Vercel)이 개발한 혁신적인 UI 생성 AI 도구인 v0의 핵심 기능, 자연어 프롬프트 작성 꿀팁, 그리고 피그마나 코딩 작업 없이 즉석에서 모던 반응형 웹 페이지를 설계하고 리액트/테일윈드 코드로 추출하는 방법을 안내합니다.",
       "publish_date": "2026-06-19",
       "publish_time": "08:30"
     }
