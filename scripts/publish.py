@@ -135,7 +135,10 @@ def main():
             should_publish = True
         elif post_date == today:
             # 오늘 날짜: 해당 슬롯 시간이 됐는지 확인
-            post_hour = 8 if post_time == '08:00' else 16
+            try:
+                post_hour = int(post_time.split(':')[0])
+            except (ValueError, IndexError):
+                post_hour = 8 if post_time == '08:00' else 16
             if current_hour >= post_hour:
                 should_publish = True
 
