@@ -699,6 +699,16 @@
       "description": "차세대 AI 에디터 Cursor에서 프로젝트 맞춤형 규칙을 정의하는 .cursorrules 파일의 설정 방법과 생산성을 극대화하는 모범 사례 실전 꿀팁을 알아봅니다.",
       "publish_date": "2026-06-21",
       "publish_time": "23:00"
+    },
+    {
+      "filename": "claude-sonnet-4-5-agentic-coding.html",
+      "title": "Claude Sonnet 4.5 완전 정복: 에이전틱 코딩의 새 시대를 여는 AI 활용법",
+      "description": "Anthropic의 최신 AI 모델 Claude Sonnet 4.5의 에이전틱 코딩 기능을 심층 분석합니다. 멀티턴 대화, 도구 사용, 자율 작업 수행 능력을 극대화하는 실전 프롬프트 전략을 알아보세요.",
+      "image_url": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=800&q=80",
+      "tag": "AI 도구 / 프로그래밍",
+      "date_display": "2026. 06. 30 (오후 5:41)",
+      "publish_date": "2026-06-30",
+      "publish_time": "17:41"
     }
   ]
 }
