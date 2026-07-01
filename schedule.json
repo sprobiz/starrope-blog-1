@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "filename": "gemini-3-5-flash-performance.html",
+      "title": "Google Gemini 3.5 Flash 완전 분석: 초고속 추론 속도와 실전 개발 및 API 활용법",
+      "description": "구글의 최신 경량형 모델 Gemini 3.5 Flash의 특징, 속도, 비용 비교부터 대용량 컨텍스트 창을 활용한 실전 개발 및 업무 자동화 구축 방법까지 완벽 가이드를 확인해보세요.",
+      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
+      "tag": "AI 도구 / 프로그래밍",
+      "date_display": "2026. 07. 02 (오전 8:00)",
+      "publish_date": "2026-07-02",
+      "publish_time": "06:00"
+    },
+    {
       "filename": "github-copilot-workspace.html",
       "title": "GitHub Copilot Workspace 사용법: 아이디어에서 코드 구현까지 자율 코딩 가이드",
       "description": "GitHub Copilot Workspace의 핵심 기능과 실전 활용법을 소개합니다. 자연어로 개발 환경을 정의하고, AI가 계획을 세우며, 코드를 자율적으로 수정/완성하는 워크플로우를 익혀 개발 생산성을 극대화하세요.",
