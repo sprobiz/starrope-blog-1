@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <!-- JSON-LD Structured Data (Alphanahm Skill) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Roo Code (구 Roo Cline) 사용법: VS Code에서 AI 에이전트로 자율 코딩하기",
+    "description": "VS Code 최강의 오픈소스 AI 에이전트 Roo Code(구 Roo Cline)의 설치법부터 커스텀 시스템 프롬프트 설정, 자율 코딩 모드 및 실전 개발 활용 꿀팁까지 명쾌하게 알아봅니다.",
+    "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+    "author": { "@type": "Person", "name": "Starrope" },
+    "publisher": { "@type": "Organization", "name": "Starrope IT & AI", "url": "https://blog1.starrope2023.com" },
+    "datePublished": "2026-07-06",
+    "dateModified": "2026-07-06",
+    "url": "https://blog1.starrope2023.com/posts/roo-code-vs-code-ai-agent.html",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://blog1.starrope2023.com/posts/roo-code-vs-code-ai-agent.html" }
+  }
+  </script>
+  <meta name="keywords" content="AI 도구, 프로그래밍, 자산관리, IT기술, AI도구, 개발생산성">
+  <meta name="author" content="Starrope">
+  <meta property="og:title" content="Roo Code (구 Roo Cline) 사용법: VS Code에서 AI 에이전트로 자율 코딩하기">
+  <meta property="og:description" content="VS Code 최강의 오픈소스 AI 에이전트 Roo Code(구 Roo Cline)의 설치법부터 커스텀 시스템 프롬프트 설정, 자율 코딩 모드 및 실전 개발 활용 꿀팁까지 명쾌하게 알아봅니다.">
+  <meta property="og:type" content="article">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://blog1.starrope2023.com/posts/roo-code-vs-code-ai-agent.html">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roo Code (구 Roo Cline) 사용법: VS Code에서 AI 에이전트로 자율 코딩하기 | 스타로프 IT 블로그</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="VS Code 최강의 오픈소스 AI 에이전트 Roo Code(구 Roo Cline)의 설치법부터 커스텀 시스템 프롬프트 설정, 자율 코딩 모드 및 실전 개발 활용 꿀팁까지 명쾌하게 알아봅니다.">
+  
+  <!-- Link CSS (relative path to main assets) -->
+  <link rel="stylesheet" href="../assets/style.css">
+  
+  <!-- Pre-configured Google AdSense Auto Ads Tag -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1692428092138510" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">S</div>
+        <span class="gradient-text">Starrope IT</span>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="../index.html" class="nav-item">홈</a>
+        <a href="../index.html#articles" class="nav-item">포스트</a>
+        <a href="../about.html" class="nav-item">소개</a>
+        <a href="../privacy-policy.html" class="nav-item">개인정보처리방침</a>
+        <a href="../terms-of-service.html" class="nav-item">이용약관</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="다크 모드 전환">
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 9H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M14 12a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- POST HEADER -->
+  <header class="post-header">
+    <div class="post-header-tag">AI 도구 / 프로그래밍</div>
+    <h1 class="post-header-title">Roo Code (구 Roo Cline) 사용법: VS Code에서 AI 에이전트로 자율 코딩하기</h1>
+    <div class="post-header-meta">
+      <span>작성자: Starrope</span>
+      <span>•</span>
+      <span>2026. 07. 06</span>
+      <span>•</span>
+      <span>읽는 시간: 약 4분</span>
+    </div>
+  </header>
+
+  <!-- AD SLOT (POST TOP DISPLAY) -->
+  <div class="container">
+    <ins class="adsbygoogle ad-slot ad-header"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true">
+       <div class="ad-slot-label">본문 상단 반응형 광고</div>
+    </ins>
+  </div>
+
+  <!-- ARTICLE LAYOUT -->
+  <main class="container post-article-layout">
+    
+    <!-- LEFT: MAIN CONTENT -->
+    <article class="post-content">
+      
+      <p>단순히 질문에 대답하거나 짤막한 코드 블록만 완성해 주는 코딩 어시스턴트를 넘어, 이제는 전체 파일 구조를 이해하고 명령어를 직접 실행하며 터미널 제어까지 완수하는 <strong>자율형 AI 코딩 에이전트(Autonomous Coding Agent)</strong> 시대가 열렸습니다. 그중에서도 VS Code 환경에서 가장 강력하고 유연한 오픈소스로 주목받고 있는 도구가 바로 <strong>Roo Code(구 Roo Cline)</strong>입니다. 이번 포스트에서는 Roo Code의 핵심 가치부터 실전 연동, 그리고 생산성을 200% 끌어올릴 수 있는 팁들을 명쾌하게 분석해 드립니다.</p>
+      <!-- Key Summary Table (Alphanahm Skill) -->
+      <div class="summary-table-container" style="margin: 30px 0;">
+        <table style="width: 100%; border-collapse: collapse; border: 1px solid var(--border-light); font-size: 14.5px; background-color: var(--bg-surface);">
+          <thead>
+            <tr style="background-color: var(--bg-ad); border-bottom: 1px solid var(--border-light);">
+              <th style="padding: 12px 16px; border-right: 1px solid var(--border-light); text-align: left; font-weight: 700; color: var(--text-main);">핵심 영역</th>
+              <th style="padding: 12px 16px; text-align: left; font-weight: 700; color: var(--text-main);">상세 가이드 & 실전 가치</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 12px 16px; border-right: 1px solid var(--border-light); font-weight: 600; color: var(--primary-color);">주요 목표</td>
+              <td style="padding: 12px 16px; color: var(--text-main);">Roo Code (구 Roo Cline) 사용법를 위한 핵심 전략 및 기초 이론 수립</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-light);">
+              <td style="padding: 12px 16px; border-right: 1px solid var(--border-light); font-weight: 600; color: var(--primary-color);">실전 분석</td>
+              <td style="padding: 12px 16px; color: var(--text-main);">Roo Code란 무엇인가? (Roo Cline의 진화) 단계별 구현 가이드 및 세부 실행 방안</td>
+            </tr>
+            <tr>
+              <td style="padding: 12px 16px; border-right: 1px solid var(--border-light); font-weight: 600; color: var(--primary-color);">최적화 팁</td>
+              <td style="padding: 12px 16px; color: var(--text-main);">Roo Code 핵심 기능과 차별점 적용을 통한 성능 고도화 및 리스크 예방</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <h2>1. Roo Code란 무엇인가? (Roo Cline의 진화)</h2>
+      <p>Roo Code는 기존에 폭발적인 인기를 끌었던 오픈소스 프로젝트인 <strong>Cline(구 Devins)</strong>의 핵심 포크 버전으로 출발해, 한층 더 강력해진 에이전트 기능을 탑재한 도구입니다. 단순 코드 생성을 넘어 터미널 명령어 실행, 파일 읽기/쓰기, 디렉터리 검색, 브라우징 테스트까지 에이전트가 <strong>스스로 도구를 활용(Tool-use)하여 작업을 독립적으로 수행</strong>할 수 있는 것이 차별점입니다.</p>
+      
+      <blockquote>
+          "단순한 자동 완성을 넘어서, 자연어로 주어진 지시사항을 분석하고 터미널 실행과 코드 디버깅을 교차 반복하여 완벽한 빌드 완료 상태를 스스로 만들어 냅니다."
+      </blockquote>
+      
+      <h2>2. Roo Code 핵심 기능과 차별점</h2>
+      <p>Roo Code가 기존 AI 어시스턴트(Copilot, ChatGPT 등) 대비 독보적인 성능을 발휘하는 이유는 다음과 같은 에이전트 아키텍처 덕분입니다.</p>
+      <ul>
+        <li><strong>다양한 LLM API 지원:</strong> Anthropic Claude 3.5 Sonnet, OpenRouter, DeepSeek-R1, Google Gemini, Ollama(로컬 구동 모델) 등 현존하는 다양한 고성능 API 모델을 완벽하게 지원합니다.</li>
+        <li><strong>완전한 자율적 도구 사용:</strong> 파일 읽고 쓰기, 프로젝트 내 검색은 물론이며 직접 터미널에 명령어를 입력하여 빌드, 테스트, 의존성 설치 등을 주도적으로 실행할 수 있습니다.</li>
+        <li><strong>브라우저 자동화 테스트:</strong> 웹 애플리케이션 작업 시 에이전트가 브라우저를 열어 실제 렌더링된 화면의 동작과 에러 여부를 탐색할 수 있습니다.</li>
+      </ul>
+
+      <!-- AD SLOT (IN-CONTENT DISPLAY) -->
+      <ins class="adsbygoogle ad-slot ad-content"
+           style="display:block; text-align:center;"
+           data-ad-layout="in-article"
+           data-ad-format="fluid"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="5566778899">
+        <div class="ad-slot-label">본문 중간 인피드 광고 영역</div>
+      </ins>
+
+      <h2>3. 커스텀 시스템 프롬프트(Custom Instructions) 활용하기</h2>
+      <p>Roo Code의 강점 중 하나는 프로젝트 루트 디렉터리에 <code>.clinerules</code> 또는 <code>.agents/rules</code>와 같은 설정 파일을 구성해 두면, 에이전트가 코딩할 때 준수해야 할 **아키텍처 규칙, 파일 네이밍 룰, 코드 스타일 등을 강제**할 수 있다는 점입니다. 이를 통해 AI가 협업 가이드라인을 어기거나 엉뚱한 기술 스택을 사용하는 낭비를 방지할 수 있습니다.</p>
+      
+      <!-- HIGH-CONVERTING REDIRECT CTA BOX (전면 광고 100% 트리거용 내부 브릿지 링크) -->
+      <div class="redirect-box">
+        <h3 class="redirect-title" style="border: none; padding: 0; margin-bottom: 8px;">📍 Roo Code 공식 GitHub 저장소 바로가기</h3>
+        <p class="redirect-desc">
+          아래 버튼을 클릭하시면 Roo Code 공식 오픈소스 저장소(안전 연결)로 즉시 이동합니다.<br>
+          (이동 시 1~2초간 보안 점검 로딩이 진행될 수 있습니다.)
+        </p>
+        <a href="../apply.html?target=https://github.com/RooVetGit/Roo-Code" class="redirect-cta-btn" target="_blank" rel="noopener">
+          공식 GitHub 바로가기
+          <svg xmlns="http://www.w3.org/2000/svg" style="width: 18px; height: 18px;" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 5l7 7-7 7M5 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+
+      <h2>마치며</h2>
+      <p>Roo Code(구 Roo Cline)는 AI를 부사수로 고용하여 실제 개발 업무를 위임하는 방식의 **'워크플로우 혁신'**을 직접 체감할 수 있는 도구입니다. 아직 사용해 보지 않으셨다면 VS Code 확장 마켓플레이스에서 Roo Code를 검색하여 설치하고, 무료 API 혹은 로컬 Ollama 모델과 연동하여 진정한 자율 코딩 에이전트의 강력함을 경험해 보시기 바랍니다.</p>
+      
+    
+      <!-- FAQ Section (Alphanahm Skill) -->
+      <div class="faq-section" style="margin-top: 40px; border-top: 1px solid var(--border-light); padding-top: 30px; margin-bottom: 30px;">
+        <h3 style="font-size: 20px; margin-bottom: 20px; color: var(--text-main);">❓ 자주 묻는 질문 (FAQ)</h3>
+        <details style="margin-bottom: 16px; padding: 16px; background-color: var(--bg-main); border: 1px solid var(--border-light); border-radius: var(--border-radius-sm); cursor: pointer;">
+          <summary style="font-weight: 600; font-size: 15px; color: var(--text-main); outline: none;">Roo Code란 무엇인가? (Roo Cline의 진화)의 핵심 내용은 무엇인가요?</summary>
+          <p style="margin-top: 12px; margin-bottom: 0; font-size: 14.5px; color: var(--text-muted); line-height: 1.6;">Roo Code는 기존에 폭발적인 인기를 끌었던 오픈소스 프로젝트인 Cline(구 Devins)의 핵심 포크 버전으로 출발해, 한층 더 강력해진 에이전트 기능을 탑재한 도구입니다. 단순 코드 생성을 넘어 터미널 명령어 실행, 파일 읽기/쓰기, 디렉터리 검색, 브라우징 테스트까지 에이전트가 스스로 도구를 활용(Tool-use)하여 작업을 독립적으로 수행할 수...</p>
+        </details>
+        <details style="margin-bottom: 16px; padding: 16px; background-color: var(--bg-main); border: 1px solid var(--border-light); border-radius: var(--border-radius-sm); cursor: pointer;">
+          <summary style="font-weight: 600; font-size: 15px; color: var(--text-main); outline: none;">Roo Code 핵심 기능과 차별점의 핵심 내용은 무엇인가요?</summary>
+          <p style="margin-top: 12px; margin-bottom: 0; font-size: 14.5px; color: var(--text-muted); line-height: 1.6;">Roo Code가 기존 AI 어시스턴트(Copilot, ChatGPT 등) 대비 독보적인 성능을 발휘하는 이유는 다음과 같은 에이전트 아키텍처 덕분입니다.</p>
+        </details>
+        <details style="margin-bottom: 16px; padding: 16px; background-color: var(--bg-main); border: 1px solid var(--border-light); border-radius: var(--border-radius-sm); cursor: pointer;">
+          <summary style="font-weight: 600; font-size: 15px; color: var(--text-main); outline: none;">커스텀 시스템 프롬프트(Custom Instructions) 활용하기의 핵심 내용은 무엇인가요?</summary>
+          <p style="margin-top: 12px; margin-bottom: 0; font-size: 14.5px; color: var(--text-muted); line-height: 1.6;">Roo Code의 강점 중 하나는 프로젝트 루트 디렉터리에 .clinerules 또는 .agents/rules와 같은 설정 파일을 구성해 두면, 에이전트가 코딩할 때 준수해야 할 **아키텍처 규칙, 파일 네이밍 룰, 코드 스타일 등을 강제**할 수 있다는 점입니다. 이를 통해 AI가 협업 가이드라인을 어기거나 엉뚱한 기술 스택을 사용하는 낭비를 방지할 수 ...</p>
+        </details>
+      </div>
+      <!-- Author Profile Box (Alphanahm Skill) -->
+      <div class="author-box" style="margin-top: 50px; padding: 24px; border: 1px solid var(--border-light); border-radius: var(--border-radius-md); display: flex; align-items: center; gap: 20px; background: rgba(255, 255, 255, 0.02); margin-bottom: 20px;">
+        <div style="font-size: 28px; background: linear-gradient(135deg, var(--primary-color), hsl(265, 90%, 60%)); width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; flex-shrink: 0; box-shadow: 0 4px 12px hsla(var(--hue), 95%, 48%, 0.2);">✍️</div>
+        <div>
+          <h5 style="margin: 0; font-size: 15.5px; font-weight: 700; color: var(--text-main);">Starrope IT 에디터</h5>
+          <p style="margin: 6px 0 0 0; font-size: 13.5px; color: var(--text-muted); line-height: 1.5;">IT 기술 및 AI 도구 파트너. 코딩, 인공지능 활용법, 디바이스 리뷰, 그리고 개발 생산성 향상을 위한 최신 트렌드를 알기 쉽게 전달합니다.</p>
+        </div>
+      </div>
+</article>
+    
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="sidebar">
+      
+      <!-- Bio Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">운영자 프로필</h3>
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 12px;">
+          <div style="width: 50px; height: 50px; border-radius: 50%; background-color: var(--primary-color); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">S</div>
+          <div>
+            <h4 style="font-size: 15px;">Starrope</h4>
+            <span style="font-size: 12px; color: var(--text-muted);">IT 기술 & SEO 파트너</span>
+          </div>
+        </div>
+        <p style="font-size: 13.5px; color: var(--text-muted); line-height: 1.6;">실전 SEO 전략 및 IT 기술 블로그 최적화 파트너입니다. 최고의 퍼포먼스를 내는 고성능 블로그 정보를 제공합니다.</p>
+      </div>
+      
+      <!-- Ad Widget -->
+      <ins class="adsbygoogle ad-slot ad-sidebar sidebar-widget"
+           style="display:block"
+           data-ad-client="ca-pub-1692428092138510"
+           data-ad-slot="9876543210"
+           data-ad-format="rectangle"
+           data-full-width-responsive="true">
+        <div class="ad-slot-label">사이드바 스폰서 링크</div>
+      </ins>
+      
+      <!-- Navigation Widget -->
+      <div class="sidebar-widget">
+        <h3 class="widget-title">바로가기</h3>
+        <ul class="categories-list">
+          <li><a href="../index.html">🏠 홈으로 돌아가기</a></li>
+          <li><a href="../about.html">👤 필자 소개 보기</a></li>
+        </ul>
+      </div>
+      
+    </aside>
+  </main>
+
+  <!-- AD SLOT (POST BOTTOM DISPLAY) -->
+  <div class="container" style="margin-bottom: 60px;">
+    <ins class="adsbygoogle ad-slot ad-footer"
+         style="display:block"
+         data-ad-client="ca-pub-1692428092138510"
+         data-ad-slot="1122334455"
+         data-ad-format="horizontal"
+         data-full-width-responsive="true">
+      <div class="ad-slot-label">본문 하단 반응형 매칭 광고</div>
+    </ins>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <a href="../index.html" class="logo footer-info-logo">
+          <div class="logo-icon">S</div>
+          <span class="gradient-text">Starrope IT</span>
+        </a>
+        <p>최신 IT 기술 트렌드, AI 생산성 도구 사용법 및 디지털 노마드의 삶을 위한 유용한 지식을 공유하는 전문 기술 블로그.</p>
+      </div>
+      
+      <div class="footer-links">
+        <h4>중요 문서</h4>
+        <ul>
+          <li><a href="../privacy-policy.html">개인정보처리방침</a></li>
+          <li><a href="../terms-of-service.html">서비스 이용약관</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Starrope IT. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Link JS (relative path) -->
+  <script src="../assets/main.js"></script>
+  
+  <!-- Trigger Adsense rendering loop -->
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</body>
+</html>
