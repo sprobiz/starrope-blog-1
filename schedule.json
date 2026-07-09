@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "filename": "gemini-1-5-pro-vs-gemini-3-5-flash.html",
+      "title": "Gemini 1.5 Pro vs Gemini 3.5 Flash: 성능 특징 및 개발자 사용 가이드 완벽 비교",
+      "description": "구글의 최신 거대 언어 모델인 Gemini 1.5 Pro와 경량화 모델 Gemini 3.5 Flash의 핵심 성능 차이, 벤치마크 점수, 그리고 프로젝트 목적에 맞는 현명한 선택 기준을 실전 개발 사례와 함께 상세히 분석합니다.",
+      "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80",
+      "tag": "AI 도구 / 프로그래밍",
+      "date_display": "2026. 07. 09 (오후 10:15)",
+      "publish_date": "2026-07-09",
+      "publish_time": "22:15"
+    },
+    {
       "filename": "deepseek-v3-vs-gpt-4o-coding.html",
       "title": "DeepSeek-V3 vs GPT-4o: 코딩 성능 및 비용 가성비 완벽 비교 분석",
       "description": "최근 주목받고 있는 DeepSeek-V3와 OpenAI의 GPT-4o의 코딩 생성 능력 및 API 비용 가성비를 심층 비교 분석합니다. 어떤 모델을 선택해야 개발 생산성을 가장 효과적으로 극대화할 수 있는지 가이드를 드립니다.",
