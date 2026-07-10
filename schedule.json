@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "filename": "claude-3-7-sonnet-hybrid-reasoning.html",
+      "title": "Claude 3.7 Sonnet과 하이브리드 추론(Hybrid Reasoning): 성능 특징 및 실전 활용 가이드",
+      "description": "앤트로픽의 최신 인공지능 모델 Claude 3.7 Sonnet의 하이브리드 추론 모드(Reasoning Mode) 작동 방식, 성능 벤치마크, 개발자를 위한 실전 프롬프트 및 API 활용법을 알아봅니다.",
+      "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80",
+      "tag": "AI 도구 / 프로그래밍",
+      "date_display": "2026. 07. 10 (오후 10:00)",
+      "publish_date": "2026-07-10",
+      "publish_time": "22:00"
+    },
+    {
       "filename": "gemini-1-5-pro-vs-gemini-3-5-flash.html",
       "title": "Gemini 1.5 Pro vs Gemini 3.5 Flash: 성능 특징 및 개발자 사용 가이드 완벽 비교",
       "description": "구글의 최신 거대 언어 모델인 Gemini 1.5 Pro와 경량화 모델 Gemini 3.5 Flash의 핵심 성능 차이, 벤치마크 점수, 그리고 프로젝트 목적에 맞는 현명한 선택 기준을 실전 개발 사례와 함께 상세히 분석합니다.",
