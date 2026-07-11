@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "filename": "cursor-claude-3-7-agentic-coding.html",
+      "title": "Cursor AI와 Claude 3.7 Sonnet Agentic 모드 연동: 코딩 생산성 200% 극대화 가이드",
+      "description": "최신 Cursor AI 에디터와 Claude 3.7 Sonnet의 에이전트 코딩(Agentic Coding) 모드를 완벽하게 결합하여 코딩 분석부터 자동 디버깅까지 한 번에 자동화하는 실전 가이드를 알아봅니다.",
+      "image_url": "https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=800&q=80",
+      "tag": "AI 도구 / 프로그래밍",
+      "date_display": "2026. 07. 11 (오전 08:00)",
+      "publish_date": "2026-07-11",
+      "publish_time": "08:00"
+    },
+    {
       "filename": "claude-3-7-sonnet-hybrid-reasoning.html",
       "title": "Claude 3.7 Sonnet과 하이브리드 추론(Hybrid Reasoning): 성능 특징 및 실전 활용 가이드",
       "description": "앤트로픽의 최신 인공지능 모델 Claude 3.7 Sonnet의 하이브리드 추론 모드(Reasoning Mode) 작동 방식, 성능 벤치마크, 개발자를 위한 실전 프롬프트 및 API 활용법을 알아봅니다.",
