@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "filename": "gemini-3-5-flash-practical-guide.html",
+      "title": "Gemini 3.5 Flash 실전 활용법: 개발자 생산성 극대화를 위한 가이드",
+      "description": "Google의 초고속, 초경량 인공지능 모델인 Gemini 3.5 Flash의 작동 원리, 장단점 및 개발 생산성을 향상시키기 위한 강력한 실전 활용 팁을 제시합니다.",
+      "image_url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80",
+      "tag": "AI 도구 / 프로그래밍",
+      "date_display": "2026. 07. 13 (오전 08:00)",
+      "publish_date": "2026-07-13",
+      "publish_time": "07:00"
+    },
+    {
       "filename": "cline-vs-cursor-ai-comparison.html",
       "title": "Cline (Roo Code) vs Cursor AI: 2026년 하반기 최강의 AI 코딩 에이전트 승자는?",
       "description": "최근 개발자 생산성을 극대화해주는 두 대세 AI 코딩 에이전트인 Cline(구 Roo Cline / Roo Code)과 Cursor AI를 철저하게 비교 분석합니다. 특징, 비용, 기능 및 나에게 맞는 도구 선택 팁까지 알아보세요.",
