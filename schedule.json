@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "filename": "cline-vs-cursor-ai-comparison.html",
+      "title": "Cline (Roo Code) vs Cursor AI: 2026년 하반기 최강의 AI 코딩 에이전트 승자는?",
+      "description": "최근 개발자 생산성을 극대화해주는 두 대세 AI 코딩 에이전트인 Cline(구 Roo Cline / Roo Code)과 Cursor AI를 철저하게 비교 분석합니다. 특징, 비용, 기능 및 나에게 맞는 도구 선택 팁까지 알아보세요.",
+      "image_url": "https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=800&q=80",
+      "tag": "AI 도구 / 프로그래밍",
+      "date_display": "2026. 07. 12 (오후 15:30)",
+      "publish_date": "2026-07-12",
+      "publish_time": "15:00"
+    },
+    {
       "filename": "cursor-claude-3-7-agentic-coding.html",
       "title": "Cursor AI와 Claude 3.7 Sonnet Agentic 모드 연동: 코딩 생산성 200% 극대화 가이드",
       "description": "최신 Cursor AI 에디터와 Claude 3.7 Sonnet의 에이전트 코딩(Agentic Coding) 모드를 완벽하게 결합하여 코딩 분석부터 자동 디버깅까지 한 번에 자동화하는 실전 가이드를 알아봅니다.",
