@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "filename": "bolt-new-fullstack-ai.html",
+      "title": "Bolt.new 사용법: 자연어로 풀스택 웹 서비스를 생성부터 배포까지 5분 만에 끝내는 방법",
+      "description": "브라우저 안에서 풀스택 웹 애플리케이션을 자연어로 개발하고 즉시 배포까지 해주는 혁신적인 AI 개발 도구 Bolt.new의 핵심 기능과 실전 활용 가이드를 자세히 알아봅니다.",
+      "image_url": "https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=800&q=80",
+      "tag": "AI 도구 / 프로그래밍",
+      "date_display": "2026. 07. 14 (오전 07:00)",
+      "publish_date": "2026-07-14",
+      "publish_time": "07:00"
+    },
+    {
       "filename": "gemini-3-5-flash-practical-guide.html",
       "title": "Gemini 3.5 Flash 실전 활용법: 개발자 생산성 극대화를 위한 가이드",
       "description": "Google의 초고속, 초경량 인공지능 모델인 Gemini 3.5 Flash의 작동 원리, 장단점 및 개발 생산성을 향상시키기 위한 강력한 실전 활용 팁을 제시합니다.",
