@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "filename": "mcp-model-context-protocol-ai-agent-guide.html",
+      "title": "2026년 MCP(Model Context Protocol) 연동 완벽 가이드: AI 에이전트 구축과 애드센스 블로그 자동화 실전",
+      "description": "2026년 최신 AI 트렌드의 핵심인 MCP(Model Context Protocol)의 개념, VS Code 및 Cursor 연동 방법, 그리고 에이전트 기반 애드센스 수익화 자동화 구축법을 완벽 정리합니다.",
+      "image_url": "https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=800&q=80",
+      "tag": "AI 도구 / 프로그래밍",
+      "date_display": "2026. 07. 28 (오전 09:00)",
+      "publish_date": "2026-07-28",
+      "publish_time": "09:00"
+    },
+    {
       "filename": "gemini-3-6-flash-cursor-ai-automation.html",
       "title": "2026년 Gemini 3.6 Flash & Cursor AI 연동 가이드: 무제한 자동 코딩과 애드센스 블로그 자동화 실전",
       "description": "2026년 최신 발표된 Google Gemini 3.6 Flash 모델을 Cursor AI 및 에이전틱 코딩 도구와 연동하여 초고속 개발 및 애드센스 수익화 블로그 자동화를 구축하는 실전 팁을 완벽히 정리합니다.",
