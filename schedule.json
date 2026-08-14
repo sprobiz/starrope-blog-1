@@ -1,6 +1,56 @@
 {
   "posts": [
     {
+      "filename": "antigravity-2-claude-37-agentic-coding-adsense.html",
+      "title": "2026년 Antigravity 2.0 & Claude 3.7 Sonnet 에이전틱 코딩 가이드: 프롬프트 최적화 및 애드센스 블로그 자동화 실전",
+      "description": "Google DeepMind의 2026년 최신 Antigravity 2.0 프레임워크와 Anthropic의 Claude 3.7 Sonnet 하이브리드 추론 모델을 결합하여 무제한 에이전틱 코딩 및 구글 애드센스 자동화 수익 시스템을 구축하는 실전 팁을 완벽 정리합니다.",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
+      "tag": "AI 도구 / 에이전틱 코딩",
+      "date_display": "2026. 08. 14 (오전 09:45)",
+      "publish_date": "2026-08-14",
+      "publish_time": "09:45"
+    },
+    {
+      "filename": "gpt-4-5-gemini-2-5-flash-seo-adsense-automation.html",
+      "title": "2026년 GPT-4.5 & Gemini 2.5 Flash 기반 AI 블로그 SEO 자동화 실전 가이드: 고수익 키워드 작성부터 애드센스 승인·Git 배포까지",
+      "description": "2026년 최신 AI LLM(GPT-4.5 및 Gemini 2.5 Flash)을 활용한 블로그 SEO 최적화 포스트 생성, 구글 애드센스 수익 슬롯 배치, 100% 전면광고 전환 브릿지 및 GitHub 배포 자동화 가이드를 완벽 정리합니다.",
+      "image_url": "https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=800&q=80",
+      "tag": "AI 도구 / 프로그래밍",
+      "date_display": "2026. 08. 12 (오후 10:30)",
+      "publish_date": "2026-08-12",
+      "publish_time": "22:30"
+    },
+    {
+      "filename": "antigravity-ai-agentic-workflow-adsense-guide.html",
+      "title": "2026년 Google Anti-Gravity AI & Agentic Workflow 연동 가이드: 무제한 자동 개발과 구글 애드센스 수익 극대화 전략",
+      "description": "2026년 최신 발표된 Google Anti-Gravity AI와 에이전틱 워크플로우를 활용하여 풀스택 앱 개발부터 구글 애드센스 수익화 블로그 파이프라인 구축까지 초고속으로 실현하는 완벽 가이드입니다.",
+      "image_url": "https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=800&q=80",
+      "tag": "AI 도구 / 프로그래밍",
+      "date_display": "2026. 08. 10 (오후 11:00)",
+      "publish_date": "2026-08-10",
+      "publish_time": "23:00"
+    },
+    {
+      "filename": "claude-3-7-sonnet-cursor-agentic-coding.html",
+      "title": "2026년 Claude 3.7 Sonnet & Cursor AI 0.45 하이브리드 추론 연동 가이드: 차세대 에이전틱 코딩과 애드센스 수익화 자동화",
+      "description": "2026년 최신 Anthropic Claude 3.7 Sonnet 하이브리드 추론(Hybrid Reasoning) 모델을 Cursor AI 0.45와 연동하여 초고속 에이전틱 개발 및 구글 애드센스 블로그 자동화 파이프라인을 구축하는 실전 가이드입니다.",
+      "image_url": "https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=800&q=80",
+      "tag": "AI 도구 / 프로그래밍",
+      "date_display": "2026. 08. 07 (오전 11:00)",
+      "publish_date": "2026-08-07",
+      "publish_time": "11:00"
+    },
+    {
+      "filename": "ollama-deepseek-r1-adsense-automation.html",
+      "title": "2026년 Open-Source AI 에이전트(Ollama + DeepSeek R1) 로컬 구축 및 구글 애드센스 블로그 자동 파이프라인 실전 가이드",
+      "description": "2026년 최신 오픈소스 AI 모델인 DeepSeek R1을 Ollama로 로컬 환경에 구축하고, 구글 SEO 최적화 콘텐츠 자동 생성부터 애드센스 수익화 슬롯 및 GitHub 저장소 배포까지 자동화하는 실전 가이드입니다.",
+      "image_url": "https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=800&q=80",
+      "tag": "AI 도구 / 프로그래밍",
+      "date_display": "2026. 08. 05 (오전 09:00)",
+      "publish_date": "2026-08-05",
+      "publish_time": "09:00"
+    },
+    {
       "filename": "ai-blog-automation-adsense-seo-guide.html",
       "title": "2026년 AI 블로그 자동화 & 구글 애드센스 SEO 최적화 가이드: Python/Node.js 자동 발행부터 깃허브 배포까지",
       "description": "2026년 최신 AI 기술과 스크립트를 활용해 구글 SEO 최적화 블로그 콘텐츠를 작성하고 애드센스 광고 수익 파이프라인과 GitHub Pages 배포까지 자동화하는 종합 실전 가이드입니다.",
