@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "filename": "cursor-claude-3-5-ai-coding-guide.html",
+      "title": "2026년 최신 AI 코딩 에이전트 커서(Cursor) 및 클로드 3.5 완벽 가이드",
+      "description": "2026년 개발 트렌드를 주도하는 Cursor AI 에디터와 Claude 3.5 Sonnet의 결합으로 초고속 에이전틱 코딩 환경을 구축하는 완벽 가이드입니다. 실무 프로젝트 자동화부터 최적화 노하우까지 한 번에 알아봅니다.",
+      "image_url": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
+      "tag": "AI 도구 / 프로그래밍",
+      "date_display": "2026. 08. 17 (오전 10:00)",
+      "publish_date": "2026-08-17",
+      "publish_time": "10:00"
+    },
+    {
       "filename": "antigravity-2-claude-37-agentic-coding-adsense.html",
       "title": "2026년 Antigravity 2.0 & Claude 3.7 Sonnet 에이전틱 코딩 가이드: 프롬프트 최적화 및 애드센스 블로그 자동화 실전",
       "description": "Google DeepMind의 2026년 최신 Antigravity 2.0 프레임워크와 Anthropic의 Claude 3.7 Sonnet 하이브리드 추론 모델을 결합하여 무제한 에이전틱 코딩 및 구글 애드센스 자동화 수익 시스템을 구축하는 실전 팁을 완벽 정리합니다.",
