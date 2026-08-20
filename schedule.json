@@ -1,6 +1,16 @@
 {
   "posts": [
     {
+      "filename": "gemini-3-7-pro-deepseek-v3-ai-agent-adsense.html",
+      "title": "2026년 Gemini 3.7 Pro & DeepSeek V3 AI 에이전트 연동 가이드: 풀스택 자동 코딩과 구글 애드센스 수익 극대화 실전",
+      "description": "2026년 최신 발표된 Google Gemini 3.7 Pro와 DeepSeek V3 하이브리드 AI 에이전트를 연동하여 풀스택 앱 개발부터 구글 애드센스 자동 수익화 블로그 파이프라인 구축까지의 실전 전략을 완벽히 정리합니다.",
+      "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
+      "tag": "AI 도구 / 에이전틱 코딩",
+      "date_display": "2026. 08. 20 (오전 09:30)",
+      "publish_date": "2026-08-20",
+      "publish_time": "09:30"
+    },
+    {
       "filename": "cursor-claude-3-5-ai-coding-guide.html",
       "title": "2026년 최신 AI 코딩 에이전트 커서(Cursor) 및 클로드 3.5 완벽 가이드",
       "description": "2026년 개발 트렌드를 주도하는 Cursor AI 에디터와 Claude 3.5 Sonnet의 결합으로 초고속 에이전틱 코딩 환경을 구축하는 완벽 가이드입니다. 실무 프로젝트 자동화부터 최적화 노하우까지 한 번에 알아봅니다.",
