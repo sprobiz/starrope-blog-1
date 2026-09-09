@@ -606,4 +606,23 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
+  <url>
+    <loc>https://blog1.starrope2023.com/posts/claude-sonnet-45-vs-gpt41-ai-coding-2026.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://blog1.starrope2023.com/posts/ai-side-hustle-adsense-blog-monthly-1million-2026.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://blog1.starrope2023.com/posts/vibe-coding-ai-app-development-guide-2026.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
+
