@@ -1,14 +1,14 @@
 {
   "posts": [
     {
-      "filename": "cursor-composer-fullstack-app.html",
-      "title": "Cursor AI Composer로 풀스택 웹 애플리케이션 10분 만에 빌드하기",
-      "description": "차세대 AI 에디터 Cursor의 핵심 기능인 Composer(멀티파일 편집)를 활용하여 API 연동부터 프론트엔드 UI까지 한 번에 자동 구축하는 실전 10분 마스터 가이드를 알아봅니다.",
+      "filename": "2026-deepseek-vs-claude-coding-agent.html",
+      "title": "2026년 최신 딥시크(DeepSeek) vs 클로드(Claude) 3.5 코딩 에이전트 성능 비교",
+      "description": "2026년 최신 AI 코딩 에이전트 딥시크(DeepSeek)와 클로드(Claude) 3.5의 코딩 성능, 장단점, 가격, 활용법을 완벽히 비교 분석합니다.",
       "image_url": "https://images.unsplash.com/photo-1618401471353-b98aedd07871?auto=format&fit=crop&w=800&q=80",
-      "tag": "AI 도구 / 프로그래밍",
-      "date_display": "2026. 06. 16 (오전 10:00)",
-      "publish_date": "2026-06-16",
-      "publish_time": "10:00"
+      "tag": "AI 툴 / 프로그래밍",
+      "date_display": "2026. 09. 23 (오후 13:37)",
+      "publish_date": "2026-09-23",
+      "publish_time": "13:37"
     }
   ]
 }
